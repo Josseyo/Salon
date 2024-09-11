@@ -1,9 +1,24 @@
-core.Microsoft*
-core.mongo*
-core.python*
-env.py
+# Ignore core dumps
+#core.Microsoft*
+#core.mongo*
+#core.python*
+
+# Ignore environment files
+#env.py
+
+# Ignore Python cache files
 __pycache__/
 *.py[cod]
-node_modules/
-.github/
-cloudinary_python.txt
+*.pyc
+
+# Ignore Node.js modules
+#node_modules/
+
+# Ignore GitHub files
+#.github/
+
+# Ignore Cloudinary Python text file
+#cloudinary_python.txt
+
+# Ignore SQLite database files
+*.sqlite3

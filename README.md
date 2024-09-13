@@ -1,8 +1,6 @@
 # Markup Salon
 
 ## Table of Contents
-- [User Story User Stories PP5](#user-story-user-stories-pp5)
-- [README](#readme)
 - [The Salon](#the-salon)
 - [UX](#ux)
 - [Typography](#typography)
@@ -44,11 +42,6 @@
 - [Media](#media)
 - [Acknowledgements](#acknowledgements)
 
-## User Story User Stories PP5
-A brief description of user stories related to PP5.
-
-## README
-Overview of the project and its objectives.
 
 ## The Salon
 Details about the salon aspect of the project.

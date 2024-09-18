@@ -10,6 +10,7 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'start_time',
         'end_time',
+        'host',
         'category',
         'price',
         'rating',

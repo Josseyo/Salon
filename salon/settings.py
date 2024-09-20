@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-# from pathlib import Path
+from pathlib import Path
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR,...)
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "home",
     "products",
-    "bag"
+    "bag",
 ]
 
 MIDDLEWARE = [
@@ -79,6 +79,8 @@ TEMPLATES = [
         },
     },
 ]
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",

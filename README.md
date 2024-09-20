@@ -76,6 +76,11 @@ Features available to administrators.
 ## Future Features
 Planned features for future updates.
 
+**Integrate Real-Time Updates:**
+   - Use JavaScript to dynamically update the total cost and any other relevant information as the quantity is adjusted so that the updates are smooth and do not require page refreshes.
+   -  Automatically remove events when date of event has passed
+
+
 ## Tools & Technologies Used
 List of tools and technologies utilized in the project.
 

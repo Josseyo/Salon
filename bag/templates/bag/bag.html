@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">Shopping Bag</h2>
+                <h2 class="logo-font mb-4">Shopping Salon Talks</h2>
                 <hr>
             </div>
         </div>
@@ -138,18 +138,19 @@
         form.submit();
     });
 
-    // Remove item and reload on click
-    $('.remove-item').click(function(e) {
+
+        // Remove item and reload on click
+
+        $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
         var url = `/bag/remove/${itemId}/`;
         var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
         $.post(url, data)
          .done(function() {
-             location.reload();
+                location.reload();
          });
-
-        // Add your removal logic here (e.g., AJAX call or form submission)
-    });
+    })
 </script>
 {% endblock %}

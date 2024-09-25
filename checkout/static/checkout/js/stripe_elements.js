@@ -18,7 +18,7 @@ var style = {
     fontSize: "16px",
     "::placeholder": {
       color: "#aab7c4",
-    },
+    }
   },
   invalid: {
     color: "#dc3545",
@@ -33,11 +33,11 @@ card.addEventListener("change", function (event) {
   var errorDiv = document.getElementById("card-errors");
   if (event.error) {
     var html = `
-            <span class="icon" role="alert">
-                <i class="fas fa-times"></i>
-            </span>
-            <span>${event.error.message}</span>
-        `;
+      <span class="icon" role="alert">
+          <i class="fas fa-times"></i>
+      </span>
+      <span>${event.error.message}</span>
+    `;
     $(errorDiv).html(html);
   } else {
     errorDiv.textContent = "";
@@ -51,6 +51,9 @@ form.addEventListener("submit", function (ev) {
   ev.preventDefault();
   card.update({ disabled: true });
   $("#submit-button").attr("disabled", true);
+  $('#submit-button').attr('disabled', true);
+  $('#payment-form').fadeToggle(100);
+  $('#loading-overlay').fadeToggle(100);
   stripe
     .confirmCardPayment(clientSecret, {
       payment_method: {
@@ -61,17 +64,19 @@ form.addEventListener("submit", function (ev) {
       if (result.error) {
         var errorDiv = document.getElementById("card-errors");
         var html = `
-                <span class="icon" role="alert">
-                <i class="fas fa-times"></i>
-                </span>
-                <span>${result.error.message}</span>`;
+          <span class="icon" role="alert">
+          <i class="fas fa-times"></i>
+          </span>
+          <span>${result.error.message}</span>`;
         $(errorDiv).html(html);
+        $('#payment-form').fadeToggle(100);
+        $('#loading-overlay').fadeToggle(100);
         card.update({ disabled: false });
         $("#submit-button").attr("disabled", false);
       } else {
-        if (result.paymentIntent.status === "succeeded") {
-          form.submit();
-        }
+          if (result.paymentIntent.status === "succeeded") {
+            form.submit();
+          }
       }
     });
 });

@@ -1,10 +1,10 @@
-# Ignore core dumps
+#Ignore core dumps
 #core.Microsoft*
 #core.mongo*
 #core.python*
 
-# Ignore environment files
-#env.py
+env.py
+*.sqlite3
 
 # Ignore Python cache files
 __pycache__/
@@ -21,4 +21,3 @@ __pycache__/
 #cloudinary_python.txt
 
 # Ignore SQLite database files
-*.sqlite3

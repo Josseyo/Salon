@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 # from pathlib import Path
 import os
+from django.core.management.utils import get_random_secret_key
 import dj_database_url
 
 
@@ -31,11 +32,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # )
 
 
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+# SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = False
+# DEBUG = "DEVELOPMENT" in os.environ
 
 ALLOWED_HOSTS = [
     "8000-josseyo-salon-xug9qhr5u6r.ws.codeinstitute-ide.net",

@@ -10,11 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-#from pathlib import Path
+# from pathlib import Path
 import os
+import dj_database_url
 
-#if os.path.isfile("env.py"):
- #   import env
+
+# if os.path.isfile("env.py"):
+#   import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR,...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,7 +33,10 @@ SECRET_KEY = (
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["8000-josseyo-salon-xug9qhr5u6r.ws.codeinstitute-ide.net"]
+ALLOWED_HOSTS = [
+    "8000-josseyo-salon-xug9qhr5u6r.ws.codeinstitute-ide.net",
+    "salontalks-e6485414bbd3.herokuapp.com",
+]
 
 
 # Application definition
@@ -122,13 +127,17 @@ WSGI_APPLICATION = "salon.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+if "DATABASE_URL" in os.environ:
+    DATABASES = {
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
-}
-
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -183,5 +192,4 @@ STRIPE_CURRENCY = "usd"
 STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY", "")
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY", "")
 STRIPE_WH_SECRET = os.getenv("STRIPE_WH_SECRET", "")
-DEFAULT_FROM_EMAIL = 'salontalks@example.com',
-
+DEFAULT_FROM_EMAIL = ("salontalks@example.com",)

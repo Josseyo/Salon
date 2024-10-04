@@ -27,10 +27,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = (
-#    "django-insecure-m*4z++1i%q_clll-m_%ektr3830kjpi13-zd9bbj4h5apgg_sj"
-# )
-
 
 # SECRET_KEY = os.environ.get('SECRET_KEY', '')
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", get_random_secret_key())
@@ -133,6 +129,13 @@ WSGI_APPLICATION = "salon.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 if "DATABASE_URL" in os.environ:
     DATABASES = {
         "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
@@ -144,6 +147,7 @@ else:
             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
         }
     }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

@@ -13,7 +13,4 @@ os.environ["DJANGO_SECRET_KEY"] = (
     "@!7pr8ywn8wgtsolp9^w8dvigjtl*u^hbq23gm6gug1_icdo-m"
 )
 
-os.environ.setdefault(
-    "DATABASE_URL",
-    "postgres://uekmpb0lnen:4aJ7pV0WELJC@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/stove_five_buggy_670604",
-)
+os.environ["DATABASE_URL"] = "postgres://uekmpb0lnen:4aJ7pV0WELJC@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/stove_five_buggy_670604"

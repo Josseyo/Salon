@@ -15,6 +15,17 @@ import os
 from django.core.management.utils import get_random_secret_key
 import dj_database_url
 
+# CORS settings
+if "CLIENT_ORIGIN" in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+        os.environ.get("CLIENT_ORIGIN"),
+        os.environ.get("CLIENT_ORIGIN_DEV"),
+    ]
+else:
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        r"^https://.*\.codeinstitute-ide\.net$",
+    ]
+
 
 # if os.path.isfile("env.py"):
 #   import env
@@ -33,11 +44,22 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-# DEBUG = "DEVELOPMENT" in os.environ
 
-ALLOWED_HOSTS = [
-    "8000-josseyo-salon-xug9qhr5u6r.ws.codeinstitute-ide.net",
-    "salontalks-e6485414bbd3.herokuapp.com",
+ALLOWED_HOSTS = (
+    os.environ.get("ALLOWED_HOSTS", "").split(",")
+    if os.environ.get("ALLOWED_HOSTS")
+    else []
+)
+# Additional allowed hosts for development and production
+ALLOWED_HOSTS.extend(
+    [
+        "theshop-8565bb64956d.herokuapp.com",
+        "8000-josseyo-salon-s8mmgxdiu91.ws.codeinstitute-ide.net",
+    ]
+)
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-josseyo-salon-s8mmgxdiu91.ws.codeinstitute-ide.net",
 ]
 
 
@@ -61,6 +83,7 @@ INSTALLED_APPS = [
     "profiles",
     # Other
     "crispy_forms",
+    "storages",
 ]
 
 MIDDLEWARE = [
@@ -199,6 +222,25 @@ SESSION_ENGINE = "django.contrib.sessions.backends.db"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+if "USE_AWS" in os.environ:
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = "salontalks-e6485414bbd3"
+    AWS_S3_REGION_NAME = "eu-north-1"
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+
+    # Static and media files
+    STATICFILES_STORAGE = "custom_storages.StaticStorage"
+    STATICFILES_LOCATION = "static"
+    DEFAULT_FILE_STORAGE = "custom_storages.MediaStorage"
+    MEDIAFILES_LOCATION = "media"
+
+    # Override static and media URLs in production
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/"
+    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/"
+
+# Stripe
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = "usd"

@@ -91,7 +91,7 @@ Overview of the database structure and design.
 Description of the agile process used for development.
 
 ### GitHub Projects
-[GitHub Projects](https://github.com/users/Josseyo/projects/8/views/1) served as an Agile tool for this project. Through it, user stories, labels, epics and milestone tasks were planned, then tracked using the basic Kanban board.
+[GitHub Projects](https://github.com/users/Josseyo/projects/8/views/1) served as an Agile tool for this project. Through it, user stories, labels, epics and milestone were planned and tasks carried out, and tracked using the basic Kanban board.
 
 The MoSCoW method was used with accompanying custom Github project labels to help prioritise the important tasks for the available time.
 
@@ -174,3 +174,6 @@ Details about media assets utilized.
 
 ### Acknowledgements
 Acknowledgments to individuals and organizations that contributed to the project.
+
+### Issues on the road
+October 4th I got pull & push issues when trying to update previous pushed commits accordin to followin instructions https://algerwrites.medium.com/how-to-remove-env-from-git-commit-history-1d594917b376 . On tutors recommendation I started a new workspace. Which resulted in confusion with code and commits being "broken". 73 pulled and 78 pushed but got stuck in the middle. 

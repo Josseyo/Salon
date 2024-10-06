@@ -53,7 +53,7 @@ ALLOWED_HOSTS = (
 # Additional allowed hosts for development and production
 ALLOWED_HOSTS.extend(
     [
-        "theshop-8565bb64956d.herokuapp.com",
+        "salontalks-e6485414bbd3.herokuapp.com",
         "8000-josseyo-salon-s8mmgxdiu91.ws.codeinstitute-ide.net",
     ]
 )

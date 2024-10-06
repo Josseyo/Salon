@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 # from pathlib import Path
 import os
-# from django.core.management.utils import get_random_secret_key
+
+from django.core.management.utils import get_random_secret_key
 import dj_database_url
 
 # CORS settings
@@ -39,8 +40,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get("SECRET_KEY", "")
-# SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", get_random_secret_key())
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -84,9 +84,6 @@ INSTALLED_APPS = [
     # Other
     "crispy_forms",
     "storages",
-    "debug_toolbar",
-    "compressor",
-    "django_extensions",
 ]
 
 MIDDLEWARE = [
@@ -146,7 +143,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
-LOGIN_URL = "/accounts/login/"
+LOGIN_URL = "/accounts/login"
 LOGIN_REDIRECT_URL = "/"
 
 WSGI_APPLICATION = "salon.wsgi.application"
@@ -162,17 +159,17 @@ WSGI_APPLICATION = "salon.wsgi.application"
 #     }
 # }
 
-if "DATABASE_URL" in os.environ:
-    DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
-    }
-else:
-    DATABASES = {
-        "default": {
+# Database
+DATABASES = {
+    "default": (
+        dj_database_url.parse(os.environ.get("DATABASE_URL"))
+        if "DATABASE_URL" in os.environ
+        else {
             "ENGINE": "django.db.backends.sqlite3",
             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
         }
-    }
+    )
+}
 
 
 # Password validation

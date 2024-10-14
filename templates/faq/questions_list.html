@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+<div class="background-faq-class">
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">Choose a Question</h2>
+                {% for question in questions %}
+                    <h3 class="question" style="cursor: pointer;" aria-expanded="false">
+                        <span class="caret" style="margin-right: 8px;">▶</span>
+                        {{ question.question }}
+                    </h3>
+                    <div class="answer" style="display: none;">
+                        {% if question.answer_set.exists %}
+                            <p>Answer:</p>
+                            <h4>{{ question.answer_set.first.answer }}</h4>
+                            {% if can_vote_answer %}
+                                <p>Found this answer helpful?</p>
+                                <form class="vote-form" data-question-id="{{ question.id }}" action="{% if category_enabled %}{% url 'faq:vote_answer' question.category.slug question.slug question.answer_set.first.slug %}{% else %}{% url 'faq:vote_answer' question.slug question.answer_set.first.slug %}{% endif %}" method="post" style="display: inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="True" name="vote">
+                                    <button type="submit">Yes ({{ question.answer_set.first.helpful }})</button>
+                                </form>
+                                <form class="vote-form" data-question-id="{{ question.id }}" action="{% if category_enabled %}{% url 'faq:vote_answer' question.category.slug question.slug question.answer_set.first.slug %}{% else %}{% url 'faq:vote_answer' question.slug question.answer_set.first.slug %}{% endif %}" method="post" style="display: inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="False" name="vote">
+                                    <button type="submit">No ({{ question.answer_set.first.not_helpful }})</button>
+                                </form>
+                            {% endif %}
+                        {% else %}
+                            <p>No answers yet.</p>
+                        {% endif %}
+                    </div>
+                    <hr>
+                {% empty %}
+                    <p>No questions available.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/vote.js' %}"></script>
+{% endblock %}

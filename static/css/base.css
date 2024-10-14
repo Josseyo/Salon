@@ -166,6 +166,55 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+
+/* FAQ */
+    .background-faq-class {
+        background: #f9f9f9; /* Light background color */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .question {
+        font-size: 1.5em; /* Larger font size for questions */
+        color: #333; /* Dark text color */
+        padding: 10px;
+        border: 1px solid #ddd; /* Light border */
+        border-radius: 5px;
+        margin: 10px 0;
+        transition: background-color 0.3s; /* Smooth background transition */
+    }
+
+    .question:hover {
+        background-color: #e9ecef; /* Light gray background on hover */
+    }
+
+    .caret {
+        font-size: 1.2em; /* Slightly larger caret */
+        transition: transform 0.3s; /* Smooth rotation transition */
+    }
+
+    .answer {
+        font-size: 1.1em; /* Slightly smaller font size for answers */
+        padding: 10px;
+        border-left: 3px solid #704c5eff; /* Updated left border color */
+        background-color: #ffffff; /* White background for answers */
+        margin: 5px 0 15px 0; /* Margin for spacing */
+        border-radius: 5px;
+        display: none; /* Initially hidden */
+        transition: max-height 0.3s ease; /* Smooth height transition */
+    }
+
+    .answer p {
+        margin: 0; /* Remove default margin for paragraphs */
+    }
+
+    hr {
+        border: 1px solid #ddd; /* Light gray horizontal rule */
+        margin: 20px 0; /* Spacing around horizontal rule */
+    }
+
+
 /* Media Queries */
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {

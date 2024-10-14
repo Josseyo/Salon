@@ -84,6 +84,8 @@ Planned features for future updates.
 ## Tools & Technologies Used
 List of tools and technologies utilized in the project.
 
+https://temp-mail.org/
+
 ## Database Design
 Overview of the database structure and design.
 
@@ -126,12 +128,13 @@ Information on newsletter marketing efforts.
 
 ## Testing
 Overview of the testing process.
+Each view was testing 
 
 ## Deployment
 Instructions for deploying the project.
 
-### ElephantSQL Database
-Details about the ElephantSQL database setup.
+### Postgress SQL Database
+Details about the SQL database setup.
 
 ### Amazon AWS
 Information on using Amazon AWS for the project.
@@ -165,6 +168,8 @@ Guidelines for forking the repository.
 
 ## Credits
 Acknowledgment of contributors and resources.
+FAQ setup - https://pypi.org/project/django-easy-faq/
+Mail setup - 
 
 ### Content
 Overview of the content used in the project.
@@ -177,3 +182,4 @@ Acknowledgments to individuals and organizations that contributed to the project
 
 ### Issues on the road
 October 4th I got pull & push issues when trying to update previous pushed commits accordin to followin instructions https://algerwrites.medium.com/how-to-remove-env-from-git-commit-history-1d594917b376 . On tutors recommendation I started a new workspace. Which resulted in confusion with code and commits being "broken". 73 pulled and 78 pushed but got stuck in the middle. 
+

@@ -85,6 +85,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "storages",
     "faq",
+    "about",
 ]
 
 FAQ_SETTINGS = [

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="background-contact-class">
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-left mt-3">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 my-5">
+                        <h2 class="logo-font">Signup for our Newsletter</h2>
+                        <p>Subscribing to the Salon Talks newsletter is a great way to stay informed about the latest discussions, articles, and insights from Salon Talks. By signing up, you’ll receive curated content that covers a wide range of topics, including politics, culture, and social issues. 
+                        </p>
+                       
+                        <p>The newsletter often features exclusive interviews, thought-provoking essays, and updates on upcoming events or discussions that you won’t want to miss. 
+    
+                        To subscribe, enter your email address. Joining the Salon Talks community means you’ll be part of a vibrant dialogue, gaining access to rich, engaging content delivered straight to your inbox. 
+                        </p>  
+                            {% csrf_token %}
+                            {{ subscribe_form|crispy }}
+                            <button class="btn btn-success" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

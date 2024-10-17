@@ -31,13 +31,12 @@ def about_view(request):
                 "Message received! You can expect a response "
                 "within 2 working days.",
             )
-    
-    # Corrected 'about' to 'About'
+
     about = About.objects.all().order_by("-updated_on").first()
     collaborate_form = CollaborateForm()
 
     return render(
         request,
-        "about/about.html",  # Ensure the template path is correct
+        "about/about.html",
         {"about": about, "collaborate_form": collaborate_form},
     )

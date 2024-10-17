@@ -26,6 +26,9 @@
     
                         To subscribe, enter your email address. Joining the Salon Talks community means you’ll be part of a vibrant dialogue, gaining access to rich, engaging content delivered straight to your inbox. 
                         </p>  
+
+                        <form method="post" action="{% url 'subscribe' %}">
+
                             {% csrf_token %}
                             {{ subscribe_form|crispy }}
                             <button class="btn btn-success" type="submit">Submit</button>

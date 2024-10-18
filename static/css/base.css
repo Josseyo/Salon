@@ -83,8 +83,12 @@ body {
     z-index: -1;
 }
 
+.border-aubergine {
+    border: 2px solid #704c5eff;
+}
+
 a.category-badge > span.badge:hover {
-    background: #212529 !important;
+    background: #704c5eff !important;
     color: #fff !important;
 }
 

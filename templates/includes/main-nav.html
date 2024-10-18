@@ -6,8 +6,8 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                <!--<a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>-->
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Salon Talks</a>
             </div>
         </li>
@@ -21,7 +21,6 @@
                 <a href="{% url 'products' %}?category=discussing_present" class="dropdown-item">Discussing the Present</a>
                 <a href="{% url 'products' %}?category=pages_perspectives" class="dropdown-item">Pages & Perspectives</a>
                 <a href="{% url 'products' %}?category=life_conversation,discussing_present,pages_perspectives" class="dropdown-item">All Thoughtful Exchanges</a>
-
             </div>
         </li>
 
@@ -37,20 +36,10 @@
             </div>
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Special Offers
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
-            </div>
-        </li>
+       
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="about-link">
@@ -58,6 +47,11 @@
                 <a href="" class="dropdown-item">FAQ</a>
                 <a href="" class="dropdown-item">Contact</a>
             </div>            
+        </li>
+      
+
+        <li class="nav-item">
+            <a href="{% url 'subscribe' %}" class="logo-font font-weight-bold nav-link text-black mr-5">Newsletter</a>
         </li>
     </ul>
 </div>

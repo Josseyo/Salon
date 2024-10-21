@@ -38,13 +38,13 @@
                                 <tr>
                                     <td class="p-3 w-25">
                                         {% if item.product.image %}
-                                        <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                            <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                         {% else %}
-                                        <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                                        {% endif %}                                    </td>
+                                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                        {% endif %}
+                                    </td>
                                     <td class="py-3">
                                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                        <!--<p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>-->
                                         <p class="mt-3 font-weight-bold">Host: {{ item.product.host }}</p>
                                         <p class="mt-3 font-weight-bold">Date: {{ item.product.start_time }}</p>
                                     </td>
@@ -82,7 +82,6 @@
                                         <a class="update-link text-info"><small>Update</small></a>
                                         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                     </td>
-
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     </td>
@@ -143,23 +142,22 @@
         form.submit();
     });
 
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        e.preventDefault();
+        var csrfToken = '{{ csrf_token }}';
+        var itemId = $(this).attr('id').split('_')[1];
 
-        // Remove item and reload on click
+        var url = `/bag/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+        };
 
-$('.remove-item').click(function(e) {
-    e.preventDefault();
-    var csrfToken = "JW0KG15AM6xoVlpwayxIZb8m8bpvqJRvckGbmhyogLS6p3Wb9yuXyqfZSSqS9P1J";
-    var itemId = $(this).attr('id').split('remove_')[1];
-    var size = $(this).data('product_size');
-    var url = `/bag/remove/${itemId}/`;
-    var data = {
-        'csrfmiddlewaretoken': csrfToken,
-    };
-
-    $.post(url, data)
-     .done(function() {
-            location.reload();
-     });
-});
+        $.post(url, data)
+            .done(function() {
+                location.reload();
+            });
+    });
 </script>
 {% endblock %}
+

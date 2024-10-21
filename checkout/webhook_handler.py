@@ -99,10 +99,13 @@ class StripeWH_Handler:
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)
+
         if order_exists:
             self._send_confirmation_email(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
+                content=f'Webhook received: {
+                    event["type"]
+                    } | SUCCESS: Verified order already in database',
                 status=200,
             )
         else:
@@ -131,17 +134,6 @@ class StripeWH_Handler:
                             quantity=item_data,
                         )
                         order_line_item.save()
-                    else:
-                        for size, quantity in item_data[
-                            "items_by_size"
-                        ].items():
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                product=product,
-                                quantity=quantity,
-                                product_size=size,
-                            )
-                            order_line_item.save()
             except Exception as e:
                 if order:
                     order.delete()
@@ -149,9 +141,11 @@ class StripeWH_Handler:
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500,
                 )
+
         self._send_confirmation_email(order)
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+            content=f'Webhook received: {
+                event["type"]} | SUCCESS: Created order in webhook',
             status=200,
         )
 
@@ -160,5 +154,7 @@ class StripeWH_Handler:
         Handle the payment_intent.payment_failed webhook from Stripe
         """
         return HttpResponse(
-            content=f'Webhook received: {event["type"]}', status=200
+            content=f'Webhook received: {
+                event["type"]} | ERROR: Payment failed',
+            status=200,
         )

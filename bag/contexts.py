@@ -9,20 +9,24 @@ def bag_contents(request):
     bag_items = []
     total = 0
     product_count = 0
-    bag = request.session.get('bag', {})
+    bag = request.session.get("bag", {})
 
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
         total += quantity * product.price
         product_count += quantity
-        bag_items.append({
-            'item_id': item_id,
-            'quantity': quantity,
-            'product': product,
-        })
+        bag_items.append(
+            {
+                "item_id": item_id,
+                "quantity": quantity,
+                "product": product,
+            }
+        )
 
     if total >= settings.DISCOUNT_THRESHOLD:
-        discount = total * Decimal(settings.STANDARD_DISCOUNT_PERCENTAGE) / Decimal('100')
+        discount = (
+            total * Decimal(settings.DISCOUNT_PERCENTAGE) / Decimal("100")
+        )
         discount_delta = 0
     else:
         discount = 0
@@ -31,16 +35,16 @@ def bag_contents(request):
     grand_total = total - discount
 
     # Debugging print statement
-    print(f'Total: {total}, Discount: {discount}, Grand Total: {grand_total}')
+    print(f"Total: {total}, Discount: {discount}, Grand Total: {grand_total}")
 
     context = {
-        'bag_items': bag_items,
-        'total': total,
-        'product_count': product_count,
-        'discount_amount': discount,
-        'discount_delta': discount_delta,
-        'discount_threshold': settings.DISCOUNT_THRESHOLD,
-        'grand_total': grand_total,
+        "bag_items": bag_items,
+        "total": total,
+        "product_count": product_count,
+        "discount_amount": discount,
+        "discount_delta": discount_delta,
+        "discount_threshold": settings.DISCOUNT_THRESHOLD,
+        "grand_total": grand_total,
     }
 
     return context

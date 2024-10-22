@@ -11,68 +11,63 @@
 {% endblock %}
 
 {% block content %}
-<div class="background-contact-class">
-    <div class="overlay"></div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col text-left mt-3">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-6 my-5">
-                        <h2 class="logo-font">Hjärtligt välkommen till Samtalssalong!</h2>
-                        <p>Om du längtar efter att träffa andra människor, men av olika anledningar har svårt för att komma iväg hemifrån har du hamnat helt rätt. Samtalssalong är digitala möten där vi träffas och samtalar om livet i stort som smått.
-                        <h3>Vi behöver varandra</h3>
-                           <p>Vi är sociala varelser och behöver träffa andra människor för att må bra.
-                            
-                            Det är något speciellt med att dela tankar, känslor och erfarenheter med andra. För många av oss är det gemenskapen som ger livet sin rikedom och glädje.
-                            
-                            Att umgås med andra är viktigt för vår hälsa och välbefinnande. Man skulle till och med kunna säga att samvaro med andra människor är meningen med livet!
+    <div class="background-contact-class">
+        <div class="overlay"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col text-left mt-3">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-6 my-5">
+                            <h2 class="logo-font">About Salon Talks</h2>
+                            <p>
+                                Salon Talks is an online space for meaningful conversations, 
+                                designed to connect people who may feel lonely and isolated. 
+                                Our events provide a relaxed, welcoming environment where you can 
+                                share your thoughts, stories, and ideas with others who share 
+                                similar interests. From discussing current events to reflecting 
+                                on life’s experiences, or sharing your love for books, food, 
+                                or nature, each Salon Talk brings people together for genuine 
+                                connection. Whether you love to chat or prefer to listen, 
+                                you’ll find a community that values what you have to say.
                             </p>
-                            <h3>Det goda samtalet</h3>
-                           <p> Vid en Samtalssalong träffas personer som är intresserade av att samtala om viktiga och angelägna frågor och funderingar om livet, snarare än om allehanda krämpor, vädret och vardagens trivialiteter.
-                            
-                            Det händer något när vi formulerar oss och låter våra tankar ta till orda. När vi lyssnar aktivt, reflekterar och kommunicerar öppet och respektfullt med varandra.
-                            
-                            Det goda samtalet vindlar sig fram och kan ta oväntade riktningar. Nya idéer och insikter uppstår genom att vi delar våra tankar och erfarenheter. 
-                            </p>
-                            <h3>Träffas digitalt - javisst!</h3>
-                            
-                            <p>Våra Samtalssalonger är helt digitala.</p>
-                            
-                            Man kan ju tycka att det är bättre att träffas ”på riktigt”. Fast det går att ha väldigt fina mänskliga möten även digitalt. Och nog kan det vara skönt att kunna stanna i hemmet, att slippa ta sig till en plats på en tid som kanske inte passar och utsätta sig för smittorisk, halka, regn och rusk.
-                            
-                            <h3>Så här funkar det</h3>
-                            <p>För att vara med på våra Samtalssalonger behöver du en dator eller surfplatta, internetuppkoppling och en e-postadress.
-                            
-                            Du kommer få tydliga instruktioner om hur du ska göra för att delta i det digitala mötet.
-                            
-                            Jag finns alltid tillgänglig 10 minuter innan mötet börjar. Om något skulle krångla kan du ringa mig, så löser vi det.
-                            </p>
-                            <h3>Enklare än du tror</h3>
-                            
-                            <p>Du kanske oroar dig för tekniken och att du inte ska klara av det. Du behöver inte vara orolig – jag hjälper dig!
-                            
-                            Och du, det är faktiskt inte särskilt svårt.
-                            
-                            Ge Samtalssalongen en chans. – Om du inte provar kan du ju inte veta om det är något för dig.
-                            </p>
-                            <h3>Nyfiken?</h3>
-                            Hör av dig till mig, så berättar jag mer!
-                            
-                            Jag hjälper dig också med tekniken.
-                            
-                            Lotta Tuvstedt
 
-                        </p>
+                            <h3>Why Choose Salon Talks?</h3>
+                            <p>
+                                We know that staying connected can be difficult, especially 
+                                as we age. Salon Talks was created to combat loneliness 
+                                and foster meaningful interactions. All of our events are 
+                                held online, so you can participate from the comfort of home, 
+                                without worrying about technology—we’re here to guide you 
+                                every step of the way.
+                            </p>
 
-                        <form method="post">
-                            {% csrf_token %}
-                            {{ collaborate_form|crispy }}
-                            <button class="btn btn-success" type="submit">Submit</button>
-                        </form>
+                            <h3>How it works</h3>
+                            <p>
+                                It’s simple! Browse our upcoming events, sign up, and join 
+                                the conversation online. Each event has a specific theme, 
+                                such as Life Conversations, Discussing the Present, or 
+                                Food & Drink, and we encourage you to share your experiences 
+                                with others. No technical skills are required, just a 
+                                willingness to engage in a fun, supportive environment.
+                            </p>
+
+                            <h3>Join Us</h3>
+                            <p>
+                                Salon Talks is a place to connect, reflect, and enjoy 
+                                meaningful conversations. If you’re looking for a way 
+                                to meet new people and engage in inspiring discussions, 
+                                sign up for one of our upcoming events and join the conversation.
+                            </p>
+
+                            <form method="post">
+                                {% csrf_token %}
+                                {{ collaborate_form|crispy }}
+                                <button class="btn btn-success" type="submit">Submit</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}

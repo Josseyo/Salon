@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block page_header %}
+<div class="container header-container">
+   <div class="row">
+       <div class="col"></div>
+   </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="background-faq-class">
+   <div class="overlay"></div>
+   <div class="container-fluid">
+       <div class="row">
+           <div class="col text-center mt-3">
+
+
+               <h1>FAQ</h1>
+               {% if questions %}
+                   {% for question in questions %}
+                       <div class="question-container">
+                           <h3 class="question" style="cursor: pointer;" aria-expanded="false">
+                               <span class="caret" style="margin-right: 8px;">▶</span>
+                               {{ question.question }}  <!-- Display the question text -->
+                           </h3>
+                           <div class="answer" style="display: none;">
+                               {% if question.answer %}  <!-- Check if there's an associated answer -->
+                                   <p>Answer:</p>
+                                   <h4>{{ question.answer.answer }}</h4>  <!-- Display the answer text -->
+                               {% else %}
+                                   <p>No answer available for this question.</p>
+                               {% endif %}
+                           </div>
+                       </div>
+                       <hr>
+                   {% endfor %}
+               {% else %}
+                   <p>No questions available.</p>
+               {% endif %}
+           </div>
+       </div>
+   </div>
+</div>
+
+
+<script>
+   // Simple script to toggle the visibility of answers
+   document.addEventListener('DOMContentLoaded', function() {
+       const questions = document.querySelectorAll('.question-container');
+       questions.forEach(container => {
+           const questionHeader = container.querySelector('.question');
+           const answerDiv = container.querySelector('.answer');
+           questionHeader.addEventListener('click', function() {
+               answerDiv.style.display = answerDiv.style.display === 'none' ? 'block' : 'none';
+               // Optionally toggle the caret direction
+               const caret = questionHeader.querySelector('.caret');
+               caret.textContent = answerDiv.style.display === 'block' ? '▼' : '▶';
+           });
+       });
+   });
+</script>
+
+
+{% endblock %}

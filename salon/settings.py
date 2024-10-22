@@ -81,7 +81,6 @@ INSTALLED_APPS = [
     "bag",
     "checkout",
     "profiles",
-    # Other
     "crispy_forms",
     "storages",
     "faq",
@@ -89,12 +88,6 @@ INSTALLED_APPS = [
     "subscribe",
 ]
 
-FAQ_SETTINGS = [
-    "no_category_description",
-    "no_category",
-    "allow_unicode",
-    "rich_text_answers",
-]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

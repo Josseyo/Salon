@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             answerDiv.style.display = answerDiv.style.display === 'none' ? 'block' : 'none';
             const caret = questionHeader.querySelector('.caret');
             caret.textContent = answerDiv.style.display === 'block' ? '▼' : '▶';
+            questionHeader.setAttribute('aria-expanded', answerDiv.style.display === 'block');
         });
     });
 });

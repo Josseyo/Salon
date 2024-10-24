@@ -29,7 +29,7 @@ def bag_contents(request):
         )
         discount_delta = 0
     else:
-        discount = 0
+        discount = Decimal("0")
         discount_delta = settings.DISCOUNT_THRESHOLD - total
 
     grand_total = total - discount

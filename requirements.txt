@@ -25,3 +25,4 @@ rjsmin==1.2.2
 s3transfer==0.10.2
 sqlparse==0.5.1
 stripe==11.1.0
+django-csp==3.7

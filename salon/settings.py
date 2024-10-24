@@ -86,11 +86,13 @@ INSTALLED_APPS = [
     "faq",
     "about",
     "subscribe",
+    "csp",
 ]
 
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "csp.middleware.CSPMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -283,3 +285,40 @@ else:
     EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
     EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASS")
     DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_HOST_USER")
+
+# Content Security Policy
+CSP_DEFAULT_SRC = ("'self'", "https://js.stripe.com")
+CSP_SCRIPT_SRC = (
+    "'self'",
+    "https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js",
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
+    "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js",
+    "https://js.stripe.com",
+    "https://kit.fontawesome.com",  # Allow Font Awesome script
+    "'unsafe-inline'",  # Allows inline scripts
+)
+CSP_STYLE_SRC = (
+    "'self'",
+    "'unsafe-inline'",  # Allows inline styles
+    "https://stackpath.bootstrapcdn.com",  # Example for Bootstrap CDN
+    "https://fonts.googleapis.com",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",  # Font Awesome CSS
+)
+
+CSP_FONT_SRC = (
+    "'self'",
+    "https://fonts.gstatic.com",
+    "https://ka-f.fontawesome.com",  # Allow Font Awesome fonts
+)
+
+CSP_IMG_SRC = ("'self'", "https:", "data:")
+CSP_FRAME_SRC = ("'self'", "https://js.stripe.com")
+CSP_CONNECT_SRC = (
+    "'self'",
+    "https://api.stripe.com",
+    "https://ka-f.fontawesome.com",  # Allow Font Awesome connections
+)
+
+# Ensure to add 'unsafe-inline' to script sources if needed
+CSP_SCRIPT_SRC += ("'unsafe-inline'",)
+CSP_STYLE_SRC += ("https://js.stripe.com",)

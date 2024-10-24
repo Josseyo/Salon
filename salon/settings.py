@@ -296,6 +296,8 @@ CSP_SCRIPT_SRC = (
     "https://kit.fontawesome.com",  # Allow Font Awesome script
     "'unsafe-inline'",  # Allows inline scripts
     "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
+    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/faq/js/faq.js",
+
 )
 
 CSP_STYLE_SRC = (
@@ -311,6 +313,8 @@ CSP_FONT_SRC = (
     "'self'",
     "https://fonts.gstatic.com",
     "https://ka-f.fontawesome.com",
+    "https://js.stripe.com/type-font/Colfax-Medium.woff",
+    "https://js.stripe.com/type-font/Colfax-Medium.woff",
 )
 
 CSP_IMG_SRC = (

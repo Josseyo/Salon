@@ -193,8 +193,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         "NAME": (
-            "django.contrib.auth.password_validation."
-            "MinimumLengthValidator"
+            "django.contrib.auth.password_validation." "MinimumLengthValidator"
         ),
     },
     {
@@ -297,7 +296,7 @@ CSP_SCRIPT_SRC = (
     "'unsafe-inline'",  # Allows inline scripts
     "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
     "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/faq/js/faq.js",
-
+    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/js/stripe_elements.js",
 )
 
 CSP_STYLE_SRC = (
@@ -308,12 +307,12 @@ CSP_STYLE_SRC = (
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",  # Font Awesome CSS
     "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
     "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/css/base.css",
+    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/css/checkout.css",
 )
 CSP_FONT_SRC = (
     "'self'",
     "https://fonts.gstatic.com",
     "https://ka-f.fontawesome.com",
-    "https://js.stripe.com/type-font/Colfax-Medium.woff",
     "https://js.stripe.com/type-font/Colfax-Medium.woff",
 )
 

@@ -86,13 +86,11 @@ INSTALLED_APPS = [
     "faq",
     "about",
     "subscribe",
-    "csp",
 ]
 
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "csp.middleware.CSPMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -285,51 +283,3 @@ else:
     EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASS")
     DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_HOST_USER")
 
-# Content Security Policy
-CSP_SCRIPT_SRC = (
-    "'self'",
-    "https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js",
-    "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
-    "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js",
-    "https://js.stripe.com",
-    "https://kit.fontawesome.com",  # Allow Font Awesome script
-    "'unsafe-inline'",  # Allows inline scripts
-    "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
-    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/faq/js/faq.js",
-    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/js/stripe_elements.js",
-)
-
-CSP_STYLE_SRC = (
-    "'self'",
-    "'unsafe-inline'",
-    "https://stackpath.bootstrapcdn.com",
-    "https://fonts.googleapis.com",
-    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",  # Font Awesome CSS
-    "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
-    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/css/base.css",
-    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/css/checkout.css",
-)
-CSP_FONT_SRC = (
-    "'self'",
-    "https://fonts.gstatic.com",
-    "https://ka-f.fontawesome.com",
-    "https://js.stripe.com/type-font/Colfax-Medium.woff",
-)
-
-CSP_IMG_SRC = (
-    "'self'",
-    "https:",
-    "data:",
-    "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/media/",
-)
-
-CSP_FRAME_SRC = ("'self'", "https://js.stripe.com")
-CSP_CONNECT_SRC = (
-    "'self'",
-    "https://api.stripe.com",
-    "https://ka-f.fontawesome.com",  # Allow Font Awesome connections
-)
-
-# Ensure to add 'unsafe-inline' to script sources if needed
-CSP_SCRIPT_SRC += ("'unsafe-inline'",)
-CSP_STYLE_SRC += ("https://js.stripe.com",)

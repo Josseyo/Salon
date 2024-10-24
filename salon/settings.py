@@ -43,7 +43,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = (
     os.environ.get("ALLOWED_HOSTS", "").split(",")
@@ -287,7 +287,6 @@ else:
     DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_HOST_USER")
 
 # Content Security Policy
-CSP_DEFAULT_SRC = ("'self'", "https://js.stripe.com")
 CSP_SCRIPT_SRC = (
     "'self'",
     "https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js",
@@ -296,22 +295,30 @@ CSP_SCRIPT_SRC = (
     "https://js.stripe.com",
     "https://kit.fontawesome.com",  # Allow Font Awesome script
     "'unsafe-inline'",  # Allows inline scripts
-)
-CSP_STYLE_SRC = (
-    "'self'",
-    "'unsafe-inline'",  # Allows inline styles
-    "https://stackpath.bootstrapcdn.com",  # Example for Bootstrap CDN
-    "https://fonts.googleapis.com",
-    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",  # Font Awesome CSS
+    "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
 )
 
+CSP_STYLE_SRC = (
+    "'self'",
+    "'unsafe-inline'",
+    "https://stackpath.bootstrapcdn.com",
+    "https://fonts.googleapis.com",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",  # Font Awesome CSS
+    "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
+)
 CSP_FONT_SRC = (
     "'self'",
     "https://fonts.gstatic.com",
-    "https://ka-f.fontawesome.com",  # Allow Font Awesome fonts
+    "https://ka-f.fontawesome.com",
 )
 
-CSP_IMG_SRC = ("'self'", "https:", "data:")
+CSP_IMG_SRC = (
+    "'self'",
+    "https:",
+    "data:",
+    "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/media/",
+)
+
 CSP_FRAME_SRC = ("'self'", "https://js.stripe.com")
 CSP_CONNECT_SRC = (
     "'self'",

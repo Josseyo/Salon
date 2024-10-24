@@ -55,6 +55,7 @@ ALLOWED_HOSTS.extend(
     [
         "salontalks-e6485414bbd3.herokuapp.com",
         "8000-josseyo-salon-s8mmgxdiu91.ws.codeinstitute-ide.net",
+        "salon-talks-af192748bd52.herokuapp.com"
     ]
 )
 

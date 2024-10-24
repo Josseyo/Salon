@@ -305,6 +305,7 @@ CSP_STYLE_SRC = (
     "https://fonts.googleapis.com",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",  # Font Awesome CSS
     "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
+    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/css/base.css",
 )
 CSP_FONT_SRC = (
     "'self'",

@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 # from pathlib import Path
 import os
 
-from django.core.management.utils import get_random_secret_key
+# from django.core.management.utils import get_random_secret_key
 import dj_database_url
 
 # CORS settings
@@ -40,7 +40,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", get_random_secret_key())
+# SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", get_random_secret_key())
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -53,9 +54,8 @@ ALLOWED_HOSTS = (
 # Additional allowed hosts for development and production
 ALLOWED_HOSTS.extend(
     [
-        "salontalks-e6485414bbd3.herokuapp.com",
         "8000-josseyo-salon-s8mmgxdiu91.ws.codeinstitute-ide.net",
-        "salon-talks-af192748bd52.herokuapp.com"
+        "salon-talks-af192748bd52.herokuapp.com",
     ]
 )
 
@@ -238,7 +238,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-#SESSION_ENGINE = "django.contrib.sessions.backends.db"
+SESSION_ENGINE = "django.contrib.sessions.backends.db"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -292,4 +292,3 @@ else:
     EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
     EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASS")
     DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_HOST_USER")
-

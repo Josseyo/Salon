@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/bag/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/?sort=price&amp;direction=asc</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/?sort=category&amp;direction=asc</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/?category=life_conversation</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/?category=discussing_present</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/?category=life_conversation,discussing_present</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/?category=food_drink</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/?category=roots_blooms</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/?category=food_drink,roots_blooms</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/about/about/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/faq/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/subscribe/subscribe/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/2/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/3/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/4/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/9/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/6/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/5/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/7/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://salon-talks-af192748bd52.herokuapp.com/products/8/</loc>
+  <lastmod>2024-10-27T09:05:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

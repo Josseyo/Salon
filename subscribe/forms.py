@@ -4,10 +4,6 @@ from .models import SubscribeRequest
 
 class SubscribeForm(forms.ModelForm):
     class Meta:
-        """
-        Specify the Django model and order of the fields.
-        """
-
         model = SubscribeRequest
         fields = ["email"]
         widgets = {
@@ -19,7 +15,7 @@ class SubscribeForm(forms.ModelForm):
             ),
         }
         help_texts = {
-            "email": "Submit your email and will send you our latest updates.",
+         "email": "Submit your email, and we will send you our latest updates."
         }
 
     def clean_email(self):

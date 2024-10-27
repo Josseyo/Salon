@@ -1,27 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Subscribe
 from .forms import SubscribeForm
 
 
 def subscribe_view(request):
-    """
-    Handle the display and submission of subscribe requests.
-
-    This view allows users to send subscribe requests through a form.
-    Upon successful subscription, a success message will be displayed.
-
-    **Template**
-    :template:`subscribe/subscribe.html`
-
-    Args:
-        request (HttpRequest): The HTTP request object.
-
-    Returns:
-        HttpResponse: The rendered subscribe page with the subscribe information
-        and form.
-    """
-
     if request.method == "POST":
         subscribe_form = SubscribeForm(data=request.POST)
         if subscribe_form.is_valid():
@@ -30,9 +13,11 @@ def subscribe_view(request):
                 request,
                 "Subscription received! You can expect our next newsletter.",
             )
+            return redirect("subscribe")  # Corrected redirect
+    else:
+        subscribe_form = SubscribeForm()
 
     subscribe = Subscribe.objects.all().order_by("-updated_on").first()
-    subscribe_form = SubscribeForm()
 
     return render(
         request,

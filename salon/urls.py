@@ -30,9 +30,8 @@ urlpatterns = [
     path("checkout/", include("checkout.urls")),
     path("profile/", include("profiles.urls")),
     path("faq/", include("faq.urls")),
-
     path("about/", include("about.urls")),
-    path("subscribe/", include("subscribe.urls")),
+    path("", include("subscribe.urls")),
     path(
         "password_reset/",
         auth_views.PasswordResetView.as_view(),

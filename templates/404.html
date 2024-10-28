@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- CUSTOM 404 ERROR HANDLER PAGE -->
+<div class="overlay"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h1 class="error-number"><span>4</span><span>0</span><span>4</span></h1>
+            <h2 class="">Bad Request</h2>
+            <h3 class="my-4">Oops! That didn't work</h3>
+            <p class="mb-4">Click the button below to return home</p>
+            <a class="btn black-button" href="{% url 'home' %}">Go Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

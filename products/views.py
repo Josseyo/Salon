@@ -7,7 +7,10 @@ from django.db.models.functions import Lower
 from .models import Product, Category
 from .forms import ProductForm
 
-# Create your views here.
+
+def custom_404(request, exception):
+    """Render the custom 404 error page."""
+    return render(request, "404.html", status=404)
 
 
 def all_products(request):

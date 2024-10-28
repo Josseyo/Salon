@@ -1,45 +1,58 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block page_header %}
 <div class="container header-container">
-   <div class="row">
-       <div class="col"></div>
-   </div>
+    <div class="row">
+        <div class="col"></div>
+    </div>
 </div>
 {% endblock %}
 
 {% block content %}
 <div class="background-faq-class">
-   <div class="overlay"></div>
-   <div class="container-fluid">
-       <div class="row">
-           <div class="col text-center mt-3">
-               <h1>FAQ</h1>
-               {% if questions %}
-                   {% for question in questions %}
-                       <div class="question-container">
-                           <h3 class="question" style="cursor: pointer;" aria-expanded="false">
-                               <span class="caret" style="margin-right: 8px;">▶</span>
-                               {{ question.question }}
-                           </h3>
-                           <div class="answer" style="display: none;">
-                               {% if question.answer %}
-                                   <p>Answer:</p>
-                                   <h4>{{ question.answer.answer }}</h4>
-                               {% else %}
-                                   <p>No answer available for this question.</p>
-                               {% endif %}
-                           </div>
-                       </div>
-                       <hr>
-                   {% endfor %}
-               {% else %}
-                   <p>No questions available.</p>
-               {% endif %}
-           </div>
-       </div>
-   </div>
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-left mt-3"> <!-- Left aligned for questions and answers -->
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 my-5">
+                        <h1 class="logo-font text-center">FAQ</h1> 
+                        {% if questions %}
+                            {% for question in questions %}
+                                <div class="question-container">
+                                    <h3 class="question" style="cursor: pointer;" aria-expanded="false">
+                                        <span class="caret" style="margin-right: 8px; font-size: 0.8em; color: #704c5eff;">▶</span>
+                                        {{ question.question }}
+                                    </h3>
+                                    <div class="answer" style="display: none;">
+                                        {% if question.answer %}
+                                            <p>Answer:</p>
+                                            <h4>{{ question.answer.answer }}</h4>
+                                        {% else %}
+                                            <p>No answer available for this question.</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <hr>
+                            {% endfor %}
+                        {% else %}
+                            <p>No questions available.</p>
+                        {% endif %}
+                        
+                        <h3 class="mt-5">Can't find the answer? Send it to us and we will answer.</h3> 
+                
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <button class="btn btn-success" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Link to the JavaScript file -->

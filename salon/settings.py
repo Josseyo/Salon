@@ -88,6 +88,7 @@ INSTALLED_APPS = [
     "faq",
     "about",
     "subscribe",
+    "contact",
 ]
 
 

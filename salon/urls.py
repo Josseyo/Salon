@@ -31,6 +31,7 @@ urlpatterns = [
     path("profile/", include("profiles.urls")),
     path("faq/", include("faq.urls")),
     path("about/", include("about.urls")),
+    path("contact/", include("contact.urls")),
     path("", include("subscribe.urls")),
     path(
         "password_reset/",

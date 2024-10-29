@@ -2,6 +2,13 @@ html {
     height: 100%;
 }
 
+.brand {
+    font-family: Lato, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: black
+}
+
 body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;

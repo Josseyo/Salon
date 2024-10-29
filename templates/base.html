@@ -1,9 +1,15 @@
 {% load static %}
+
 <!doctype html>
-<html lang="en">
+<html class="h-100" lang="en">
+
 <head>
     {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>SalonTalks</title>
+        <meta name="description" content="Salon Talks is an online space for meaningful conversations, designed to connect people who may feel lonely and isolated">
+        <meta name="keywords" content="Book Discussions, Food and Drink Conversations, Online Conversations, Life Experiences">
+        <meta name="author" content="SalonTalks">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
@@ -38,9 +44,10 @@
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0"><strong>Salon</strong>Talks</h2>
-                </a>
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <span class="brand"><a class="navbar-brand" href="{% url 'home' %}">
+                        <span class="brand" style="color: black"><strong>Salon</strong>Talks</span>
+                    </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">

@@ -58,12 +58,13 @@
                                 to meet new people and engage in inspiring discussions, 
                                 sign up for one of our upcoming events and join the conversation.
                             </p>
+                            <hr>
 
-                            <form method="post">
-                                {% csrf_token %}
-                                {{ collaborate_form|crispy }}
-                                <button class="btn btn-success" type="submit">Submit</button>
-                            </form>
+                            <h4>
+                                <a href ="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Browse Upcoming Events</a>
+                            </h4>
+
+                        
                         </div>
                     </div>
                 </div>

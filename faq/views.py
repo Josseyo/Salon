@@ -1,16 +1,16 @@
 from django.shortcuts import render
 from django.contrib import messages
 from .models import Question
-from common.forms import CollaborateForm
+from common.forms import ContactForm
 
 
 def faq_view(request):
     questions = Question.objects.all()
 
     if request.method == "POST":
-        collaborate_form = CollaborateForm(data=request.POST)
-        if collaborate_form.is_valid():
-            collaborate_form.save()
+        contact_form = ContactForm(data=request.POST)
+        if contact_form.is_valid():
+            contact_form.save()
             messages.success(
                 request,
                 "Message received! You can expect a response "
@@ -18,11 +18,11 @@ def faq_view(request):
             )
             # Redirect or re-render with success message can be added here
 
-    collaborate_form = CollaborateForm()
+    contact_form = ContactForm()
 
     context = {
         'questions': questions,
-        'form': collaborate_form
+        'form': contact_form
     }
 
     return render(request, "faq/faq.html", context)

@@ -6,8 +6,10 @@
                     All Salon Talks
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                    <a href="{% url 'home' %}" class="dropdown-item">Home</a>
                     <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                     <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
+                    <a href="{% url 'products' %}?sort=date&direction=asc" class="dropdown-item">By Date</a>
                     <a href="{% url 'products' %}" class="dropdown-item">All Salon Talks</a>
                 </div>
             </li>
@@ -23,6 +25,7 @@
                     <a href="{% url 'products' %}?category=discussing_present" class="dropdown-item">Discussing the Present</a>
                     <a href="{% url 'products' %}?category=life_conversation,discussing_present" class="dropdown-item">All Thoughtful Exchanges</a>
                 </div>
+                
             </li>
         </ul>
 

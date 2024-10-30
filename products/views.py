@@ -7,11 +7,9 @@ from django.db.models.functions import Lower
 from .models import Product, Category
 from .forms import ProductForm
 
-
 def custom_404(request, exception):
     """Render the custom 404 error page."""
     return render(request, "404.html", status=404)
-
 
 def all_products(request):
     """A view to show all products, including sorting and search queries"""
@@ -31,6 +29,8 @@ def all_products(request):
                 products = products.annotate(lower_name=Lower("name"))
             if sortkey == "category":
                 sortkey = "category__name"
+            if sortkey == "date":
+                sortkey = "start_time"
             if "direction" in request.GET:
                 direction = request.GET["direction"]
                 if direction == "desc":
@@ -66,7 +66,6 @@ def all_products(request):
 
     return render(request, "products/products.html", context)
 
-
 def product_detail(request, product_id):
     """A view to show individual product details"""
 
@@ -77,7 +76,6 @@ def product_detail(request, product_id):
     }
 
     return render(request, "products/product_detail.html", context)
-
 
 @login_required
 def add_product(request):
@@ -106,7 +104,6 @@ def add_product(request):
     }
 
     return render(request, template, context)
-
 
 @login_required
 def edit_product(request, product_id):
@@ -139,7 +136,6 @@ def edit_product(request, product_id):
 
     return render(request, template, context)
 
-
 @login_required
 def delete_product(request, product_id):
     """Delete a product from the store"""
@@ -149,5 +145,5 @@ def delete_product(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
-    messages.success(request, "Product deleted!")
+    messages.success(request, "Product deleted successfully!")
     return redirect(reverse("products"))

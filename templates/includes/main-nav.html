@@ -2,7 +2,7 @@
     <ul class="navbar-nav w-auto mx-auto">
         <ul>
             <li class="nav-item dropdown">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="All Salon Talks">
                     All Salon Talks
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
@@ -15,10 +15,10 @@
 
         <ul>
             <li class="nav-item dropdown">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="thoughtful-exchanges-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="thoughtful-exchanges-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Thoughtful Exchanges">
                     Thoughtful Exchanges
                 </a>
-                <div class="dropdown-menu border-0" aria-labelledby="thoughtful_exchanges-link">
+                <div class="dropdown-menu border-0" aria-labelledby="thoughtful-exchanges-link">
                     <a href="{% url 'products' %}?category=life_conversation" class="dropdown-item">Life Conversation</a>
                     <a href="{% url 'products' %}?category=discussing_present" class="dropdown-item">Discussing the Present</a>
                     <a href="{% url 'products' %}?category=life_conversation,discussing_present" class="dropdown-item">All Thoughtful Exchanges</a>
@@ -28,7 +28,7 @@
 
         <ul> 
             <li class="nav-item dropdown">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="essence_living-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="essence_living-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Essence of Living">
                     Essence of Living
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="essence_living-link">
@@ -41,7 +41,7 @@
 
         <ul> 
             <li class="nav-item dropdown">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="About">
                     About
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="about-link">
@@ -54,7 +54,7 @@
 
         <ul> 
             <li class="nav-item">
-                <a href="{% url 'subscribe' %}" class="logo-font font-weight-bold nav-link text-black mr-5">Newsletter</a>
+                <a href="{% url 'subscribe' %}" class="logo-font font-weight-bold nav-link text-black mr-5" aria-label="Newsletter Subscription">Newsletter</a>
             </li>
         </ul> 
     </ul>

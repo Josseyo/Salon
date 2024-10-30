@@ -65,7 +65,10 @@ Overview of features included in the project.
 Description of features that are currently available.
 
 ### Site Pages
-Details about the different pages on the site.
+
+The main homepage for the site. Hero image is large and striking. Large heading tells users they are in the right place. Call to action button to invite users to enter and explore the site products.
+![home page](documentation/features/sitepages/home.png)
+
 
 ### User Features
 Features available to users.
@@ -168,8 +171,11 @@ Guidelines for forking the repository.
 
 ## Credits
 Acknowledgment of contributors and resources.
+
 FAQ setup - https://pypi.org/project/django-easy-faq/
 Mail setup - 
+
+SEO Keywords - https://www.wordtracker.com
 
 ### Content
 Overview of the content used in the project.

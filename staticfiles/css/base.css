@@ -2,13 +2,6 @@ html {
     height: 100%;
 }
 
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: black
-}
-
 body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -88,6 +81,25 @@ body {
     position: fixed;
     background: white;
     z-index: -1;
+}
+
+.navbar-nav ul {
+    list-style-type: none;
+    padding: 0;            
+    margin: 0;             
+}
+
+/* label is hidden visually, keeping accessible for screen readers */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 .border-aubergine {

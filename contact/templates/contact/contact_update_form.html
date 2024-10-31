@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-left mt-3">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 my-5">
+                        <h1 class="text-center default-page-header">Message Details</h1>
+                        <div id="message-detail-container">
+                            <br>
+                            <small class="text-muted">Message sent on: <strong>{{ object.date_created }}</strong></small>
+                            
+                            <!-- DETAILS TABLE -->
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Email:</th>
+                                        <td>{{ object.email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Name:</th>
+                                        <td>{{ object.name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Subject:</th>
+                                        <td>{{ object.subject }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Message:</th>
+                                        <td id="contact-message">{{ object.message }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Responded:</th>
+                                        <td>{{ object.responded|yesno:"Yes,No" }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <a href="{% url 'contact-list' %}">Back to Contact List</a>
+                            <div class="text-center my-5" id="message-detail-button-container">
+                                {% if not object.responded %}
+                                <!-- Displays the response form on click -->
+                                <button class="btn btn-success" onclick="responseForm()">Respond To Message <i class="fa-solid fa-caret-down"></i></button>
+                                {% endif %}
+                                
+                                <!-- Deletes the message -->
+                                <a class="btn btn-danger" href="{% url 'contact-delete' object.id %}">Delete Message</a>
+                            </div>
+                        </div>
+
+                        <!-- Response form -->
+                        <div id="formDiv" style="display: none;">
+                            <div class="custom-form-outer-container"> 
+                                <div class="custom-form-inner-container">
+                                    <form method="POST" id="response-form" class="p-4 border rounded bg-light shadow">
+                                        {% csrf_token %}
+                                        <h4 class="text-center mb-4">Respond to Message</h4>
+                                        <div class="form-group">
+                                            <label for="email" class="font-weight-bold">Email To:</label>
+                                            <input type="email" id="email" class="form-control" placeholder="Email" readonly value="{{ object.email }}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="subject" class="font-weight-bold">Subject:</label>
+                                            <input type="text" id="subject" class="form-control" placeholder="Subject" readonly value="{{ object.subject }}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email_body" class="font-weight-bold">Message:</label>
+                                            <textarea id="email_body" name="email_body" rows="10" class="form-control">
+                                                Dear {{ object.name }},&#10;&#10;...&#10;&#10;&#10;Kind regards,&#10;Salon Talks&#10;https://salon-talks-af192748bd52.herokuapp.com/
+                                            </textarea>
+                                        </div>
+                                        
+                                        <div class="text-center my-3">
+                                            <input class="btn btn-success" id="responded-update-button" type="submit" value="Send Email">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Shows/hides the form
+        function responseForm() {
+            var form = document.getElementById("formDiv");
+            form.style.display = form.style.display === "none" ? "block" : "none";
+
+            // Sets responded status to True
+            let checkBox = document.getElementById("id_responded");
+            if (checkBox) {
+                checkBox.checked = true;
+            }
+        }
+    </script>
+{% endblock %}

@@ -1,25 +1,14 @@
 from django.contrib import admin
-from .models import ContactForm
+from .models import Contact
 
 
-@admin.register(ContactForm)
-class ContactFormAdmin(admin.ModelAdmin):
-    """Admin panel for ContactFormAdmin"""
-
+class ContactAdmin(admin.ModelAdmin):
     list_display = (
-        "name",
-        "email",
-        "read",
-        "message",
+        'subject',
+        'email',
+        'name',
+        'responded',
     )
-    list_filter = (
-        "read",
-        "name",
-        "email",
-    )
-    search_fields = [
-        "name",
-        "email",
-        "read",
-        "message",
-    ]
+
+
+admin.site.register(Contact, ContactAdmin)

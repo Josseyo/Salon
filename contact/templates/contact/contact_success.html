@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-left mt-3">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 my-5">
+
+                        <h1 class="text-center default-page-header" id="about-header">Message Sent</h1>
+                        <div>
+                            <h2 class="my-5 mx-5 text-center">
+                                Thanks for getting in touch!
+                            </h2>
+                            <p class="text-center" id="message-success-text">One of our team will respond to your message as soon as possible.</p>
+                            <br><br>
+                            <div class="text-center">  <!-- Centering the button -->
+                                <a href="{% url 'subscribe' %}" class="shop-now-button btn btn-lg rounded-0 py-3">
+                                    Subscribe to our Newsletter
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

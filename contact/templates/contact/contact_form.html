@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-left mt-3">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 my-5">
+                   
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <h1 class="text-center default-page-header">Get In Touch</h1>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group my-2 custom-form-button-container">
+                        <!-- Submits the Form -->
+                        <button class="btn btn-success" type="submit">Send</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

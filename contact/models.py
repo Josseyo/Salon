@@ -1,46 +1,33 @@
 from django.db import models
-
-
-# Create your models here.
+from django.shortcuts import reverse
+from django.utils import timezone
 
 
 class Contact(models.Model):
-    """
-    Model to store information about when and why to get in contact.
+    class Meta:
+        verbose_name_plural = "Contact Requests"
 
-    Attributes:
-        title (str): The title of the contact information.
-        profile_image (CloudinaryField): An image associated with the contact.
-        updated_on (datetime): The timestamp for when the contact information
-        was last updated.
-        content (str): Detailed content explaining the contact information.
-    """
+    SUBJECTS = (
+        ("Trouble using the site", "Trouble using the site"),
+        ("Ticket Issues", "Account Issues"),
+        ("Event Issues", "Event Issues"),
+        ("Other", "Other"),
+    )
 
-    title = models.CharField(max_length=200)
-    updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
-
-    def __str__(self):
-        """Return the title of the contact information."""
-        return self.title
-
-
-class ContactForm(models.Model):
-    """
-    Model to store contact details and request message.
-
-    Attributes:
-        name (str): The name of the person making the request.
-        email (str): The email address of the person making the request.
-        message (str): The message detailing the collaboration request.
-        read (bool): A flag indicating whether the request has been read.
-    """
-
-    name = models.CharField(max_length=200)
-    email = models.EmailField()
-    message = models.TextField()
-    read = models.BooleanField(default=False)
+    name = models.CharField(
+        max_length=254, default="Anonymous"
+    )  # Added default value
+    email = models.EmailField(
+        default="default@example.com"
+    )  # Added default value
+    subject = models.CharField(
+        choices=SUBJECTS, max_length=254, default="Other"
+    )  # Added default value
+    message = models.TextField(
+        max_length=1024, default="No message provided"
+    )  # Added default value
+    date_created = models.DateTimeField(default=timezone.now)
+    responded = models.BooleanField(default=False)
 
     def __str__(self):
-        """Return a string representation of the collaboration request."""
-        return f"Collaboration request from {self.name}"
+        return self.email

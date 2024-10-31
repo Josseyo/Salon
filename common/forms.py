@@ -1,9 +1,12 @@
 # common/forms.py
 from django import forms
-from contact.models import ContactForm
+from contact.models import Contact
+from django.core.validators import EmailValidator
 
 
 class ContactForm(forms.ModelForm):
     class Meta:
-        model = ContactForm
-        fields = ("name", "email", "message")
+        model = Contact
+        fields = ("name", "email", "subject", "message")
+
+    email = forms.EmailField(validators=[EmailValidator()])

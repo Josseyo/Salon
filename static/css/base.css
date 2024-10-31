@@ -5,9 +5,9 @@ html {
 body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: calc(100vh - 164px); /* Adjust based on navbar height */
     color: #555;
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif; /* Fallback */
 }
 
 /* from Bulma */
@@ -28,7 +28,7 @@ body {
 }
 
 .shop-now-button {
-    background: black;
+    background: #db6c1bff;
     color: white;
     min-width: 260px;
 }
@@ -57,7 +57,7 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #db6c1bff;
+    background: #704c5eff;
     color: white;
 }
 
@@ -79,7 +79,7 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: white;
+    background: #fdf9f8;
     z-index: -1;
 }
 
@@ -134,7 +134,7 @@ input[name='q']::placeholder {
     position: fixed;
     top: 72px;
     right: 15px;
-    z-index: 99999999999;
+    z-index: 9999;
 }
 
 .custom-toast {
@@ -189,67 +189,63 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+/* FAQ Styles */
+.background-faq-class {
+    background: #f9f9f9; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-/* FAQ */
-    .background-faq-class {
-        background: #f9f9f9; /* Light background color */
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+.question {
+    font-size: 1.5em; 
+    color: #333; 
+    padding: 10px;
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.3s; 
+}
 
-    .question {
-        font-size: 1.5em; /* Larger font size for questions */
-        color: #333; /* Dark text color */
-        padding: 10px;
-        border: 1px solid #ddd; /* Light border */
-        border-radius: 5px;
-        margin: 10px 0;
-        transition: background-color 0.3s; /* Smooth background transition */
-    }
+.question:hover {
+    background-color: #e9ecef; 
+}
 
-    .question:hover {
-        background-color: #e9ecef; /* Light gray background on hover */
-    }
+.caret {
+    font-size: 1.2em; 
+    transition: transform 0.3s; 
+}
 
-    .caret {
-        font-size: 1.2em; /* Slightly larger caret */
-        transition: transform 0.3s; /* Smooth rotation transition */
-    }
+.answer {
+    font-size: 1.1em; 
+    padding: 10px;
+    border-left: 3px solid #704c5eff; 
+    background-color: #ffffff; 
+    margin: 5px 0 15px 0; 
+    border-radius: 5px;
+    display: none; 
+    transition: max-height 0.3s ease; 
+}
 
-    .answer {
-        font-size: 1.1em; /* Slightly smaller font size for answers */
-        padding: 10px;
-        border-left: 3px solid #704c5eff; /* Updated left border color */
-        background-color: #ffffff; /* White background for answers */
-        margin: 5px 0 15px 0; /* Margin for spacing */
-        border-radius: 5px;
-        display: none; /* Initially hidden */
-        transition: max-height 0.3s ease; /* Smooth height transition */
-    }
+.answer p {
+    margin: 0; 
+}
 
-    .answer p {
-        margin: 0; /* Remove default margin for paragraphs */
-    }
-
-    hr {
-        border: 1px solid #ddd; /* Light gray horizontal rule */
-        margin: 20px 0; /* Spacing around horizontal rule */
-    }
-
+hr {
+    border: 1px solid #ddd; 
+    margin: 20px 0; 
+}
 
 /* Media Queries */
-/* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
         max-width: 80%;
     }
 }
 
-/* Allauth form formatting */
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    margin-top: 1.5rem; 
+    color: #6c757d; 
 }
 
 .allauth-form-inner-content input {
@@ -267,7 +263,6 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-    /* btn */
     display: inline-block;
     font-weight: 400;
     color: #fff;
@@ -289,14 +284,14 @@ input[name='q']::placeholder {
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
+.allauth-form-inner-content input[type='submit']:hover {    
     color: #fff;
     background-color: #222;
     border-color: #222;
 }
 
 .allauth-form-inner-content a {
-    color: #17a2b8; /* text-info */
+    color: #17a2b8; 
 }
 
 /* Product Form */
@@ -383,4 +378,9 @@ input[name='q']::placeholder {
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
     }
+}
+
+.custom-form-outer-container {
+    margin: 20px auto;
+    max-width: 600px;
 }

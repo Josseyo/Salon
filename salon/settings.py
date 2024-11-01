@@ -16,10 +16,12 @@ import dj_database_url
 # CORS settings
 CORS_ALLOWED_ORIGINS = []
 if "CLIENT_ORIGIN" in os.environ:
-    CORS_ALLOWED_ORIGINS.extend([
-        os.environ.get("CLIENT_ORIGIN"),
-        os.environ.get("CLIENT_ORIGIN_DEV"),
-    ])
+    CORS_ALLOWED_ORIGINS.extend(
+        [
+            os.environ.get("CLIENT_ORIGIN"),
+            os.environ.get("CLIENT_ORIGIN_DEV"),
+        ]
+    )
 else:
     CORS_ALLOWED_ORIGIN_REGEXES = [
         r"^https://.*\.codeinstitute-ide\.net$",
@@ -32,20 +34,24 @@ if os.path.isfile("env.py"):
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.environ.get("SECRET_KEY", "")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = (
-    os.environ.get("ALLOWED_HOSTS", "").split(",") if os.environ.get("ALLOWED_HOSTS") else []
+    os.environ.get("ALLOWED_HOSTS", "").split(",")
+    if os.environ.get("ALLOWED_HOSTS")
+    else []
 )
 
 # Additional allowed hosts for development and production
-ALLOWED_HOSTS.extend([
-    "8000-josseyo-salon-s8mmgxdiu91.ws.codeinstitute-ide.net",
-    "salon-talks-af192748bd52.herokuapp.com",
-])
+ALLOWED_HOSTS.extend(
+    [
+        "8000-josseyo-salon-s8mmgxdiu91.ws.codeinstitute-ide.net",
+        "salon-talks-af192748bd52.herokuapp.com",
+    ]
+)
 
 CSRF_TRUSTED_ORIGINS = [
     "https://8000-josseyo-salon-s8mmgxdiu91.ws.codeinstitute-ide.net",
@@ -147,13 +153,19 @@ else:
     EMAIL_PORT = 587
     EMAIL_HOST = "smtp.gmail.com"
     EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")  # Heroku config var
-    EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASS")  # Heroku config var
+    EMAIL_HOST_PASSWORD = os.environ.get(
+        "EMAIL_HOST_PASS"
+    )  # Heroku config var
     DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # Using the EMAIL_HOST_USER directly
-    ADMIN_EMAIL = 'josefin@yomaco.com'
+    ADMIN_EMAIL = "josefin@yomaco.com"
 
 # Optional: Check if the required environment variables are set
 if not EMAIL_HOST_USER or not EMAIL_HOST_PASSWORD:
-    raise ValueError("Please set the EMAIL_HOST_USER and EMAIL_HOST_PASS environment variables.")
+    raise ValueError(
+        "Please set the EMAIL_HOST_USER and "
+        "EMAIL_HOST_PASSWORD environment variables."
+    )
+
 
 WSGI_APPLICATION = "salon.wsgi.application"
 
@@ -169,15 +181,15 @@ WSGI_APPLICATION = "salon.wsgi.application"
 # }
 
 # Database
-if 'DATABASE_URL' in os.environ:
+if "DATABASE_URL" in os.environ:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
 else:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
         }
     }
 
@@ -237,8 +249,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # AWS S3 Configuration
 if "USE_AWS" in os.environ:
     AWS_S3_OBJECT_PARAMETERS = {
-        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-        'CacheControl': 'max-age=94608000',
+        "Expires": "Thu, 31 Dec 2099 20:00:00 GMT",
+        "CacheControl": "max-age=94608000",
     }
     AWS_STORAGE_BUCKET_NAME = "salontalks-e6485414bbd3"
     AWS_S3_REGION_NAME = "eu-north-1"

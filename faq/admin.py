@@ -1,9 +1,11 @@
 from django.contrib import admin
 from .models import Question, Answer
 
+
 class AnswerInline(admin.StackedInline):
     model = Answer
     extra = 1  # Number of extra forms to display
+
 
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
@@ -23,6 +25,7 @@ class QuestionAdmin(admin.ModelAdmin):
         return hasattr(obj, 'answer')
     has_answer.boolean = True
     has_answer.short_description = 'Has Answer'
+
 
 @admin.register(Answer)
 class AnswerAdmin(admin.ModelAdmin):

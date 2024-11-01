@@ -5,6 +5,7 @@ from .forms import SubscribeForm
 
 
 def subscribe_view(request):
+    """Handle subscription requests and display the subscription form."""
     if request.method == "POST":
         subscribe_form = SubscribeForm(data=request.POST)
         if subscribe_form.is_valid():
@@ -13,7 +14,7 @@ def subscribe_view(request):
                 request,
                 "Subscription received! You can expect our next newsletter.",
             )
-            return redirect("subscribe")  # Corrected redirect
+            return redirect("subscribe")
     else:
         subscribe_form = SubscribeForm()
 

@@ -5,6 +5,7 @@ from common.forms import ContactForm
 
 
 def faq_view(request):
+    """Render the FAQ page with a list of questions and a contact form."""
     questions = Question.objects.all()
 
     if request.method == "POST":
@@ -16,7 +17,6 @@ def faq_view(request):
                 "Message received! You can expect a response "
                 "within 2 working days.",
             )
-            # Redirect or re-render with success message can be added here
 
     contact_form = ContactForm()
 

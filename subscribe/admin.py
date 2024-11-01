@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import SubscribeRequest
 
+
 @admin.register(SubscribeRequest)
 class SubscribeRequestAdmin(admin.ModelAdmin):
     """Admin panel for subscribeRequestAdmin"""
@@ -17,4 +18,3 @@ class SubscribeRequestAdmin(admin.ModelAdmin):
         "email",
         "date",
     ]
-

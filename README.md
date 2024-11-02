@@ -141,6 +141,9 @@ Features and workflows were manually tested across different screen sizes and br
 - **Accessibility**: Validated using the [Wave Validator](https://wave.webaim.org/) 
 
 **See detailed [Test Report](documentation/TESTING.md)**
+**See [Bug Report](documentation/BUGS.md)**
+
+
 
 ## Deployment
 Instructions for deploying the project.

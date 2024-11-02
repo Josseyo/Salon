@@ -129,9 +129,18 @@ Details on social media marketing strategies.
 ### Newsletter Marketing
 Information on newsletter marketing efforts.
 
-## Testing
-Overview of the testing process.
-Each view was testing 
+## Testing & Validation
+
+Features and workflows were manually tested across different screen sizes and browser compatibility. The code was validated with:
+
+- **HTML**: Validated using the [W3C HTML Validator](https://validator.w3.org/)
+- **CSS**: Validated using the [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)
+- **JavaScript**: Validated using [JS Hint](https://jshint.com)
+- **Python**: Validated using the [CI Python Linter](https://pep8ci.herokuapp.com/)
+- **Performance**: Validated using [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- **Accessibility**: Validated using the [Wave Validator](https://wave.webaim.org/) 
+
+**See detailed [Test Report](documentation/TESTING.md)**
 
 ## Deployment
 Instructions for deploying the project.

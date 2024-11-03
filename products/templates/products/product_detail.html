@@ -29,9 +29,9 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="lead mb-0 text-left font-weight-bold">{{ product.name }}</p>
-                    <p class="mb-0 font-weight-bold">{{ product.start_time }}</p>
-                    <hr>
-
+                    <p class="lead mb-0 text-left">{{ product.event_date|date:"F d, Y" }}</p>
+                    <p class="mb-0 font-weight-bold">{{ product.start_time|time:"H:i" }} - {{ product.end_time|time:"H:i" }}</p>                            </div>
+            </div>
                     {% if product.category %}
                         <p class="small mt-1 mb-0">
                             <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">

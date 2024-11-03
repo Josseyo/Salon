@@ -37,11 +37,11 @@ class Order(models.Model):
     )
     original_bag = models.TextField(null=False, blank=False, default="")
     stripe_pid = models.CharField(
-        max_length=254, null=False, blank=False, default="")
-
-    # Add discount as a field
+        max_length=254, null=False, blank=False, default=""
+    )
     discount = models.DecimalField(
-        max_digits=10, decimal_places=2, null=False, default=0)
+        max_digits=10, decimal_places=2, null=False, default=0
+    )
 
     def _generate_order_number(self):
         """
@@ -86,6 +86,9 @@ class Order(models.Model):
     def __str__(self):
         return self.order_number
 
+    def get_meeting_links(self):
+        return [item.product.meeting_link for item in self.lineitems.all()]
+
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(
@@ -99,6 +102,7 @@ class OrderLineItem(models.Model):
         Product, null=False, blank=False, on_delete=models.CASCADE
     )
     quantity = models.IntegerField(null=False, blank=False, default=0)
+
     lineitem_total = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, blank=False, editable=False
     )

@@ -166,6 +166,11 @@ def checkout_success(request, order_number):
     save_info = request.session.get("save_info")
     order = get_object_or_404(Order, order_number=order_number)
 
+    context = {
+        'order': order,
+        'meeting_links': order.get_meeting_links(),
+    }
+
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order

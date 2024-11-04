@@ -151,6 +151,31 @@
     {% block page_header %}{% endblock %}
     {% block content %}{% endblock %}
 
+    {% if request.path != '/' %}
+  
+    <footer class="footer mt-auto d-flex justify-content-center">
+        <div class="footer-content text-center">
+            <hr>
+        
+            <p class="m-0">Made by Salon Talks | Follow us
+                <a href="https://www.instagram.com/coon_louis/" target="_blank" rel="noopener"
+                   aria-label="Visit Coon Louis on Instagram (opens in a new tab)" class="icon-link" style="color: #704c5eff;">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+                <a href="https://github.com/Josseyo/Cultivating_Intelligence" target="_blank" rel="noopener"
+                   aria-label="Visit Josefin Yoshida on GitHub (opens in a new tab)" class="icon-link" style="color: #704c5eff;">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/josefiny/" target="_blank" rel="noopener"
+                   aria-label="Visit Josefin Yoshida on LinkedIn (opens in a new tab)" class="icon-link" style="color: #704c5eff;">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </p>
+        </div>
+    </footer>
+   
+    {% endif %}
+
     {% block postloadjs %}
         <script type="text/javascript">
             $('.toast').toast('show');

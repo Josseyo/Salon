@@ -5,9 +5,9 @@ html {
 body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: calc(100vh - 164px); /* Adjust based on navbar height */
     color: #555;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif; /* Fallback */
 }
 
 /* from Bulma */
@@ -28,7 +28,7 @@ body {
 }
 
 .shop-now-button {
-    background: #704c5eff;
+    background:#704c5eff;
     color: white;
     min-width: 260px;
 }
@@ -85,11 +85,12 @@ body {
 
 .navbar-nav ul {
     list-style-type: none;
-    padding: 0;            
-    margin: 0;             
+    padding: 0;
+    margin: 0;
 }
 
-/* label is hidden visually, keeping accessible for screen readers */
+/* Visually hidden label for accessibility */
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -144,7 +145,7 @@ input[name='q']::placeholder {
     height: 2px;
 }
 
-/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+/* CSS triangle, CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
     width: 0; 
     height: 0; 
@@ -188,9 +189,10 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
-/* FAQ */
+/* FAQ Styles */
 .background-faq-class {
-    background: #f9f9f9; 
+     
+    background: #fdf9f8;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -200,8 +202,7 @@ input[name='q']::placeholder {
     font-size: 1.5em; 
     color: #333; 
     padding: 10px;
-    border: 1px solid #ddd; 
-    border-radius: 5px;
+
     margin: 10px 0;
     transition: background-color 0.3s; 
 }
@@ -227,23 +228,38 @@ input[name='q']::placeholder {
 }
 
 .answer p {
-    margin: 0; /* Remove default margin for paragraphs */
+    margin: 0; 
 }
 
 hr {
-    border: 1px solid #ddd; /* Light gray horizontal rule */
-    margin: 20px 0; /* Spacing around horizontal rule */
+    border: 0.85px solid rgba(112, 76, 94, 0.506); 
+    margin: 20px 0; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    padding: 20px 0; 
+}
+
+.footer-content {
+    max-width: 800px;
+    width: 100%;
 }
 
 /* Media Queries */
-/* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
         max-width: 80%;
     }
 }
 
-/* Allauth form formatting */
 .allauth-form-inner-content p {
     margin-top: 1.5rem; 
     color: #6c757d; 
@@ -280,6 +296,14 @@ hr {
     line-height: 1.5;
     border-radius: 0;
 
+    /* User select none */
+    .user-select-none {
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none;    /* Firefox */
+        -ms-user-select: none;     /* Internet Explorer */
+        user-select: none;         /* Non-prefixed version */
+    }
+
     /* standard bootstrap btn transitions */
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
@@ -292,7 +316,7 @@ hr {
 }
 
 .allauth-form-inner-content a {
-    color: #17a2b8; /* text-info */
+    color: #17a2b8; 
 }
 
 /* Product Form */
@@ -300,6 +324,7 @@ hr {
     position: relative;
     overflow: hidden;
 }
+
 .btn-file input[type="file"] {
     position: absolute;
     top: 0;
@@ -309,14 +334,21 @@ hr {
     opacity: 0;
     cursor: pointer;
 }
+
 .custom-checkbox .custom-control-label::before {
     border-radius: 0;
     border-color: #dc3545;
 }
+
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
     background-color: #dc3545;
     border-color: #dc3545;
     border-radius: 0;
+}
+
+.custom-form-outer-container {
+    margin: 20px auto;
+    max-width: 600px;
 }
 
 /* fixed top navbar only on medium and up */

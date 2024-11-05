@@ -1,0 +1,83 @@
+{% load i18n %}
+{% load account %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Order Confirmation" %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        .logo-font {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .mb-4 {
+            margin-bottom: 1.5em;
+        }
+        .mb-0 {
+            margin-bottom: 0;
+        }
+        .font-weight-bold {
+            font-weight: bold;
+        }
+        hr {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <h2 class="logo-font mb-4">Hello {{ order.full_name }}!</h2>
+
+    <p class="mb-0 text-black font-weight-bold">This is a confirmation of your order at Salon Talks:</p>
+    <br>
+
+    <p><strong>Order Number:</strong> {{ order.order_number }}</p>
+    <p><strong>Order Date:</strong> {{ order.date }}</p>
+    <p><strong>Order Total:</strong> ${{ order.order_total|floatformat:2 }}</p>
+    <p><strong>Discount:</strong> ${{ order.discount|floatformat:2 }}</p>
+    <p><strong>Grand Total:</strong> ${{ order.grand_total|floatformat:2 }}</p>
+    <br>
+
+    <h3 class="logo-font mb-4">Your Event Details:</h3>
+   
+    <p><strong>Event Date:</strong> {{ order.product.event.date }}</p>
+    <p><strong>Event Time:</strong> {{ order.product.event.start_time }} - {{ order.product.event.end_time }}</p>
+    <br>
+    <p><strong>To Join Event, click on the button</strong></p>
+    
+    <div>
+    {% for item in order.lineitems.all %}
+        <a href="{{ item.product.meeting_link }}" style="display: inline-block; padding: 10px 20px; margin: 5px; background-color: green; color: white; text-decoration: none; border-radius: 5px;">
+            Your Event link to {{ item.product.name }}
+        </a>
+    {% endfor %}
+    </div>
+    <br>
+    <p>If you have any questions, feel free to <a href="{% url 'contact-form' %}">reach out</a> to us!</p>
+
+    <hr>
+    <h3>{% trans "Billing Information" %}</h3>
+    <p><strong>{% trans "Full Name:" %}</strong> {{ order.full_name }}</p>
+    <p><strong>{% trans "Email:" %}</strong> {{ order.email }}</p>
+    <p><strong>{% trans "Phone Number:" %}</strong> {{ order.phone_number }}</p>
+    <br>
+    <p>{% blocktrans %}If you have any questions about your order, please contact us.{% endblocktrans %}</p>
+
+    <a href="{% url 'contact-form' %}">Contact us</a>
+
+    <br>
+    <p>
+    Sincerely,
+
+    Salon Talks
+    </p>
+    
+</body>
+</html>

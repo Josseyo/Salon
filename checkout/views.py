@@ -8,7 +8,8 @@ from django.shortcuts import (
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 
@@ -21,6 +22,22 @@ import stripe
 import json
 
 
+def send_order_confirmation_email(order):
+    subject = f"Order Confirmation - {order.order_number}"
+    body = render_to_string(
+        "account/email_order_confirmation.html", {"order": order}
+    )
+
+    send_mail(
+        subject,
+        body,
+        settings.DEFAULT_FROM_EMAIL,
+        [order.email],
+        fail_silently=False,
+        html_message=body,  # HTML version
+    )
+
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -31,7 +48,7 @@ def cache_checkout_data(request):
             metadata={
                 "bag": json.dumps(request.session.get("bag", {})),
                 "save_info": request.POST.get("save_info"),
-                "username": request.user,
+                "username": request.user.username,
             },
         )
         return HttpResponse(status=200)
@@ -41,7 +58,10 @@ def cache_checkout_data(request):
             "Sorry, your payment cannot be \
             processed right now. Please try again later.",
         )
-        return HttpResponse(content=e, status=400)
+
+        return HttpResponse(
+            content=str(e), status=400
+        )  # Convert exception to string
 
 
 def checkout(request):
@@ -94,9 +114,13 @@ def checkout(request):
 
             # Save the info to the user's profile if all is well
             request.session["save_info"] = "save-info" in request.POST
+
+            send_order_confirmation_email(order)  # Send confirmation email
+
             return redirect(
                 reverse("checkout_success", args=[order.order_number])
             )
+
         else:
             messages.error(
                 request,
@@ -167,8 +191,8 @@ def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     context = {
-        'order': order,
-        'meeting_links': order.get_meeting_links(),
+        "order": order,
+        "meeting_links": order.get_meeting_links(),
     }
 
     if request.user.is_authenticated:
@@ -191,6 +215,8 @@ def checkout_success(request, order_number):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
+    # Send the confirmation email
+    send_order_confirmation_email(order)
 
     messages.success(
         request,
@@ -205,6 +231,7 @@ def checkout_success(request, order_number):
     template = "checkout/checkout_success.html"
     context = {
         "order": order,
+        "meeting_links": order.get_meeting_links(),
     }
 
     return render(request, template, context)

@@ -15,7 +15,7 @@ class Contact(models.Model):
     )
 
     name = models.CharField(
-        max_length=254, default="Anonymous"
+        max_length=254, default=""
     )  # Added default value
     email = models.EmailField(
         default="default@example.com"
@@ -24,7 +24,7 @@ class Contact(models.Model):
         choices=SUBJECTS, max_length=254, default="Other"
     )  # Added default value
     message = models.TextField(
-        max_length=1024, default="No message provided"
+        max_length=1024, default=""
     )  # Added default value
     date_created = models.DateTimeField(default=timezone.now)
     responded = models.BooleanField(default=False)

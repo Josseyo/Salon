@@ -14,7 +14,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato', sans-serif;
     font-weight: 700;   
     font-style: normal;
+}
 
+h1 {
+    color:#333
 }
 
 /* from Bulma */
@@ -69,7 +72,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-black {
-    color: #000 !important;
+    color: black
+     !important;
 }
 
 .border-black {
@@ -110,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .border-aubergine {
-    border: 2px solid #704c5eff;
+    border: 2px solid #7D8570;
 }
 
 
@@ -124,7 +128,7 @@ a.category-badge > span.badge {
 }
 
 a.category-badge > span.badge:hover {
-    background: #704c5eff !important;
+    background: #7D8570!important;
     color: #fff !important;
 }
 

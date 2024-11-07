@@ -1,4 +1,4 @@
-# Markup Salon
+
 
 ## Table of Contents
 - [The Salon](#the-salon)
@@ -43,20 +43,61 @@
 - [Acknowledgements](#acknowledgements)
 
 
-## The Salon
-Details about the salon aspect of the project.
+## The SalonTalks
+SalonTalks is a fully functioning e-commerce web application. The site allows users to view and purchase tickets to SalonTalks events online. Users can easily create personal accounts and profiles and see their information and order history on the site. The site also enables administrators to add, edit and remove events as well as view and respond to contact enquiries.
 
 ## UX
-Information regarding user experience design.
+The design philosophy was to create a clear and engaging look for the target customers. Relevant information is presented in a salient and clean manner, allowing the user to easily navigate through the site to browse and make their purchase as well as finding contact information for more help and support.
 
 ### Typography
-Guidelines for typography used in the project.
 
-### Colors
-Guidelines for colors used in the project.
+When choosing fonts for a website with an older audience, especially those who may have vision problems, it's important to prioritize readability and clarity. 
+
+**Headings:** Lato bold
+**Body text:** Open Sans regular
+**Headings:** Button text/CTA: Lato 
+
+All these fonts are available for free on 
+[Google Fonts](https://fonts.google.com/selection?query=open+sa)
+
+
+### Color Palette
+I have used [coolors](https://coolors.co/db6c1b-704c5e-fdf9f8-000000-7d8570-ffffff) to create the color palette for the project. Then I have evaluated the palette using ChatGPT.
+
+![here](https://github.com/users/Josseyo/projects/8)
+
+![colors](documentation/design/colors.png)
+
+**Cocoa Brown (#DB6C1B)**
+
+This rich, warm brown maintains cohesion with the Rufous and Xanthous tones while providing good contrast. It’s a versatile color that could be used for buttons, text on light backgrounds, or accents.
+
+**Eggplant (#704C5E)**
+
+This subtle purple adds depth and sophistication to the palette. It contrasts nicely with the warmer tones (Cocoa Brown) without overwhelming them. Eggplant would work well for secondary text, borders, or backgrounds.
+
+**Snow (#FDF9F8)**
+
+This soft, almost ethereal white has subtle hints of warmth. It evokes a sense of tranquility and purity, enhancing the overall brightness of the design. Snow can be effectively used for backgrounds, providing a clean canvas that allows other colors to stand out, or for text on darker backgrounds to ensure readability.
+
+**Black (#000000)**
+
+The black adds depth to the palette. Utilized for primary text. Its versatility allows it to anchor the design, providing a strong foundation that balances the warmth of Cocoa Brown and the softness of Snow.
+
+**Reseda Green (#7D8570)**
+
+This muted green adds a nice balance to the palette. It’s calming and pairs well with brighter tones like the Cocoa Brown. It can be great for backgrounds or secondary elements, as it doesn't dominate the visual space.
+
+### Readability & Accessibility:
+The color palette feels well-balanced, combining warm tones with a touch of calmness from the Eggplant and Reseda Green. The earthy and muted tones will give your website a grounded, inviting feel without being too loud. 
+
+The palette has good contrast when pairing lighter colors with the darker colors. This ensures that text and buttons remain readable for all users
 
 ### User Stories
-List and explanation of user stories.
+All user stories can be found in a linked GitHub project [here](https://github.com/users/Josseyo/projects/8)
+
+![kanban](documentation/project_setup/kanban_userstories.png)
+
 
 ## Features
 Overview of features included in the project.
@@ -65,10 +106,21 @@ Overview of features included in the project.
 Description of features that are currently available.
 
 ### Site Pages
-
-The main homepage for the site. Hero image is large and striking. Large heading tells users they are in the right place. Call to action button to invite users to enter and explore the site products.
+The main homepage for the site. Hero image is large and striking with a call to action button to invite users to enter and explore and purchase events.
 ![home page](documentation/features/sitepages/home.png)
 
+![Event list view](documentation/features/sitepages/all_product_list.png)
+
+![Event list view](documentation/features/sitepages/categories_product_lists_page.png)
+
+![Cateory hover](documentation/features/sitepages/category_hover.png)
+
+![Contact](documentation/features/sitepages/contact.png)
+
+![faq](documentation/features/sitepages/faq.png)
+
+![Event list view](documentation/features/sitepages/contact.png
+)
 
 ### User Features
 Features available to users.
@@ -125,6 +177,7 @@ Instructions for web crawlers.
 
 ### Social Media Marketing
 Details on social media marketing strategies.
+![facebook](documentation/webmarketing/facebook.png)
 
 ### Newsletter Marketing
 Information on newsletter marketing efforts.

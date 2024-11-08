@@ -6,6 +6,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.core.mail import send_mail
 from django.conf import settings
+from common.forms import ContactForm
 
 from django.views.generic import (
     CreateView,
@@ -20,7 +21,7 @@ class ContactFormCreateView(CreateView):
     """View to create a new contact form submission."""
 
     model = Contact
-    fields = ["email", "name", "subject", "message"]
+    form_class = ContactForm  # Use the ContactForm defined in common/forms.py
 
     def get_initial(self):
         """Set initial data for the form."""
@@ -40,7 +41,7 @@ class ContactFormCreateView(CreateView):
         return super().form_valid(form)
 
 
-def ContactSuccess(request):
+def contact_success(request):
     """Render the contact success page."""
     return render(request, "contact/contact_success.html")
 
@@ -83,6 +84,7 @@ class ContactUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         form.instance.author = self.request.user
         messages.info(self.request, "Response sent via email")
         self._send_email()
+        form.instance.responded = True
         return super().form_valid(form)
 
     def test_func(self):

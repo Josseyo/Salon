@@ -7,7 +7,17 @@ body {
     background-size: cover;
     height: calc(100vh - 164px); /* Adjust based on navbar height */
     color: #555;
-    font-family: 'Lato', sans-serif; /* Fallback */
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;   
+    font-style: normal;
+}
+
+h1 {
+    color:#333
 }
 
 /* from Bulma */
@@ -62,7 +72,8 @@ body {
 }
 
 .text-black {
-    color: #000 !important;
+    color: black
+     !important;
 }
 
 .border-black {
@@ -103,11 +114,21 @@ body {
 }
 
 .border-aubergine {
-    border: 2px solid #704c5eff;
+    border: 2px solid #7D8570;
+}
+
+
+
+a.category-badge > span.badge {
+    display: inline-block; /* Ensure the badge behaves like a block element */
+    max-width: 100%; /* Allow the badge to be responsive */
+    padding: 0.5rem 1rem; /* Add some padding */
+    white-space: normal; /* Allow text to wrap */
+    overflow-wrap: break-word; /* Break long words if necessary */
 }
 
 a.category-badge > span.badge:hover {
-    background: #704c5eff !important;
+    background: #7D8570!important;
     color: #fff !important;
 }
 

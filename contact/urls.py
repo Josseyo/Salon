@@ -16,6 +16,6 @@ urlpatterns = [
         name='contact-delete'
         ),
 
-    path('success/', views.ContactSuccess, name='contact-success'),
+    path('success/', views.contact_success, name='contact-success'),
 
 ]

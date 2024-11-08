@@ -66,9 +66,11 @@
                                 {% endif %}
                             </a>
                             <div class="card-body pb-0">
-                                <p class="lead mb-0 text-left">{{ product.name }}</p>
-                                <p class="lead mb-0 text-left">{{ product.event_date|date:"F d, Y" }}</p>
-                                <p class="mb-0 font-weight-bold">{{ product.start_time|time:"H:i" }} - {{ product.end_time|time:"H:i" }}</p>                            </div>
+                                <p class="lead mb-0 text-left font-weight-bold" style="color: #704c5eff;">{{ product.name }}</p>
+                                    
+                                <p class="mb-0">{{ product.event_date|date:"F d, Y" }}</p>
+                                <p class="mb-0">{{ product.start_time|time:"H:i" }} - {{ product.end_time|time:"H:i" }}</p>
+                            </div>
                             <div class="card-footer bg-white pt-0 border-0 text-left">
                                 <div class="row">
                                     <div class="col">

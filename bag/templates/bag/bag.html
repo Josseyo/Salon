@@ -3,11 +3,6 @@
 {% load bag_tools %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
 {% endblock %}
 
 {% block content %}
@@ -15,8 +10,8 @@
     <div class="container mb-2">
         <div class="row">
             <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Shopping Salon Talks</h2>
+                <br><br>
+                <h1 class="logo-font mb-4">Shopping Salon Talks</h1>
                 <hr>
             </div>
         </div>
@@ -69,14 +64,12 @@
                                                            name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                                            data-item_id="{{ item.item_id }}"
                                                            id="id_qty_{{ item.item_id }}">
-                                                    
-                                                        <button class="increment-qty btn btn-sm btn-black rounded-0"
+                                                    <button class="increment-qty btn btn-sm btn-black rounded-0"
                                                             data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                                                            <span>
-                                                                <i class="fas fa-plus fa-sm"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
+                                                        <span>
+                                                            <i class="fas fa-plus fa-sm"></i>
+                                                        </span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -161,4 +154,3 @@
     });
 </script>
 {% endblock %}
-

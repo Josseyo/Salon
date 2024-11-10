@@ -2,11 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+
 {% endblock %}
 
 {% block content %}
@@ -15,7 +11,7 @@
         <div class="row">
             <div class="col text-center mt-3">
                 <br>
-                <h1>Choose your Conversations</h1>
+                <h1 class="default-page-header mb-4">Choose your Conversations</h1>
                 {% for c in current_categories %}
                     <a class="category-badge" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="badge p-2 mt-2 badge badge-white text-black rounded-0 border-aubergine">

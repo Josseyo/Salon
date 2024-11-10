@@ -6,11 +6,6 @@
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
 {% endblock %}
 
 {% block content %}
@@ -18,8 +13,8 @@
     <div class="container">
         <div class="row mb-4">
             <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Thank You</h2>
+                <br><br>
+                <h1 class="logo-font mb-4">Thank You</h1>
                 <hr>
                 <p class="text-black">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
             </div>
@@ -64,16 +59,14 @@
                             <p class="mb-0" style="color: #704c5eff; font-weight: bold;">{{ item.product.name }}</p>
                             <div class="normal" style="margin-bottom: 10px;">
                                 <small>Event date: {{ item.product.event_date }}</small><br>
-                                <small>Event time: {{ item.product.start_time }} – {{ item.product.end_time }}</small><br>
-                                <br>
-                           
+                                <small>Event time: {{ item.product.start_time }} – {{ item.product.end_time }}</small><br><br>
 
-                            {% if item.product.meeting_link %}
-                                <a href="{{ item.product.meeting_link }}" target="_blank" class="btn btn-success" style="margin-top: 15px;">Your Event Link</a>  <!-- Adjust the margin-top as needed -->
-                            {% else %}
-                                <small class="mb-0">No meeting link available</small>
-                            {% endif %}
-                        </div>
+                                {% if item.product.meeting_link %}
+                                    <a href="{{ item.product.meeting_link }}" target="_blank" class="btn btn-success" style="margin-top: 15px;">Your Event Link</a>
+                                {% else %}
+                                    <small class="mb-0">No meeting link available</small>
+                                {% endif %}
+                            </div>
                         </div>
                         
                         <div class="col-12 col-md-8 text-md-right">

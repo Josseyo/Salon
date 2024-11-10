@@ -2,18 +2,13 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
 {% endblock %}
 
 {% block content %}
     <div class="overlay"></div>
     <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 mb-4">
+        <div class="row justify-content-center mt-3">
+            <div class="col-12 col-md-6 col-lg-5 mb-4">
                 <div class="image-container my-3">
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
@@ -26,9 +21,11 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+            <div class="col-12 col-md-6 col-lg-6 mt-3 mb-4">
                 <div class="product-details-container p-3 border rounded shadow">
                     <p class="lead mb-0 text-left font-weight-bold" style="color: #704c5eff;">{{ product.name }}</p>
+                    <p class="mt-3 font-weight-bold">Host: {{ product.host }}</p>
                     <p class="lead mb-1">{{ product.event_date|date:"F d, Y" }}</p>
                     <p class="mb-1 font-weight-bold">{{ product.start_time|time:"H:i" }} - {{ product.end_time|time:"H:i" }}</p>
 
@@ -48,8 +45,9 @@
                     {% endif %}
                     
                     <p class="mt-3">{{ product.description }}</p>
-                    <p class="mt-3 font-weight-bold">Host: {{ product.host }}</p>
-                    <p class="mt-3 font-weight-bold">Date: {{ product.start_time }}</p>
+                    <p class="mb-1 font-weight-bold">Date: {{ product.event_date|date:"F d, Y" }}</p>
+                    <p class="mb-1 font-weight-bold">Time: {{ product.start_time|time:"H:i" }} - {{ product.end_time|time:"H:i" }}</p>
+
                     <p class="lead mb-0 font-weight-bold">Price: ${{ product.price }}</p>
 
                     <form class="form mt-4" action="{% url 'add_to_bag' product.id %}" method="POST">
@@ -96,8 +94,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
+            </div>    
     </div>
 {% endblock %}
 

@@ -3,11 +3,6 @@
 {% load crispy_forms_tags %}
 
 {% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
 {% endblock %}
 
 {% block content %}
@@ -17,7 +12,7 @@
             <div class="col text-left mt-3"> <!-- Left aligned for questions and answers -->
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-6 my-5">
-                        <h1 class="logo-font text-center">FAQ</h1> 
+                        <h1 class="logo-font text-center mb-4">FAQ</h1><hr>
                         {% if questions %}
                             {% for question in questions %}
                                 <div class="question-container">
@@ -27,7 +22,6 @@
                                     </h2>
                                     <div class="answer" style="display: none;">
                                         {% if question.answer %}
-                                            <p>Answer:</p>
                                             <p>{{ question.answer.answer }}</p>
                                         {% else %}
                                             <p>No answer available for this question.</p>

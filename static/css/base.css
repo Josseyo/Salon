@@ -10,15 +10,19 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;   
+    font-style: normal;
+    color:#444;
+}
+
+h4 {
     font-family: 'Lato', sans-serif;
     font-weight: 700;   
     font-style: normal;
 }
 
-h1 {
-    color:#333
-}
 
 /* from Bulma */
 .icon {

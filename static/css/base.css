@@ -23,6 +23,30 @@ h4 {
     font-style: normal;
 }
 
+.text-background {
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+    padding-top: 20px; /* Top and bottom padding */
+    padding-bottom: 2px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 10px; /* Rounded corners for the background */
+    min-width: 300px; /* Maximum width for the background */
+    width: fit-content; /* Adjust width to fit the content */
+    height: fit-content;
+    margin: 0 auto; /* Center the div horizontally */
+}
+
+.shop-now-button {
+    font-family: 'Lato', sans-serif;
+    font-weight: 800;   
+    font-style: bold;
+    border-radius: 5px; /* Added border-radius to the button */
+    background:#704c5eff;
+    color: white;
+    min-width: 260px;
+}
+
+
 
 /* from Bulma */
 .icon {
@@ -41,11 +65,6 @@ h4 {
     width: fit-content;
 }
 
-.shop-now-button {
-    background:#704c5eff;
-    color: white;
-    min-width: 260px;
-}
 
 .btn-black {
     background: #704c5eff !important; 

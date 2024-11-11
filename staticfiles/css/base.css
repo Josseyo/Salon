@@ -10,15 +10,43 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;   
+    font-style: normal;
+    color:#444;
+}
+
+h4 {
     font-family: 'Lato', sans-serif;
     font-weight: 700;   
     font-style: normal;
 }
 
-h1 {
-    color:#333
+.text-background {
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+    padding-top: 20px; /* Top and bottom padding */
+    padding-bottom: 2px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 10px; /* Rounded corners for the background */
+    min-width: 300px; /* Maximum width for the background */
+    width: fit-content; /* Adjust width to fit the content */
+    height: fit-content;
+    margin: 0 auto; /* Center the div horizontally */
 }
+
+.shop-now-button {
+    font-family: 'Lato', sans-serif;
+    font-weight: 800;   
+    font-style: bold;
+    border-radius: 5px; /* Added border-radius to the button */
+    background:#704c5eff;
+    color: white;
+    min-width: 260px;
+}
+
+
 
 /* from Bulma */
 .icon {
@@ -37,11 +65,6 @@ h1 {
     width: fit-content;
 }
 
-.shop-now-button {
-    background:#704c5eff;
-    color: white;
-    min-width: 260px;
-}
 
 .btn-black {
     background: #704c5eff !important; 
@@ -195,7 +218,7 @@ input[name='q']::placeholder {
     border-bottom-color: #ffc107 !important;
 }
 .arrow-info {
-    border-bottom-color: #17a2b8 !important;
+    border-bottom-color: #007bff !important;
 }
 .arrow-light {
     border-bottom-color: #f8f9fa !important;
@@ -276,7 +299,7 @@ hr {
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; 
-    color: #6c757d; 
+    color: #333; 
 }
 
 .allauth-form-inner-content input {
@@ -330,7 +353,9 @@ hr {
 }
 
 .allauth-form-inner-content a {
-    color: #17a2b8; 
+    color: #704c5eff; 
+    font-weight: 700;
+
 }
 
 /* Product Form */

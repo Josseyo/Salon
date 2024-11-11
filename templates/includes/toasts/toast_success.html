@@ -28,7 +28,8 @@
                         </div>
                         <div class="col-9">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 small text-muted">Date: {{ item.product.start_time }}</p>
+                            <p class="my-0 small text-muted">Date: {{ product.event_date|date:"F d, Y" }}</p>
+                            <p class="my-0 small text-muted">Time: {{ product.start_time|time:"H:i" }} - {{ product.end_time|time:"H:i" }}</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
                     </div>

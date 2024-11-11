@@ -218,7 +218,7 @@ input[name='q']::placeholder {
     border-bottom-color: #ffc107 !important;
 }
 .arrow-info {
-    border-bottom-color: #17a2b8 !important;
+    border-bottom-color: #007bff !important;
 }
 .arrow-light {
     border-bottom-color: #f8f9fa !important;
@@ -299,7 +299,7 @@ hr {
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; 
-    color: #6c757d; 
+    color: #333; 
 }
 
 .allauth-form-inner-content input {
@@ -353,7 +353,9 @@ hr {
 }
 
 .allauth-form-inner-content a {
-    color: #17a2b8; 
+    color: #704c5eff; 
+    font-weight: 700;
+
 }
 
 /* Product Form */

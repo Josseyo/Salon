@@ -34,9 +34,6 @@ def bag_contents(request):
 
     grand_total = total - discount
 
-    # Debugging print statement
-    print(f"Total: {total}, Discount: {discount}, Grand Total: {grand_total}")
-
     context = {
         "bag_items": bag_items,
         "total": total,

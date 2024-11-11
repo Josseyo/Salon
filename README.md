@@ -26,7 +26,7 @@
 - [Newsletter Marketing](#newsletter-marketing)
 - [Testing](#testing)
 - [Deployment](#deployment)
-- [ElephantSQL Database](#elephantsql-database)
+- [Postgress SQL Database](#postgress-sql-database)
 - [Amazon AWS](#amazon-aws)
 - [S3 Bucket](#s3-bucket)
 - [IAM](#iam)
@@ -109,38 +109,37 @@ All user stories can be found in a linked GitHub project [here](https://github.c
 
 ### Site Pages
 
-#### Home Page
-![home page](documentation/features/sitepages/home.png)
-<br>
-The main homepage for the site. Hero image is large and striking with a call to action button to invite users to enter and explore and purchase events.
-All pages have a search field and navbar at the top of the page to easily find any page and information on the site.
+| Home Page | Mobile View |
+|-----------|-------------|
+| ![home page](documentation/features/sitepages/home.png) | ![home page mobile](documentation/features/sitepages/home_mobile.png) |
+| The main homepage for the site. Hero image is large and striking with a call to action button to invite users to enter and explore and purchase events. All pages have a search field and navbar at the top of the page to easily find any page and information on the site. |  |
+
+
 
 #### Footer
 ![Footer with social links](documentation/features/sitepages/social_links.png)
 
 
-#### All Salon Talks Page <br>
-![Event list view](documentation/features/sitepages/all_product_list.png)
-![Event list view](documentation/features/sitepages/categories_product_lists_page.png)
 
-Displays an overview of all SalonTalks available for the user to purchase. Displays images of the event and their essential information including title, date, time, price & category. The SalonTalks are displayed in a pleasing responsive grid layout, making it easy to browse the events. The events utilise a mouse-hover animation to add to the interactivity of the page.<br><br> 
-**Sort Options**
+| Event List View | Sort Options |
+|------------------|--------------|
+| ![Event list view](documentation/features/sitepages/all_product_list.png) <br> Displays an overview of all Salon Talks available for the user to purchase. This view displays images of the events along with essential information including title, date, time, price, and category. The Salon Talks are displayed in a pleasing responsive grid layout, making it easy to browse the events. The events utilize a mouse-hover animation to enhance the interactivity of the page. | ![Sort options](documentation/features/sitepages/sort_options.png) <br> On all list views, Salon Talks can also be filtered and sorted by name, category, date, and price. |
 
-![Sort options](documentation/features/sitepages/sort_options.png)<br>
 
-On all list views, SalonTalks can also be filtered and sorted by name, category, date and price.
+
 
 #### Categories
+---
 ![Event list view](documentation/features/sitepages/categories_product_lists_page.png)
 ![Event list view](documentation/features/sitepages/category_hover.png)
 Events are categorized into two main groups, each with two subcategories. Available events are displayed with information buttons linking to their respective subcategory pages.
 
-#### Event detailed view
-![Event detail view](documentation/features/sitepages/product_detail.png)
-Displays images of Salon Talks including title, date, start-time, category, description of the Salon Talks subject, category and price. Users can easily adjust the quantity and add it to the bag.<br>
+| Event Detailed View | Success Bag Toast |
+|---------------------|-------------------|
+| ![Event detail view](documentation/features/sitepages/product_detail.png) | ![Success bag toast](documentation/features/sitepages/success_bag_toast.png) |
+| Displays images of Salon Talks including title, date, start time, category, description of the Salon Talks subject, category, and price. Users can easily adjust the quantity and add it to the bag. | Via toasts, users can see a summary of their basket whenever an item is added, allowing the user to quickly see the new state of their basket, without having to navigate away from the page they are currently on. |
 
-![Success bag toast](documentation/features/sitepages/success_bag_toast.png)
-Via toasts, users can see a summary of their basket whenever an item is added, allowing the user to quickly see the new state of their basket, without having to navigate away from the page they are currently on.
+
 
 #### Shopping Bag
 ![Shopping bag](documentation/features/sitepages/checkout.png)

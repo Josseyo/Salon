@@ -17,7 +17,6 @@ from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from bag.contexts import bag_contents
-
 import stripe
 import json
 
@@ -34,7 +33,7 @@ def send_order_confirmation_email(order):
         settings.DEFAULT_FROM_EMAIL,
         [order.email],
         fail_silently=False,
-        html_message=body,  # HTML version
+        html_message=body,
     )
 
 
@@ -189,11 +188,6 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get("save_info")
     order = get_object_or_404(Order, order_number=order_number)
-
-    context = {
-        "order": order,
-        "meeting_links": order.get_meeting_links(),
-    }
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)

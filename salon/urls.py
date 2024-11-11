@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
-
+from checkout import views as checkout_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -28,6 +28,7 @@ urlpatterns = [
     path("products/", include("products.urls")),
     path("bag/", include("bag.urls")),
     path("checkout/", include("checkout.urls")),
+    path('checkout/checkout_success/<str:order_number>/', checkout_views.checkout_success, name='checkout_success'),
     path("profile/", include("profiles.urls")),
     path("faq/", include("faq.urls")),
     path("about/", include("about.urls")),

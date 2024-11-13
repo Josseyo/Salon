@@ -1,109 +1,139 @@
+# SalonTalks
 
+SalonTalks is a fully functioning e-commerce web application that allows users to view and purchase tickets to SalonTalks events online. Users can easily create personal accounts and profiles to access their information and order history. The site also enables administrators to manage events and respond to contact inquiries. The live site can be found [here](https://salon-talks-af192748bd52.herokuapp.com).
 
 ## Table of Contents
-- [The Salon](#the-salon)
+- [The SalonTalks](#salontalks)
 - [UX](#ux)
 - [Typography](#typography)
+- [Color Palette](#color-palette)
 - [User Stories](#user-stories)
+- [Wireframes](#wireframes)
 - [Features](#features)
-- [Existing Features](#existing-features)
-- [Site Pages](#site-pages)
-- [User Features](#user-features)
-- [Admin Features](#admin-features)
+  - [Existing Features](#existing-features)
+  - [Site Pages](#site-pages)
+  - [User Features](#user-features)
+  - [Admin Features](#admin-features)
 - [Future Features](#future-features)
 - [Tools & Technologies Used](#tools--technologies-used)
 - [Database Design](#database-design)
 - [Agile Development Process](#agile-development-process)
-- [GitHub Projects](#github-projects)
-- [GitHub Issues](#github-issues)
-- [MoSCoW Prioritization](#moscow-prioritization)
+  - [GitHub Projects](#github-projects)
+  - [GitHub Issues](#github-issues)
+  - [MoSCoW Prioritization](#moscow-prioritization)
 - [Ecommerce Business Model](#ecommerce-business-model)
 - [Search Engine Optimization (SEO) & Social Media Marketing](#search-engine-optimization-seo--social-media-marketing)
-- [Keywords](#keywords)
-- [Sitemap](#sitemap)
-- [Robots](#robots)
-- [Social Media Marketing](#social-media-marketing)
-- [Newsletter Marketing](#newsletter-marketing)
-- [Testing](#testing)
+  - [Keywords](#keywords)
+  - [Sitemap](#sitemap)
+  - [Robots](#robots)
+- [Testing & Validation](#testing--validation)
 - [Deployment](#deployment)
-- [Postgress SQL Database](#postgress-sql-database)
-- [Amazon AWS](#amazon-aws)
-- [S3 Bucket](#s3-bucket)
-- [IAM](#iam)
-- [Final AWS Setup](#final-aws-setup)
-- [Stripe API](#stripe-api)
-- [Gmail API](#gmail-api)
-- [Heroku Deployment](#heroku-deployment)
-- [Local Deployment](#local-deployment)
-- [Cloning](#cloning)
-- [Forking](#forking)
+  - [Postgres SQL Database](#postgres-sql-database)
+  - [Amazon AWS](#amazon-aws)
+    - [S3 Bucket](#s3-bucket)
+    - [IAM](#iam)
+    - [Final AWS Setup](#final-aws-setup)
+  - [Stripe API](#stripe-api)
+  - [Gmail API](#gmail-api)
+  - [Heroku Deployment](#heroku-deployment)
+  - [Local Deployment](#local-deployment)
+    - [Cloning](#cloning)
+    - [Forking](#forking)
 - [Credits](#credits)
 - [Content](#content)
 - [Media](#media)
 - [Acknowledgements](#acknowledgements)
 
-
-## The SalonTalks
-SalonTalks is a fully functioning e-commerce web application. The site allows users to view and purchase tickets to SalonTalks events online. Users can easily create personal accounts and profiles and see their information and order history on the site. The site also enables administrators to add, edit and remove events as well as view and respond to contact enquiries. The live site can be found [here](https://salon-talks-af192748bd52.herokuapp.com)
-
 ## UX
-The design philosophy was to create a clear and engaging look for the target customers. Relevant information is presented in a salient and clean manner, allowing the user to easily navigate through the site to browse and make their purchase as well as finding contact information for more help and support.
+The design philosophy focuses on creating a clear and engaging experience for the target customers. Relevant information is presented in a salient and clean manner, allowing users to navigate easily through the site to browse and make purchases.
 
-### Typography
+## Typography
+For a website targeting an older audience, readability and clarity are prioritized:
 
-When choosing fonts for a website with an older audience, especially those who may have vision problems, it's important to prioritize readability and clarity. 
+- **Headings:** Lato Bold
+- **Body Text:** Open Sans Regular
+- **Button Text/CTA:** Lato
 
-**Headings:** Lato bold
-**Body text:** Open Sans regular
-**Headings:** Button text/CTA: Lato 
+All fonts are available for free on [Google Fonts](https://fonts.google.com/selection?query=open+sa).
 
-All these fonts are available for free on 
-[Google Fonts](https://fonts.google.com/selection?query=open+sa)
+## Color Palette
+The color palette was created using [Coolors](https://coolors.co/db6c1b-704c5e-fdf9f8-000000-7d8570-ffffff) and evaluated with ChatGPT:
 
+![Color Palette](documentation/design/colors.png)
 
-### Color Palette
-I have used [coolors](https://coolors.co/db6c1b-704c5e-fdf9f8-000000-7d8570-ffffff) to create the color palette for the project. Then I have evaluated the palette using ChatGPT.
+### Readability & Accessibility
+The palette combines warm tones with calming colors, ensuring good contrast for readability. Here are the key colors used:
 
-![here](https://github.com/users/Josseyo/projects/8)
+- **Cocoa Brown (#DB6C1B):** Versatile for buttons and text on light backgrounds.
+- **Eggplant (#704C5E):** Adds depth and sophistication, suitable for secondary text.
+- **Snow (#FDF9F8):** Soft white for backgrounds, enhancing brightness.
+- **Black (#000000):** Primary text color providing depth.
+- **Reseda Green (#7D8570):** Calming background color.
 
-![colors](documentation/design/colors.png)
+## User Stories
+All user stories can be found in the linked GitHub project [here](https://github.com/users/Josseyo/projects/8).
 
-**Cocoa Brown (#DB6C1B)**
+![Kanban Board](documentation/project_setup/kanban_userstories.png)
 
-This rich, warm brown maintains cohesion with the Rufous and Xanthous tones while providing good contrast. It’s a versatile color that could be used for buttons, text on light backgrounds, or accents.
+## Wireframes
+Explore the [Balsamiq wireframes](https://balsamiq.cloud/sr8qece/ptjxrgq).
 
-**Eggplant (#704C5E)**
+### Homepage
+![Home](documentation/wireframes/Home.png)
+- **Header:** Logo, Navigation (Home, Products, About, Contact), Search
+- **Main:** Cover image with call to action and ticket purchase button
+- **Footer:** Social media links
 
-This subtle purple adds depth and sophistication to the palette. It contrasts nicely with the warmer tones (Cocoa Brown) without overwhelming them. Eggplant would work well for secondary text, borders, or backgrounds.
+### Event List View
+![Event List View](documentation/wireframes/Event_list.png)
+- **Header:** Same as homepage
+- **Main:** Sort options, Grid of products
+- **Footer:** Social media links
 
-**Snow (#FDF9F8)**
+### Product Detail Page
+![Event Details View](documentation/wireframes/Event_detail.png)
+- **Header:** Same as homepage
+- **Main:** Event details with images, description, and purchase options
+- **Footer:** Social media links
 
-This soft, almost ethereal white has subtle hints of warmth. It evokes a sense of tranquility and purity, enhancing the overall brightness of the design. Snow can be effectively used for backgrounds, providing a clean canvas that allows other colors to stand out, or for text on darker backgrounds to ensure readability.
+### Shopping Bag
+![Shopping Bag](documentation/wireframes/Bag.png)
+- **Header:** Same as homepage
+- **Main:** List of cart items with total cost and checkout options
+- **Footer:** Social media links
 
-**Black (#000000)**
+### Checkout
+![Checkout](documentation/wireframes/Checkout.png)
+- **Header:** Same as homepage
+- **Main:** Shipping and payment information
+- **Footer:** Social media links
 
-The black adds depth to the palette. Utilized for primary text. Its versatility allows it to anchor the design, providing a strong foundation that balances the warmth of Cocoa Brown and the softness of Snow.
+### Checkout Success
+![Checkout Success](documentation/wireframes/Checkout_success.png)
+- **Header:** Same as homepage
+- **Main:** Order confirmation details
+- **Footer:** Social media links
 
-**Reseda Green (#7D8570)**
+### Email Order Confirmation
+![Confirmation Email](documentation/wireframes/Email_confirmation.png)
+- **Content:** Order summary and customer information
 
-This muted green adds a nice balance to the palette. It’s calming and pairs well with brighter tones like the Cocoa Brown. It can be great for backgrounds or secondary elements, as it doesn't dominate the visual space.
+### My Account
+![My Account](documentation/wireframes/My_account.png)
+- **Header:** Same as homepage
+- **Sections:** Profile, Order History, Payment Methods
+- **Footer:** Social media links
 
-### Readability & Accessibility:
-The color palette feels well-balanced, combining warm tones with a touch of calmness from the Eggplant and Reseda Green. The earthy and muted tones will give your website a grounded, inviting feel without being too loud. 
-
-The palette has good contrast when pairing lighter colors with the darker colors. This ensures that text and buttons remain readable for all users
-
-### User Stories
-All user stories can be found in a linked GitHub project [here](https://github.com/users/Josseyo/projects/8)
-
-![kanban](documentation/project_setup/kanban_userstories.png)
-
+### Mobile Views
+![Mobile Example Views](documentation/wireframes/Mobile_views.png)
 
 ## Features
 
 ### Existing Features
 - Discount feature
-- Meeting link added to order confirmation
+- Meeting link included in order confirmation
+- The links for all purchased products are included in the confirmation email.
+- The links are not visible in the product details or shop until after purchase.
 - Manage products and contact requests from frontend
 - Newsletter subscription signup
 
@@ -111,153 +141,162 @@ All user stories can be found in a linked GitHub project [here](https://github.c
 
 | Home Page | Mobile View |
 |-----------|-------------|
-| ![home page](documentation/features/sitepages/home.png) | ![home page mobile](documentation/features/sitepages/home_mobile.png) |
-| The main homepage for the site. Hero image is large and striking with a call to action button to invite users to enter and explore and purchase events. All pages have a search field and navbar at the top of the page to easily find any page and information on the site. |  |
+| ![Home Page](documentation/features/sitepages/home.png) | ![Home Page Mobile](documentation/features/sitepages/home_mobile.png) |
 
+<div style="width: 100%; max-width: 600px; margin: 0 auto;">
+    The main homepage for the site. The hero image is large and striking. A large heading tells users they are in the right place, and a call to action button invites users to enter and explore the site products.
+</div>
 
 
 #### Footer
-![Footer with social links](documentation/features/sitepages/social_links.png)
+![Footer with Social Links](documentation/features/sitepages/social_links.png)
 
-
-
+### Event List View
 | Event List View | Sort Options |
 |------------------|--------------|
-| ![Event list view](documentation/features/sitepages/all_product_list.png) <br> Displays an overview of all Salon Talks available for the user to purchase. This view displays images of the events along with essential information including title, date, time, price, and category. The Salon Talks are displayed in a pleasing responsive grid layout, making it easy to browse the events. The events utilize a mouse-hover animation to enhance the interactivity of the page. | ![Sort options](documentation/features/sitepages/sort_options.png) <br> On all list views, Salon Talks can also be filtered and sorted by name, category, date, and price. |
+| ![Event List View](documentation/features/sitepages/all_product_list.png) | ![Sort Options](documentation/features/sitepages/sort_options.png) |
 
+<div style="width: 100%; max-width: 600px; margin: 0 auto;">
+    Displays the Salons available for the user to purchase. Displays images of products and their essential information including title, description, price, category, start time and end time. Salons are displayed in a pleasing responsive grid layout, making it easy for a user to browse the Salons. Salons utilise a mouse-hover animation to add to the interactivity of the page. Salons can also be filtered and sorted by event/name, date, time, category, host. 
+	Administrators viewing this page can see links under each Salon to edit or delete the event.
+</div>
 
+### Categories
+![Categories](documentation/features/sitepages/categories_product_lists_page.png)
+Events are categorized for easy navigation.
 
-
-#### Categories
----
-![Event list view](documentation/features/sitepages/categories_product_lists_page.png)
-![Event list view](documentation/features/sitepages/category_hover.png)
-Events are categorized into two main groups, each with two subcategories. Available events are displayed with information buttons linking to their respective subcategory pages.
-
+### Event Detailed View
 | Event Detailed View | Success Bag Toast |
 |---------------------|-------------------|
-| ![Event detail view](documentation/features/sitepages/product_detail.png) | ![Success bag toast](documentation/features/sitepages/success_bag_toast.png) |
-| Displays images of Salon Talks including title, date, start time, category, description of the Salon Talks subject, category, and price. Users can easily adjust the quantity and add it to the bag. | Via toasts, users can see a summary of their basket whenever an item is added, allowing the user to quickly see the new state of their basket, without having to navigate away from the page they are currently on. |
+| ![Event Detail View](documentation/features/sitepages/product_detail.png) | ![Success Bag Toast](documentation/features/sitepages/success_bag_toast.png) |
+<div style="width: 100%; max-width: 600px; margin: 0 auto;">
 
 
+### Shopping Bag
+![Shopping Bag](documentation/features/sitepages/checkout.png)
 
-#### Shopping Bag
-![Shopping bag](documentation/features/sitepages/checkout.png)
-Shopping bag page. Displays all items currently in the user's shopping bag. Users get a message if their basket is empty, otherwise they will see a list of SalonTalks that they have selected with a button to keep browsing to shop more, and another to navigate to the checkout page.
+Displays all items currently in the user's shopping basket. Users get a message if their basket is empty, otherwise they will see a list of events that they have selected with a button to navigate to the events page, and another to navigate to the checkout page.
 
-#### Checkout Page
-![Secure checkout](documentation/features/sitepages/secure_checkout.png)
-Checkout page. Displays an order summary of the items that are being prepared for purchase with accompanying item details. Displays a total cost of the order to the user. The user also sees a form to fill in their personal details. For logged in users, these details will be pre-filled if the user has provided that information in the past. A checkbox allows users to save entered information to their profile. A payment input form exists at the bottom of the page for a user to enter their payment card information. A message below this warns the user that advancing will complete the purchase and incur a charge to their card.
+### Checkout Page
+![Secure Checkout](documentation/features/sitepages/secure_checkout.png)
 
-#### Checkout Success Page
-![Order success](documentation/features/sitepages/order_success.png)
-Checkout Success Page. Displays a thank you message to the user, as well as a toast message informing that a confirmation email has also been sent. Message also displays a unique order number generated by uuid.<br>
+Displays an order summary of the items that are being prepared for purchase with accompanying item details. Displays a total cost of the order to the user. The user also sees a form to fill in their personal details. For logged in users, these details will be pre-filled if the user has provided that information in the past. A checkbox allows users to save entered information to their profile. A payment input form exists at the bottom of the page for a user to enter their payment card information. A message below this warns the user that advancing will complete the purchase and incur a charge to their card.
 
-#### Email order confirmation
-![Email order confirmation](documentation/features/sitepages/email_order_confirmation.png)
-The order confirmation email contains all the relevant information about the order and event. Includes link to the purchased event.
+### Checkout Success Page
+![Order Success](documentation/features/sitepages/order_success.png)
 
-#### About Page
-![Event list view](documentation/features/sitepages/about.png)
-About page. Gives users essential information about The Salons. A button to browse the events helps to keep the user engaged with the presented information.
+Displays a thank you message to the user, as well as a message telling the order confirmation has been emailed. An order summary with all the relevant information, including a unique order number and the purchased event link is displayed.
 
-#### FAQ
-![faq](documentation/features/sitepages/faq.png)
+### Email Order Confirmation
+![Email Order Confirmation](documentation/features/sitepages/email_order_confirmation.png)
+
+The order confirmation email includes the same information as the checkout success page. It also include information how to contact us for any queries.
+
+### About Page
+![About Page](documentation/features/sitepages/about.png)
+<div style="width: 100%; max-width: 600px; margin: 0 auto;">
+ Gives users essential information about The SalonTalks. At the end of the text a "Browse SalonTalks" button is visible to keep the user engaged with the presented information.
+
+
+### FAQ
+![FAQ](documentation/features/sitepages/faq.png)
+
 FAQ Page. Displays the most frequently asked questions about the site. Lets users know essential information and quells worries that they may have about the site and its products. Animation and accordion serve to make the information engaging and clean.
 
-#### Contact
-![Contact](documentation/features/sitepages/contact.png)
-Contact Page. Users can contact the site owner using the contact form. If the user is logged in, their email is pre-filled in the email input field. Users can choose from a selection of subjects and leave their message via the text box.
+### Contact
+![Contact Page](documentation/features/sitepages/contact.png)
 
-#### Contact success
-![Contact success page](documentation/features/sitepages/)
+ Users can contact the site owner using the contact form. Users can choose from a selection of subjects and leave their message via the text box.
 
-Contact Success Page. Users see this page after sending a contact message via the contact page. This page serves to confirm to the user that their message has been sent successfully. A short message informs the user that their contact message has been received, and that one of the team will respond within two working days.
+### Contact Success
+![Contact Success Page](documentation/features/sitepages/message_sent.png)
 
-#### Newsletter subscription
-![Newsletter subscription](documentation/features/sitepages/newsletter_subscription.png)<br>
-**Submit email**
-User can submit there email to sign up for newsletter subscription.<br><br>
-![Newsletter subscription](documentation/features/sitepages/already_subscribed_toast.png)<br>
-The user will be notified if the email has already been subscribed.<br><br>
+Users see this page after sending a contact message via the contact page. This page serves to confirm to the user that their message has been sent successfully. A short message informs the user that their contact message has been received, and that one of the team will respond as soon as possible
+
+### Newsletter Subscription
+![Newsletter Subscription](documentation/features/sitepages/newsletter_subscription.png)
+
+Users can signup for Newsletter subscription. The subscription form can be found in the navbar on all pages. 
+
 ![Newsletter subscription](documentation/features/sitepages/subscription_signup_suv.png)
-Users can subscribe to the site newsletter. The subscription form can be found in the navbar on all pages. Users see a confirmation message after subscribing. In the newsletter there will be an unsubscribe link in case the user change their mind.
 
-#### Custom Error Pages
-![404 page](documentation/features/sitepages/.png)
-Custom error handler pages. These pages display when a user encounters one of the following common errors: 400, 403, 404, 500. These provide a more user-friendly error page than the user would see otherwise and includes an informative message and button to return to the home of the site.
+Users see a confirmation toast after subscribing.
 
-### User Features
+![Newsletter subscription](documentation/features/sitepages/already_subscribed_toast.png)<br>
 
-#### User Registration
+The user will be notified if the email has already been subscribed.<br><br>
+
+
+In the newsletter there will be an unsubscribe link in case the user change their mind.
+
+### Custom Error Pages
+![404 Page](documentation/features/sitepages/404.png)
+
+These provide a more user-friendly error page than the user would see otherwise and includes an informative message and button to return to the home of the site.
+
+## User Features
+
+### User Registration
 ![Signup](documentation/features/sitepages/signup.png)
-Users can register for an account using a front-end form. This creates a user object in the database and automatically secures the user's sensitive information.<br><br>
+Users can register for an account using a front-end form. This creates a user object in the database and automatically secures the user's sensitive information
+
 ![signup verification email](documentation/features/sitepages/signup_verification_email.png)
 
 When user has signed up they receive an email verification.
 
-#### User Login
-![Newsletter subscription](documentation/features/sitepages/signin.png)
+
+### User Login
+![User Login](documentation/features/sitepages/signin.png)
 Users who have made an account can quickly and easily log in to their account in order to access the login-required functionality of the site.
-
-#### User Logout
-![Newsletter subscription](documentation/features/sitepages/signout.png)
-Users who are logged in can easily log out in order to stop access to their account-based information and functionality
-
-#### User Password Recovery
-![Newsletter subscription](documentation/features/sitepages/pwd_reset.png)
-Users who have forgotten their password can recover their password via the forgot password link on the login page. Users will enter their email and get a password reset link sent to their account email which they can use to set a new password.
+#### Login Redirect
+![login verification message](documentation/features/sitepages/login_message.png)
+After logging in, the user are sent to the home page. A message shows that you are logged in and shows if you have something placed in your shopping bag.
 
 #### Login Dependant Navbar Links<br>
 ![dependant navbar links](documentation/features/sitepages/dependant_nav.png)
 <br>
 When users are logged in 'Register' and 'Login' links are replaced with 'My Account' links. This provides the user with visual feedback upon logging in, as well as removing links that they will not need
 
-#### Login Redirect
-![login verification message](documentation/features/sitepages/login_message.png)
-After logging in, the user are sent to the home page. A message shows that you are logged in and shows if you have something placed in your shopping bag.
 
+### User Logout
+![User Logout](documentation/features/sitepages/signout.png)
+Users who are logged in can easily log out in order to stop access to their account-based information and functionality
 
-#### User Profile
-![Newsletter subscription](documentation/features/sitepages/my_profile_with_orders.png)
-User profiles are automatically created upon user registration. This assigns each user a profile. Users can update their profile information using a front-end form located on their user profile page. This allows users to update profile information or correct possible mistakes made at registration. Here they can also see their order history details.
+### User Password Recovery
+![Password Recovery](documentation/features/sitepages/pwd_reset.png)
+Users who have forgotten their password can recover their password via the forgot password link on the login page. Users will enter their email and get a password reset link sent to their account email which they can use to set a new password.
 
+### User Profile
+![User Profile](documentation/features/sitepages/my_profile_with_orders.png)
+User profiles are automatically created upon user registration. Displays a user's profile information. Lets a user see their relevant profile information in a clean and simple way, and contains an update form that users can use to update their profile information. Users can also see their order history, with full details of their order as well as links to see past order confirmations.
 
-### Admin Features
-Features available to signedin administrators.
+## Admin Features
 
-#### Add and Edit Product Page
+### Add and Edit Product Page
+![Edit/Delete Links](documentation/features/sitepages/edit_delete_links.png)
+
 If you are logged in as administrator you will see links under each event to edit (blue link) or delete (red link) the event.
-
-![Edit Delete links](documentation/features/sitepages/edit_delete_links.png)
 ![edit event](documentation/features/sitepages/edit_event.png)
-Admins can use this form to edit SalonTalks on the site. Prefilled form inputs allow objects to be edited simply and quickly.
-![Newsletter subscription](documentation/features/sitepages/product_management.png)
-The user-friendly form inputs allow new SalonTalks to be created almost as quickly.
+**Add Event** Administrators can use a front-end form to create new site products. The form is simple and clean and automatically formats and displays the created product in the same manner as existing products. The form is found under My Account/Product management
 
-**Contact Response**  
-![Contact response](documentation/features/sitepages/contact_response.png)
-Admins can see the detils of each user-submitted contact message. This includes the user's email, name, subject, message content, and the status of the response. 
+**Edit Event** Administrators can use a front-end form to update existing events. If the current logged-in user has admin (superuser) privileges, an edit button will appear under products which allows that user to edit the product's details.
 
-There is also a link to easily return to the contact request list page.
+### Contact Response
+![Contact Requests/Response list](documentation/features/sitepages/contact_response_list.png)
 
-Administrators can reply to user contact messages using an email form that appears when they click the "respond to message" button on the contact details page. A text area will open, pre-filled with the user's name and a default email sign-off for convenience. The "Send Email" button sends the response to the user's provided email address, using the text box content as the email body.
+Admins can see a list of all of the contact messages sent by users. Messages are displayed in an easy-to-read table, with all of the salient information presented. Messages are automatically sorted with those messages which have not been responded to at the top of the list, with the oldest (the message which has gone unanswered the longest) at the top. Admins can click on the view details links to see the full contact messages, as well as respond to the message.
+
+### Contact Details Page
+![Contact Response details page](documentation/features/sitepages/contact_response.png)
+Admins can see details of a contact message left by the user. All of the contact message's information can be seen, including email, name, subject, message, and whether this contact message has been responded to. Contact messages can be responded to or deleted via the large buttons at the bottom of the page. A link navigates back to the contact requests page
 
 **Response Alert**
 ![Response alert](documentation/features/sitepages/response_alert.png)
 
----
-
-**Webhooks**  
-The platform utilizes a secure and reliable webhook system to prevent any interruptions or corruption during the payment process, whether due to user mistakes or malicious actions. Webhooks are integrated through the Stripe payment system and are managed on the Stripe website, specifically via the Python code located in `checkout/webhook_handler.py` and `checkout/webhooks.py`.
-
-**Delete Contact Message**  
-Admins have the capability to delete contact messages from the database through a front-end deletion function available on the contact message details page.
-
 Once a response is sent, the contact message is automatically marked as "Responded," and the "respond to message" button will no longer be visible on that message's details page.
 
---- 
-
+### Webhooks
+The site uses a secure and robust webhook system to ensure that the payment process are not interrupted and corrupted, either through user error or malicious intent. Webhooks are incorporated via the Stripe payment system and are handled on the Stripe website, by way of the python code in checkout > webhook_handler.py and checkout > webhooks.py
 ## Future Features
 
 - **Remaining Seats**: Limit ticket availability.
@@ -316,8 +355,39 @@ List of tools and technologies utilized in the project.
 https://temp-mail.org/
 
 ## Database Design
-Overview of the database structure and design.
+![ERD](documentation/project_setup/erd.svg)
 
+The relationships between the models in the ERD:
+
+1. **Order and OrderLineItem**:
+   - **Relationship**: One-to-Many
+   - **Description**: An `Order` can contain multiple `OrderLineItems`. Each `OrderLineItem` is associated with a single `Order`, indicating that it represents a specific product within that order.
+
+2. **OrderLineItem and Product**:
+   - **Relationship**: Many-to-One
+   - **Description**: Each `OrderLineItem` is linked to one `Product`. A `Product` can appear in multiple `OrderLineItems`, reflecting that the same product can be ordered multiple times in different orders.
+
+3. **Order and UserProfile**:
+   - **Relationship**: Many-to-One
+   - **Description**: An `Order` is associated with one `UserProfile`. Each `UserProfile` can have multiple `Orders`, representing the order history for that user.
+
+4. **Product and Category**:
+   - **Relationship**: Many-to-One
+   - **Description**: Each `Product` belongs to one `Category`. A `Category` can contain multiple `Products`, allowing for organization of products into different categories.
+
+5. **UserProfile and Order**:
+   - **Relationship**: One-to-Many
+   - **Description**: A `UserProfile` can have multiple `Orders`, tracking the order history for that user profile.
+
+6. **SubscribeRequest and Subscribe**:
+   - **Relationship**: Many-to-One
+   - **Description**: Each `SubscribeRequest` is linked to one `Subscribe`. This indicates that a subscription request is made for a specific subscription type.
+
+7. **CollaborateRequest and Contact**:
+   - **Relationship**: Many-to-One
+   - **Description**: Each `CollaborateRequest` can be associated with one `Contact`. This shows that a collaboration request may be part of a broader contact inquiry.
+
+---
 ## Agile Development Process
 
 ### GitHub Projects
@@ -333,22 +403,18 @@ Overview of issues tracked in the GitHub repository.
 
 ### MoSCoW Prioritization
 The MoSCoW method was used with accompanying custom Github project labels to help prioritise the important tasks for the available time.
-
-**Must Have:** Core functionalities for MVP.
-**Should Have:** Important features for future development.
-**Could Have:** Enhancements for user experience.
-**Will Not Have:** Would-be-nice-to-have-features, for future consideration.
+- **Must Have:** Core functionalities for MVP.
+- **Should Have:** Important features for future development.
+- **Could Have:** Enhancements for user experience.
+- **Will Not Have:** Features for future consideration.
 
 ## Ecommerce Business Model
-
-This site operates on a Business-to-Customer (B2C) model, selling events directly to individual customers. It represents a straightforward B2C approach, focusing solely on one-time transactions without the need for subscriptions.
-
+SalonTalks operates on a Business-to-Customer (B2C) model, focusing on one-time transactions.
 Currently in the early stages of development, the site features a newsletter signup form and links for social media marketing. Utilizing social media can help create a community around the business and increase site traffic, particularly on larger platforms like Facebook.
 
 The newsletter list enables the business to communicate regularly with users, providing updates on last-chance events, new offerings, host announcements, and more.
 
 ## Search Engine Optimization (SEO) & Social Media Marketing
-Strategies for SEO and social media marketing.
 
 ### Keywords
 
@@ -586,7 +652,6 @@ Once you've created a Gmail (Google) account and logged-in, follow these series 
 	- `EMAIL_HOST_USER` = user's own personal Gmail email address
 
 ### Heroku Deployment
-### Heroku Deployment
 
 This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
@@ -725,15 +790,15 @@ Here’s an improved version of the "Credits" section for your README file, with
 
 ## Credits
 
+
 ### Contributors
-- **[Additional Contributors]**: List other contributors here.
 
 ### Resources and Tutorials
 - **Django eCommerce Tutorial**: Comprehensive guide for building an eCommerce site using Django.
   - [GitHub Repository](https://github.com/imanaspaul/Django-eCommerce-tutorial-manascode/blob/master/ecommerce/ecommerce/settings.py)
   - [Part Two - Django Allauth](https://manascode.com/django-e-commerce-tutorial-part-two-django-allauth/)
   
-- **Web Piano Academy**: Reference for web development practices.
+- **Web Piano Academy**: Reference for readme and contact management.
   - [GitHub Repository](https://github.com/LewisMDillon/web-piano-academy/blob/main/README.md)
 
 - **EmailJS**: Service for sending emails from your application.
@@ -745,7 +810,6 @@ Here’s an improved version of the "Credits" section for your README file, with
 - **Code Institute Course**: Resource for understanding Django fundamentals.
   - [Course Material](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+4/courseware/eb05f06e62c64ac89823cc956fcd8191/9c06563251a34ed19f5d4273ab4d55ab/?child=first)
 
-### Additional Resources
 - **FAQ Creation**: 
   - [Django Easy FAQ](https://pypi.org/project/django-easy-faq/)
 
@@ -765,16 +829,16 @@ Here’s an improved version of the "Credits" section for your README file, with
 
 
 ### Content
-Overview of the content used in the project.
+ChatGPT has been used to create categories, product descriptions, product images and evaluate the color palette.
 
 ### Media
 | [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
-
 
 ### Acknowledgements
 Code Institute for providing lms, tutorsupport 
 Rory Sheridan my mentor for valuable tips and support
 Christina Åhman for laughter and support 
+Lotta Tuvstedt for the idea and help with content
 
 ### Issues on the road
 October 4th I got pull & push issues when trying to update previous pushed commits accordin to followin instructions https://algerwrites.medium.com/how-to-remove-env-from-git-commit-history-1d594917b376 . On tutors recommendation I started a new workspace. Which resulted in confusion with code and commits being "broken". 73 pulled and 78 pushed but got stuck in the middle. 

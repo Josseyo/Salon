@@ -1,65 +1,53 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
-        <ul>
-            <li class="nav-item dropdown">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="All Salon Talks">
-                    All Salon Talks
-                </a>
-                <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                    <a href="{% url 'products' %}" class="dropdown-item">All Salon Talks</a>
-                    <a href="{% url 'products' %}?sort=date&direction=asc" class="dropdown-item">By Date</a>
-                    <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                    <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
-                    <a href="{% url 'home' %}" class="dropdown-item">Home</a>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="All Salon Talks">
+                All Salon Talks
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="{% url 'products' %}" class="dropdown-item">All Salon Talks</a>
+                <a href="{% url 'products' %}?sort=date&direction=asc" class="dropdown-item">By Date</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
+                <a href="{% url 'home' %}" class="dropdown-item">Home</a>
+            </div>
+        </li>
 
-                </div>
-            </li>
-        </ul>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="thoughtful-exchanges-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Thoughtful Exchanges">
+                Thoughtful Exchanges
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="thoughtful-exchanges-link">
+                <a href="{% url 'products' %}?category=life_conversation" class="dropdown-item">Life Conversation</a>
+                <a href="{% url 'products' %}?category=discussing_present" class="dropdown-item">Discussing the Present</a>
+                <a href="{% url 'products' %}?category=life_conversation,discussing_present" class="dropdown-item">All Thoughtful Exchanges</a>
+            </div>
+        </li>
 
-        <ul>
-            <li class="nav-item dropdown">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="thoughtful-exchanges-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Thoughtful Exchanges">
-                    Thoughtful Exchanges
-                </a>
-                <div class="dropdown-menu border-0" aria-labelledby="thoughtful-exchanges-link">
-                    <a href="{% url 'products' %}?category=life_conversation" class="dropdown-item">Life Conversation</a>
-                    <a href="{% url 'products' %}?category=discussing_present" class="dropdown-item">Discussing the Present</a>
-                    <a href="{% url 'products' %}?category=life_conversation,discussing_present" class="dropdown-item">All Thoughtful Exchanges</a>
-                </div>
-                
-            </li>
-        </ul>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="essence_living-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Essence of Living">
+                Essence of Living
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="essence_living-link">
+                <a href="{% url 'products' %}?category=food_drink" class="dropdown-item">Food & Drink</a>
+                <a href="{% url 'products' %}?category=roots_blooms" class="dropdown-item">Roots & Blooms</a>
+                <a href="{% url 'products' %}?category=food_drink,roots_blooms" class="dropdown-item">All Essence of Living</a>
+            </div>
+        </li>
 
-        <ul> 
-            <li class="nav-item dropdown">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="essence_living-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Essence of Living">
-                    Essence of Living
-                </a>
-                <div class="dropdown-menu border-0" aria-labelledby="essence_living-link">
-                    <a href="{% url 'products' %}?category=food_drink" class="dropdown-item">Food & Drink</a>
-                    <a href="{% url 'products' %}?category=roots_blooms" class="dropdown-item">Roots & Blooms</a>
-                    <a href="{% url 'products' %}?category=food_drink,roots_blooms" class="dropdown-item">All Essence of Living</a>
-                </div>
-            </li>
-        </ul>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="About">
+                About
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="about-link">
+                <a href="{% url 'about' %}" class="dropdown-item">About</a>
+                <a href="{% url 'faq' %}" class="dropdown-item">FAQ</a>
+                <a href="{% url 'contact-form' %}" class="dropdown-item">Contact</a>
+            </div>            
+        </li>
 
-        <ul> 
-            <li class="nav-item dropdown">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="About">
-                    About
-                </a>
-                <div class="dropdown-menu border-0" aria-labelledby="about-link">
-                    <a href="{% url 'about' %}" class="dropdown-item">About</a>
-                    <a href="{% url 'faq' %}" class="dropdown-item">FAQ</a>
-                    <a href="{% url 'contact-form' %}" class="dropdown-item">Contact</a>
-                </div>            
-            </li>
-        </ul>
-
-        <ul> 
-            <li class="nav-item">
-                <a href="{% url 'subscribe' %}" class="logo-font font-weight-bold nav-link text-black mr-5" aria-label="Newsletter Subscription">Newsletter</a>
-            </li>
-        </ul> 
+        <li class="nav-item">
+            <a href="{% url 'subscribe' %}" class="logo-font font-weight-bold nav-link text-black mr-5" aria-label="Newsletter Subscription">Newsletter</a>
+        </li>
     </ul>
 </div>

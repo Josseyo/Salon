@@ -147,7 +147,6 @@ Explore the [Balsamiq wireframes](https://balsamiq.cloud/sr8qece/ptjxrgq).
     The main homepage for the site. The hero image is large and striking. A large heading tells users they are in the right place, and a call to action button invites users to enter and explore the site products.
 </div>
 
-
 #### Footer
 ![Footer with Social Links](documentation/features/sitepages/social_links.png)
 
@@ -158,7 +157,7 @@ Explore the [Balsamiq wireframes](https://balsamiq.cloud/sr8qece/ptjxrgq).
 
 <div style="width: 100%; max-width: 600px; margin: 0 auto;">
     Displays the Salons available for the user to purchase. Displays images of products and their essential information including title, description, price, category, start time and end time. Salons are displayed in a pleasing responsive grid layout, making it easy for a user to browse the Salons. Salons utilise a mouse-hover animation to add to the interactivity of the page. Salons can also be filtered and sorted by event/name, date, time, category, host. 
-	Administrators viewing this page can see links under each Salon to edit or delete the event.
+    Administrators viewing this page can see links under each Salon to edit or delete the event.
 </div>
 
 ### Categories
@@ -169,8 +168,10 @@ Events are categorized for easy navigation.
 | Event Detailed View | Success Bag Toast |
 |---------------------|-------------------|
 | ![Event Detail View](documentation/features/sitepages/product_detail.png) | ![Success Bag Toast](documentation/features/sitepages/success_bag_toast.png) |
-<div style="width: 100%; max-width: 600px; margin: 0 auto;">
 
+<div style="width: 100%; max-width: 600px; margin: 0 auto;">
+    Displays detailed information about the selected event, including images, descriptions, and purchase options.
+</div>
 
 ### Shopping Bag
 ![Shopping Bag](documentation/features/sitepages/checkout.png)
@@ -190,13 +191,14 @@ Displays a thank you message to the user, as well as a message telling the order
 ### Email Order Confirmation
 ![Email Order Confirmation](documentation/features/sitepages/email_order_confirmation.png)
 
-The order confirmation email includes the same information as the checkout success page. It also include information how to contact us for any queries.
+The order confirmation email includes the same information as the checkout success page. It also includes information on how to contact us for any queries.
 
 ### About Page
 ![About Page](documentation/features/sitepages/about.png)
+
 <div style="width: 100%; max-width: 600px; margin: 0 auto;">
  Gives users essential information about The SalonTalks. At the end of the text a "Browse SalonTalks" button is visible to keep the user engaged with the presented information.
-
+</div>
 
 ### FAQ
 ![FAQ](documentation/features/sitepages/faq.png)
@@ -211,7 +213,7 @@ FAQ Page. Displays the most frequently asked questions about the site. Lets user
 ### Contact Success
 ![Contact Success Page](documentation/features/sitepages/message_sent.png)
 
-Users see this page after sending a contact message via the contact page. This page serves to confirm to the user that their message has been sent successfully. A short message informs the user that their contact message has been received, and that one of the team will respond as soon as possible
+Users see this page after sending a contact message via the contact page. This page serves to confirm to the user that their message has been sent successfully. A short message informs the user that their contact message has been received, and that one of the team will respond as soon as possible.
 
 ### Newsletter Subscription
 ![Newsletter Subscription](documentation/features/sitepages/newsletter_subscription.png)
@@ -226,8 +228,7 @@ Users see a confirmation toast after subscribing.
 
 The user will be notified if the email has already been subscribed.<br><br>
 
-
-In the newsletter there will be an unsubscribe link in case the user change their mind.
+In the newsletter, there will be an unsubscribe link in case the user changes their mind.
 
 ### Custom Error Pages
 ![404 Page](documentation/features/sitepages/404.png)
@@ -238,36 +239,42 @@ These provide a more user-friendly error page than the user would see otherwise 
 
 ### User Registration
 ![Signup](documentation/features/sitepages/signup.png)
-Users can register for an account using a front-end form. This creates a user object in the database and automatically secures the user's sensitive information
+
+Users can register for an account using a front-end form. This creates a user object in the database and automatically secures the user's sensitive information.
 
 ![signup verification email](documentation/features/sitepages/signup_verification_email.png)
 
-When user has signed up they receive an email verification.
-
+When the user has signed up, they receive an email verification.
 
 ### User Login
 ![User Login](documentation/features/sitepages/signin.png)
+
 Users who have made an account can quickly and easily log in to their account in order to access the login-required functionality of the site.
+
 #### Login Redirect
 ![login verification message](documentation/features/sitepages/login_message.png)
-After logging in, the user are sent to the home page. A message shows that you are logged in and shows if you have something placed in your shopping bag.
 
-#### Login Dependant Navbar Links<br>
+After logging in, the user is sent to the home page. A message shows that you are logged in and shows if you have something placed in your shopping bag.
+
+#### Login Dependent Navbar Links<br>
 ![dependant navbar links](documentation/features/sitepages/dependant_nav.png)
-<br>
-When users are logged in 'Register' and 'Login' links are replaced with 'My Account' links. This provides the user with visual feedback upon logging in, as well as removing links that they will not need
 
+<br>
+When users are logged in, 'Register' and 'Login' links are replaced with 'My Account' links. This provides the user with visual feedback upon logging in, as well as removing links that they will not need.
 
 ### User Logout
 ![User Logout](documentation/features/sitepages/signout.png)
-Users who are logged in can easily log out in order to stop access to their account-based information and functionality
+
+Users who are logged in can easily log out in order to stop access to their account-based information and functionality.
 
 ### User Password Recovery
 ![Password Recovery](documentation/features/sitepages/pwd_reset.png)
+
 Users who have forgotten their password can recover their password via the forgot password link on the login page. Users will enter their email and get a password reset link sent to their account email which they can use to set a new password.
 
 ### User Profile
 ![User Profile](documentation/features/sitepages/my_profile_with_orders.png)
+
 User profiles are automatically created upon user registration. Displays a user's profile information. Lets a user see their relevant profile information in a clean and simple way, and contains an update form that users can use to update their profile information. Users can also see their order history, with full details of their order as well as links to see past order confirmations.
 
 ## Admin Features
@@ -275,11 +282,13 @@ User profiles are automatically created upon user registration. Displays a user'
 ### Add and Edit Product Page
 ![Edit/Delete Links](documentation/features/sitepages/edit_delete_links.png)
 
-If you are logged in as administrator you will see links under each event to edit (blue link) or delete (red link) the event.
-![edit event](documentation/features/sitepages/edit_event.png)
-**Add Event** Administrators can use a front-end form to create new site products. The form is simple and clean and automatically formats and displays the created product in the same manner as existing products. The form is found under My Account/Product management
+If you are logged in as an administrator you will see links under each event to edit (blue link) or delete (red link) the event.
 
-**Edit Event** Administrators can use a front-end form to update existing events. If the current logged-in user has admin (superuser) privileges, an edit button will appear under products which allows that user to edit the product's details.
+![edit event](documentation/features/sitepages/edit_event.png)
+
+**Add Event**: Administrators can use a front-end form to create new site products. The form is simple and clean and automatically formats and displays the created product in the same manner as existing products. The form is found under My Account/Product management.
+
+**Edit Event**: Administrators can use a front-end form to update existing events. If the current logged-in user has admin (superuser) privileges, an edit button will appear under products which allows that user to edit the product's details.
 
 ### Contact Response
 ![Contact Requests/Response list](documentation/features/sitepages/contact_response_list.png)
@@ -288,7 +297,8 @@ Admins can see a list of all of the contact messages sent by users. Messages are
 
 ### Contact Details Page
 ![Contact Response details page](documentation/features/sitepages/contact_response.png)
-Admins can see details of a contact message left by the user. All of the contact message's information can be seen, including email, name, subject, message, and whether this contact message has been responded to. Contact messages can be responded to or deleted via the large buttons at the bottom of the page. A link navigates back to the contact requests page
+
+Admins can see details of a contact message left by the user. All of the contact message's information can be seen, including email, name, subject, message, and whether this contact message has been responded to. Contact messages can be responded to or deleted via the large buttons at the bottom of the page. A link navigates back to the contact requests page.
 
 **Response Alert**
 ![Response alert](documentation/features/sitepages/response_alert.png)
@@ -296,7 +306,8 @@ Admins can see details of a contact message left by the user. All of the contact
 Once a response is sent, the contact message is automatically marked as "Responded," and the "respond to message" button will no longer be visible on that message's details page.
 
 ### Webhooks
-The site uses a secure and robust webhook system to ensure that the payment process are not interrupted and corrupted, either through user error or malicious intent. Webhooks are incorporated via the Stripe payment system and are handled on the Stripe website, by way of the python code in checkout > webhook_handler.py and checkout > webhooks.py
+The site uses a secure and robust webhook system to ensure that the payment process is not interrupted and corrupted, either through user error or malicious intent. Webhooks are incorporated via the Stripe payment system and are handled on the Stripe website, by way of the python code in checkout > webhook_handler.py and checkout > webhooks.py.
+
 ## Future Features
 
 - **Remaining Seats**: Limit ticket availability.
@@ -304,7 +315,6 @@ The site uses a secure and robust webhook system to ensure that the payment proc
 - **Subscription Model**: Implement a subscription payment option for access to all SalonTalks, utilizing Django groups and Stripe integration for backend management and webhook updates.
 - **Newsletter Customization**: Develop a system for admins to customize and send newsletters, including a front-end form for text and images, integrated into newsletter views.
 - **Complete remaining user stories**: See the project backlog.
-
 
 ## Tools & Technologies
 List of tools and technologies utilized in the project.
@@ -832,7 +842,8 @@ Here’s an improved version of the "Credits" section for your README file, with
 ChatGPT has been used to create categories, product descriptions, product images and evaluate the color palette.
 
 ### Media
-| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
+| [TinyPNG](https://tinypng.com) | tool for image compression |<br>
+| [Flat Icon](https://flaticon.com) | favicon | 
 
 ### Acknowledgements
 Code Institute for providing lms, tutorsupport 

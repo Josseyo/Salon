@@ -281,6 +281,10 @@ STRIPE_WH_SECRET = os.getenv("STRIPE_WH_SECRET", "")
 
 
 # Content Security Policy
+CSP_DEFAULT_SRC = (
+    "'self'",
+)
+
 CSP_SCRIPT_SRC = (
     "'self'",
     "https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js",
@@ -304,6 +308,7 @@ CSP_STYLE_SRC = (
     "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/css/base.css",
     "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/css/checkout.css",
 )
+
 CSP_FONT_SRC = (
     "'self'",
     "https://fonts.gstatic.com",
@@ -313,9 +318,8 @@ CSP_FONT_SRC = (
 
 CSP_IMG_SRC = (
     "'self'",
-    "https:",
     "data:",
-    "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/media/",
+    "https://salontalks-e6485414bbd3.s3.amazonaws.com",
 )
 
 CSP_FRAME_SRC = ("'self'", "https://js.stripe.com")

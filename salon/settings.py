@@ -292,7 +292,7 @@ CSP_SCRIPT_SRC = (
     "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js",
     "https://js.stripe.com",
     "https://kit.fontawesome.com",
-    "'unsafe-inline'",
+   
     "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
     "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/faq/js/faq.js",
     "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/js/stripe_elements.js",

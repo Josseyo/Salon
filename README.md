@@ -475,7 +475,121 @@ email address to subcsribe to our newsletter.
 
 ## Testing & Validation
 
-Features and workflows were manually tested across different screen sizes and browser compatibility. The code was validated with:
+## Manual Testing Protocol
+Features and workflows were manually tested across different screen sizes and browser compatibility.
+
+### 1. User Story: Navigate the Site
+- **Test Case 1**: Verify all navigation links are functional.
+- **Test Case 2**: Check for broken links in the navigation menu.
+
+### 2. Browse a List of Upcoming Salons/Events
+- **Test Case 1**: Verify the list displays all upcoming events.
+- **Test Case 2**: Check for pagination or infinite scroll functionality.
+- **Test Case 3**: Verify event details are accessible from the list.
+
+### 3. Search for an Event
+- **Test Case 1**: Verify search functionality returns relevant results.
+- **Test Case 2**: Check for no results found message when applicable.
+- **Test Case 3**: Verify search filters work correctly.
+
+### 4. Filter by Category
+- **Test Case 1**: Verify filtering by category displays correct events.
+
+### 5. View Event Details
+- **Test Case 1**: Verify event details are displayed correctly.
+- **Test Case 2**: Check for the presence of images, dates, and descriptions.
+
+### 6. Create an Account
+- **Test Case 1**: Verify account creation with valid inputs.
+- **Test Case 2**: Check for validation messages on invalid inputs.
+- **Test Case 3**: Verify the user can log in after account creation.
+
+### 7. Email Confirmation After Registering
+- **Test Case 1**: Verify registration confirmation email is sent.
+- **Test Case 2**: Check email contains correct user information.
+- **Test Case 3**: Verify that the confirmation link in email is working.
+
+### 8. User Profile Management
+- **Test Case 1**: Verify user can update profile information.
+- **Test Case 3**: Verify profile changes are saved and reflected on the profile page.
+- **Test Case 2**: Verify user can change their password by clicking forgot password on the login page.
+
+### 9. Select Quantity
+- **Test Case 1**: Verify quantity selection updates the shopping bag total.
+- **Test Case 3**: Verify quantity selection reflects correctly in the shopping bag "preview".
+- **Test Case 2**: Verify that you can keep shopping.
+
+### 10. View Products in Shopping Bag
+- **Test Case 1**: Verify products are correctly added and displayed in the shopping bag.
+- **Test Case 2**: Check for the correct total price in the shopping bag.
+- **Test Case 3**: Verify the user can add and remove events from the shopping bag.
+- **Test Case 4**: Verify the shopping bag persists after logging in/out.
+
+### 11. View the Total of Purchase
+- **Test Case 1**: Verify total reflects all items in the shopping bag.
+- **Test Case 2**: Check for correct application of discounts.
+- **Test Case 3**: Verify total updates on quantity changes.
+
+### 12. Enter Payment Information
+- **Test Case 1**: Verify payment form accepts valid inputs.
+- **Test Case 2**: Check for validation on incorrect payment details.
+- **Test Case 3**: Verify secure transmission of payment information.
+
+### 13. Purchase Ticket
+- **Test Case 1**: Verify ticket purchase process completes successfully.
+- **Test Case 2**: Check for appropriate error messages on failed purchases.
+
+### 14. View Order Confirmation
+- **Test Case 1**: Verify order confirmation displays correct order details.
+- **Test Case 2**: Verify order confirmation is sent via email.
+- **Test Case 2**: Verify order is listed in My Account and that it can be clicked to come to the Event's detail view.
+- **Test Case 3**: Check for a unique order ID in the confirmation.
+
+### 15. Notifications
+- **Test Case 1**: Verify toast message appears on successful actions (e.g., ticket purchase).
+- **Test Case 2**: Verify the content of the toast message is correct.
+- **Test Case 3**: Verify notifications appear for relevant alerts (e.g., incorrect or missing input for required form fields).
+
+### 16. Manage Events
+- **Test Case 1**: Verify user can create a new event.
+- **Test Case 2**: Check for the ability to edit existing events.
+- **Test Case 3**: Verify deletion of events works as intended.
+
+### 17. Logout
+- **Test Case 1**: Verify that user can logout and login features are no longer accessed.
+- **Test Case 2**: Check that user has to confirm the signout before signing out.
+
+### 18. Newsletter
+- **Test Case 1**: Verify user can subscribe to the newsletter.
+- **Test Case 3**: Verify confirmation message functionality works.
+
+### 19. About the Site
+- **Test Case 1**: Verify the About page is accessible.
+- **Test Case 3**: Verify links to browse events work correctly.
+
+### 20. FAQ
+- **Test Case 1**: Verify the FAQ page is accessible.
+- **Test Case 2**: Check for clarity and relevance of answers.
+- **Test Case 3**: Verify the contact form and the subject option dropdown work correctly.
+
+### 21. Add an Event to the Store
+- **Test Case 1**: Verify Administrator can successfully add an event.
+- **Test Case 2**: Check for validation on required fields.
+- **Test Case 3**: Verify added event appears in the store.
+
+### 22. Contact Form
+- **Test Case 1**: Verify contact form is functional.
+- **Test Case 2**: Check for confirmation message after submission.
+- **Test Case 3**: Verify submission of invalid inputs returns errors.
+
+### 23. Contact Management
+- **Test Case 1**: Verify Admin can view contacts
+- **Test Case 2**: Verify the ability to respond to messages.
+- **Test Case 3**: Verify deletion of messages.
+- **Test Case 3**: Verify message is marked as replied when message has been responded to.
+
+
+## The code was validated with:
 
 - **HTML**: Validated using the [W3C HTML Validator](https://validator.w3.org/)
 - **CSS**: Validated using the [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)

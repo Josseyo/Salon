@@ -178,6 +178,11 @@ Events are categorized for easy navigation.
 
 Displays all items currently in the user's shopping basket. Users get a message if their basket is empty, otherwise they will see a list of events that they have selected with a button to navigate to the events page, and another to navigate to the checkout page.
 
+![Shopping Bag](documentation/features/sitepages/toast_remove_item_from_bag.png)
+
+A toast message is shown when item is removed from bag
+
+
 ### Checkout Page
 ![Secure Checkout](documentation/features/sitepages/secure_checkout.png)
 
@@ -477,6 +482,9 @@ Features and workflows were manually tested across different screen sizes and br
 - **JavaScript**: Validated using [JS Hint](https://jshint.com)
 - **Python**: Validated using the [CI Python Linter](https://pep8ci.herokuapp.com/)
 - **Performance**: Validated using [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+
+https://docs.google.com/document/d/1M42v5yGdEz0chHrz0ZMtJ_-Rxlaq8vBqwUg6bKgzbX8/edit?usp=sharing
+
 - **Accessibility**: Validated using the [Wave Validator](https://wave.webaim.org/) 
 
 **See detailed [Test Report](documentation/TESTING.md)**

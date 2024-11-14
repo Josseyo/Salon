@@ -1,9 +1,70 @@
 # Manual Testing
 
 - **Performance**: Validated using [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-- **Accessibility**: Validated using the [Wave Validator](https://wave.webaim.org/) 
 
 ## HTML: Validated using the [W3C HTML Validator](https://validator.w3.org/)
+
+### Home
+![Home](validation/html/home_html.png)
+
+### About
+![About](validation/html/about_html.png)
+
+### Bag
+![Bag](validation/html/bag_html.png)
+
+### Checkout
+![Checkout](validation/html/checkout_html.png)
+
+### Checkout Success
+![Checkout Success](validation/html/bag_html.png)
+
+### Contact
+![Contact](validation/html/contact_html.png)
+
+### FAQ
+![FAQ](validation/html/faq_html.png)
+
+
+### Event list view
+![Products](validation/html/event_list_html_html.png)
+
+### Event detail view
+![Products](validation/html/event_detail_html.png)
+
+### Subscribe
+![Subscribe](validation/html/subscribe_html.png)
+
+### Register Account
+![Login](validation/html/login_html.png)
+
+### Login
+![Login](validation/html/login_html.png)
+
+### Logout
+![Logout](validation/html/logout_html.png)
+
+### Forgot Password
+![Forgot Password](validation/html/forgot_password_html.png)
+
+### Create new password
+![Create New Password](validation/html/new_password_html.png)
+
+### My Account
+![My Account](validation/html/my_account_html.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## CSS: Validated using the [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)
 

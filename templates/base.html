@@ -43,7 +43,6 @@
 
     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}">
 
-    <title>Salon Talks</title> 
     {% block extra_title %}{% endblock %}
 </head>
 
@@ -185,9 +184,9 @@
     {% endif %}
 
     {% block postloadjs %}
-        <script type="text/javascript">
-            $('.toast').toast('show');
-        </script>
+    <script>
+        $('.toast').toast('show');
+    </script>
     {% endblock %}
 </body>
 </html>

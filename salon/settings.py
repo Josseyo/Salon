@@ -300,5 +300,25 @@ CSP_STYLE_SRC = (
     "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com",
     "https://salontalks-e6485414bbd3.s3.amazonaws.com",
     "https://ka-f.fontawesome.com",
+)
 
+CSP_FONT_SRC = (
+    "'self'",
+    "https://fonts.gstatic.com",
+    "https://ka-f.fontawesome.com",
+    "https://js.stripe.com/type-font/Colfax-Medium.woff",
+)
+
+CSP_IMG_SRC = (
+    "'self'",
+    "data:",
+    "https://salontalks-e6485414bbd3.s3.amazonaws.com",
+)
+
+CSP_FRAME_SRC = ("'self'", "https://js.stripe.com")
+
+CSP_CONNECT_SRC = (
+    "'self'",
+    "https://api.stripe.com",
+    "https://ka-f.fontawesome.com",
 )

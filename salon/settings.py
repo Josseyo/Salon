@@ -295,7 +295,7 @@ CSP_SCRIPT_SRC = (
     "kit.fontawesome.com",
     "salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/*",
     "salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com",
-    "salontalks-e6485414bbd3.s3.amazonaws.com/static/faq/js/faq.js",
+    "salontalks-e6485414bbd3.s3.amazonaws.com/static/*",
     "salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/js/stripe_elements.js",
 )
 
@@ -306,7 +306,7 @@ CSP_STYLE_SRC = (
     "fonts.googleapis.com",
     "cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
     "salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/*",
-    "salontalks-e6485414bbd3.s3.amazonaws.com/static/css/base.css",
+    "salontalks-e6485414bbd3.s3.amazonaws.com/static/*",
     "salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/css/checkout.css",
 )
 
@@ -330,6 +330,4 @@ CSP_CONNECT_SRC = (
     "ka-f.fontawesome.com",  # Allow Font Awesome connections
 )
 
-# Ensure to add 'unsafe-inline' to script sources if needed
-CSP_SCRIPT_SRC += ("'unsafe-inline'",)
-CSP_STYLE_SRC += ("js.stripe.com",)
+

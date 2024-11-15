@@ -279,55 +279,26 @@ STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY", "")
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY", "")
 STRIPE_WH_SECRET = os.getenv("STRIPE_WH_SECRET", "")
 
-
 # Content Security Policy
-CSP_DEFAULT_SRC = (
-    "'self'",
-)
-
 CSP_SCRIPT_SRC = (
     "'self'",
+    "https://cdn.jsdelivr.net",
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
+    "https://js.stripe.com",
+    "https://kit.fontawesome.com",
     "'unsafe-inline'",
-    "cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js",
-    "stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
-    "cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js",
-    "js.stripe.com",
-    "kit.fontawesome.com",
-    "salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/*",
-    "salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com",
-    "salontalks-e6485414bbd3.s3.amazonaws.com/static/*",
-    "salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/js/stripe_elements.js",
+    "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
+    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/faq/js/faq.js",
+    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/js/stripe_elements.js",
 )
 
 CSP_STYLE_SRC = (
     "'self'",
     "'unsafe-inline'",
-    "stackpath.bootstrapcdn.com",
-    "fonts.googleapis.com",
-    "cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
-    "salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/*",
-    "salontalks-e6485414bbd3.s3.amazonaws.com/static/*",
-    "salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/css/checkout.css",
+    "https://stackpath.bootstrapcdn.com",
+    "https://fonts.googleapis.com",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
+    "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
+    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/css/base.css",
+    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/css/checkout.css",
 )
-
-CSP_FONT_SRC = (
-    "'self'",
-    "fonts.gstatic.com",
-    "ka-f.fontawesome.com",
-    "js.stripe.com/type-font/Colfax-Medium.woff",
-)
-
-CSP_IMG_SRC = (
-    "'self'",
-    "data:",
-    "salontalks-e6485414bbd3.s3.amazonaws.com",
-)
-
-CSP_FRAME_SRC = ("'self'", "https://js.stripe.com")
-CSP_CONNECT_SRC = (
-    "'self'",
-    "api.stripe.com",
-    "ka-f.fontawesome.com",  # Allow Font Awesome connections
-)
-
-CSP_SCRIPT_SRC_ELEM = CSP_SCRIPT_SRC

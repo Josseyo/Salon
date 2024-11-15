@@ -287,12 +287,13 @@ CSP_DEFAULT_SRC = (
 
 CSP_SCRIPT_SRC = (
     "'self'",
+    "'unsafe-inline'",
     "cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js",
     "stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
     "cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js",
     "js.stripe.com",
     "kit.fontawesome.com",
-    "salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
+    "salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/*",
     "salontalks-e6485414bbd3.s3.amazonaws.com/static/faq/js/faq.js",
     "salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/js/stripe_elements.js",
 )
@@ -303,7 +304,7 @@ CSP_STYLE_SRC = (
     "stackpath.bootstrapcdn.com",
     "fonts.googleapis.com",
     "cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
-    "salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
+    "salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/*",
     "salontalks-e6485414bbd3.s3.amazonaws.com/static/css/base.css",
     "salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/css/checkout.css",
 )

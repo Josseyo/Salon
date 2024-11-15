@@ -87,8 +87,8 @@
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'contact-list' %}" class="dropdown-item">Contact Management</a>
-                                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                    <a href="{% url 'contact-list' %}" class="dropdown-item">Manage Contacts</a>
+                                    <a href="{% url 'add_product' %}" class="dropdown-item">Manage Products</a>
                                 {% endif %}
                             {% else %}
                                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>

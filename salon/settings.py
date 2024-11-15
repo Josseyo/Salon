@@ -287,9 +287,8 @@ CSP_SCRIPT_SRC = (
     "https://js.stripe.com",
     "https://kit.fontawesome.com",
     "'unsafe-inline'",
-    "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
-    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/faq/js/faq.js",
-    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/js/stripe_elements.js",
+    "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com",
+    "https://salontalks-e6485414bbd3.s3.amazonaws.com",
 )
 
 CSP_STYLE_SRC = (
@@ -298,7 +297,8 @@ CSP_STYLE_SRC = (
     "https://stackpath.bootstrapcdn.com",
     "https://fonts.googleapis.com",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
-    "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/",
-    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/css/base.css",
-    "https://salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/css/checkout.css",
+    "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com",
+    "https://salontalks-e6485414bbd3.s3.amazonaws.com",
+    "https://ka-f.fontawesome.com",
+
 )

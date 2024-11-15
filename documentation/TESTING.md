@@ -1,6 +1,28 @@
 # Manual Testing
 
-- **Performance**: Validated using [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+<details>
+<summary><strong>Fixes and improvements during validation</strong></summary>
+
+## Features
+- Wrapped the `<li>` elements under the parent `<ul>` tag where necessary to ensure proper HTML structure.
+- Used `<style>` tag to remove the list bullets.
+- Adjusted heading levels for better hierarchy.
+- Added hidden visual links in forms for accessibility.
+- Made the scroll-to-top link crawlable by adding a valid `href` attribute and included a `title` attribute for better accessibility and context.
+
+## Accessibility Improvements
+- Ensured that all links are crawlable by search engines.
+- Added descriptive titles to enhance user experience.
+
+## Rich Results Testing
+![Rich text validation](validation/rich_text.png)
+
+</details>
+
+## Performance: Validated using [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+
+https://docs.google.com/document/d/1M42v5yGdEz0chHrz0ZMtJ_-Rxlaq8vBqwUg6bKgzbX8/edit?tab=t.0
+
 
 ## HTML: Validated using the [W3C HTML Validator](https://validator.w3.org/)
 

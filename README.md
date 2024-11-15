@@ -3,6 +3,9 @@
 SalonTalks is a fully functioning e-commerce web application that allows users to view and purchase tickets to SalonTalks events online. Users can easily create personal accounts and profiles to access their information and order history. The site also enables administrators to manage events and respond to contact inquiries. The live site can be found [here](https://salon-talks-af192748bd52.herokuapp.com).
 
 ## Table of Contents
+<details>
+<summary>Click to expand</summary>
+
 - [The SalonTalks](#salontalks)
 - [UX](#ux)
 - [Typography](#typography)
@@ -44,6 +47,8 @@ SalonTalks is a fully functioning e-commerce web application that allows users t
 - [Media](#media)
 - [Acknowledgements](#acknowledgements)
 
+</details>
+
 ## UX
 The design philosophy focuses on creating a clear and engaging experience for the target customers. Relevant information is presented in a salient and clean manner, allowing users to navigate easily through the site to browse and make purchases.
 
@@ -61,7 +66,8 @@ The color palette was created using [Coolors](https://coolors.co/db6c1b-704c5e-f
 
 ![Color Palette](documentation/design/colors.png)
 
-### Readability & Accessibility
+<details>
+<summary>Readability & Accessibility</summary>
 The palette combines warm tones with calming colors, ensuring good contrast for readability. Here are the key colors used:
 
 - **Cocoa Brown (#DB6C1B):** Versatile for buttons and text on light backgrounds.
@@ -70,12 +76,17 @@ The palette combines warm tones with calming colors, ensuring good contrast for 
 - **Black (#000000):** Primary text color providing depth.
 - **Reseda Green (#7D8570):** Calming background color.
 
+</details>
+
 ## User Stories
 All user stories can be found in the linked GitHub project [here](https://github.com/users/Josseyo/projects/8).
 
 ![Kanban Board](documentation/project_setup/kanban_userstories.png)
 
 ## Wireframes
+<details>
+<summary>Click to expand</summary>
+
 Explore the [Balsamiq wireframes](https://balsamiq.cloud/sr8qece/ptjxrgq).
 
 ### Homepage
@@ -127,7 +138,11 @@ Explore the [Balsamiq wireframes](https://balsamiq.cloud/sr8qece/ptjxrgq).
 ### Mobile Views
 ![Mobile Example Views](documentation/wireframes/Mobile_views.png)
 
+</details>
+
 ## Features
+<details>
+<summary>Click to expand</summary>
 
 ### Existing Features
 - Discount feature
@@ -180,8 +195,7 @@ Displays all items currently in the user's shopping basket. Users get a message 
 
 ![Shopping Bag](documentation/features/sitepages/toast_remove_item_from_bag.png)
 
-A toast message is shown when item is removed from bag
-
+A toast message is shown when item is removed from bag.
 
 ### Checkout Page
 ![Secure Checkout](documentation/features/sitepages/secure_checkout.png)
@@ -189,7 +203,7 @@ A toast message is shown when item is removed from bag
 Displays an order summary of the items that are being prepared for purchase with accompanying item details. Displays a total cost of the order to the user. The user also sees a form to fill in their personal details. For logged in users, these details will be pre-filled if the user has provided that information in the past. A checkbox allows users to save entered information to their profile. A payment input form exists at the bottom of the page for a user to enter their payment card information. A message below this warns the user that advancing will complete the purchase and incur a charge to their card.
 
 ### Checkout Success Page
-![Order Success](documentation/features/sitepages/order_success.png)
+![Order Success](documentation/features/sitepages/checkout_success.png)
 
 Displays a thank you message to the user, as well as a message telling the order confirmation has been emailed. An order summary with all the relevant information, including a unique order number and the purchased event link is displayed.
 
@@ -229,9 +243,9 @@ Users can signup for Newsletter subscription. The subscription form can be found
 
 Users see a confirmation toast after subscribing.
 
-![Newsletter subscription](documentation/features/sitepages/already_subscribed_toast.png)<br>
+![Newsletter subscription](documentation/features/sitepages/already_subscribed_toast.png)
 
-The user will be notified if the email has already been subscribed.<br><br>
+The user will be notified if the email has already been subscribed.
 
 In the newsletter, there will be an unsubscribe link in case the user changes their mind.
 
@@ -240,7 +254,11 @@ In the newsletter, there will be an unsubscribe link in case the user changes th
 
 These provide a more user-friendly error page than the user would see otherwise and includes an informative message and button to return to the home of the site.
 
+</details>
+
 ## User Features
+<details>
+<summary>Click to expand</summary>
 
 ### User Registration
 ![Signup](documentation/features/sitepages/signup.png)
@@ -261,10 +279,9 @@ Users who have made an account can quickly and easily log in to their account in
 
 After logging in, the user is sent to the home page. A message shows that you are logged in and shows if you have something placed in your shopping bag.
 
-#### Login Dependent Navbar Links<br>
+#### Login Dependent Navbar Links
 ![dependant navbar links](documentation/features/sitepages/dependant_nav.png)
 
-<br>
 When users are logged in, 'Register' and 'Login' links are replaced with 'My Account' links. This provides the user with visual feedback upon logging in, as well as removing links that they will not need.
 
 ### User Logout
@@ -282,7 +299,11 @@ Users who have forgotten their password can recover their password via the forgo
 
 User profiles are automatically created upon user registration. Displays a user's profile information. Lets a user see their relevant profile information in a clean and simple way, and contains an update form that users can use to update their profile information. Users can also see their order history, with full details of their order as well as links to see past order confirmations.
 
+</details>
+
 ## Admin Features
+<details>
+<summary>Click to expand</summary>
 
 ### Add and Edit Product Page
 ![Edit/Delete Links](documentation/features/sitepages/edit_delete_links.png)
@@ -291,9 +312,9 @@ If you are logged in as an administrator you will see links under each event to 
 
 ![edit event](documentation/features/sitepages/edit_event.png)
 
-**Add Event**: Administrators can use a front-end form to create new site products. The form is simple and clean and automatically formats and displays the created product in the same manner as existing products. The form is found under My Account/Product management.
+**Add Event:** Administrators can use a front-end form to create new site products. The form is simple and clean and automatically formats and displays the created product in the same manner as existing products. The form is found under My Account/Product management.
 
-**Edit Event**: Administrators can use a front-end form to update existing events. If the current logged-in user has admin (superuser) privileges, an edit button will appear under products which allows that user to edit the product's details.
+**Edit Event:** Administrators can use a front-end form to update existing events. If the current logged-in user has admin (superuser) privileges, an edit button will appear under products which allows that user to edit the product's details.
 
 ### Contact Response
 ![Contact Requests/Response list](documentation/features/sitepages/contact_response_list.png)
@@ -313,40 +334,48 @@ Once a response is sent, the contact message is automatically marked as "Respond
 ### Webhooks
 The site uses a secure and robust webhook system to ensure that the payment process is not interrupted and corrupted, either through user error or malicious intent. Webhooks are incorporated via the Stripe payment system and are handled on the Stripe website, by way of the python code in checkout > webhook_handler.py and checkout > webhooks.py.
 
+</details>
+
 ## Future Features
+<details>
+<summary>Click to expand</summary>
 
-- **Remaining Seats**: Limit ticket availability.
-- **Real-Time Updates**: Use JavaScript for dynamic updates of total cost and ticket quantities, automatically remove past events, and update remaining tickets in real-time.
-- **Subscription Model**: Implement a subscription payment option for access to all SalonTalks, utilizing Django groups and Stripe integration for backend management and webhook updates.
-- **Newsletter Customization**: Develop a system for admins to customize and send newsletters, including a front-end form for text and images, integrated into newsletter views.
-- **Complete remaining user stories**: See the project backlog.
+- **Remaining Seats:** Limit ticket availability.
+- **Real-Time Updates:** Use JavaScript for dynamic updates of total cost and ticket quantities, automatically remove past events, and update remaining tickets in real-time.
+- **Subscription Model:** Implement a subscription payment option for access to all SalonTalks, utilizing Django groups and Stripe integration for backend management and webhook updates.
+- **Newsletter Customization:** Develop a system for admins to customize and send newsletters, including a front-end form for text and images, integrated into newsletter views.
+- **Complete remaining user stories:** See the project backlog.
 
-## Tools & Technologies
-List of tools and technologies utilized in the project.
+</details>
 
-- **HTML**: Main site content.
-- **CSS**: Site design and layout.
-- **JavaScript**: User interactions.
-- **Python**: Back-end programming.
-- **Git**: Version control (git add, commit, push).
-- **GitHub**: Secure online code storage.
-- **Gitpod**: Cloud-based IDE for development.
-- **Bootstrap**: Front-end CSS framework for responsiveness and components.
-- **Django**: Python framework for the site.
-- **PostgreSQL**: Relational database management.
-- **CI Database**: PostgreSQL database service.
-- **Psycopg2**: PostgreSQL database adapter.
-- **Heroku**: Hosting for the back-end.
-- **Stripe**: Secure online payments.
-- **AWS S3**: Static file storage.
-- **Allauth**: User authentication system.
-- **Pillow**: Image processing library.
-- **Gunicorn**: WSGI server.
-- **Crispy Forms**: Auto-formatting for front-end forms.
-- **asgiref**: ASGI utilities for Django.
-- **boto3**: AWS SDK for Python.
-- **botocore**: Core functionality for AWS SDK.
-- **dj-database-url**: Database URL parsing for Django.
+<details>
+<summary>## Tools & Technologies Used</summary>
+
+List of tools and technologies utilized in the project:
+
+- **HTML:** Main site content.
+- **CSS:** Site design and layout.
+- **JavaScript:** User interactions.
+- **Python:** Back-end programming.
+- **Git:** Version control (git add, commit, push).
+- **GitHub:** Secure online code storage.
+- **Gitpod:** Cloud-based IDE for development.
+- **Bootstrap:** Front-end CSS framework for responsiveness and components.
+- **Django:** Python framework for the site.
+- **PostgreSQL:** Relational database management.
+- **CI Database:** PostgreSQL database service.
+- **Psycopg2:** PostgreSQL database adapter.
+- **Heroku:** Hosting for the back-end.
+- **Stripe:** Secure online payments.
+- **AWS S3:** Static file storage.
+- **Allauth:** User authentication system.
+- **Pillow:** Image processing library.
+- **Gunicorn:** WSGI server.
+- **Crispy Forms:** Auto-formatting for front-end forms.
+- **asgiref:** ASGI utilities for Django.
+- **boto3:** AWS SDK for Python.
+- **botocore:** Core functionality for AWS SDK.
+- **dj-database-url:** Database URL parsing for Django.
 - **django-allauth**: User authentication system.
 - **django-appconf**: Application configuration for Django.
 - **django-countries**: Country field for Django forms.
@@ -366,6 +395,7 @@ List of tools and technologies utilized in the project.
 - **sqlparse**: SQL parsing library.
 - **stripe**: Stripe API for payments.
 - **django-csp**: Content Security Policy middleware for Django.
+</details>
 
 https://temp-mail.org/
 
@@ -475,131 +505,130 @@ email address to subcsribe to our newsletter.
 
 ## Testing & Validation
 
-## Manual Testing Protocol
-Features and workflows were manually tested across different screen sizes and browser compatibility.
+### Manual Testing Protocol
+<details>
+<summary>Features and workflows were manually tested across different screen sizes and browser compatibility:</summary>
 
-### 1. User Story: Navigate the Site
+#### 1. User Story: Navigate the Site
 - **Test Case 1**: Verify all navigation links are functional.
 - **Test Case 2**: Check for broken links in the navigation menu.
 
-### 2. Browse a List of Upcoming Salons/Events
+#### 2. Browse a List of Upcoming Salons/Events
 - **Test Case 1**: Verify the list displays all upcoming events.
 - **Test Case 2**: Check for pagination or infinite scroll functionality.
 - **Test Case 3**: Verify event details are accessible from the list.
 
-### 3. Search for an Event
+#### 3. Search for an Event
 - **Test Case 1**: Verify search functionality returns relevant results.
 - **Test Case 2**: Check for no results found message when applicable.
 - **Test Case 3**: Verify search filters work correctly.
 
-### 4. Filter by Category
+#### 4. Filter by Category
 - **Test Case 1**: Verify filtering by category displays correct events.
 
-### 5. View Event Details
+#### 5. View Event Details
 - **Test Case 1**: Verify event details are displayed correctly.
 - **Test Case 2**: Check for the presence of images, dates, and descriptions.
 
-### 6. Create an Account
+#### 6. Create an Account
 - **Test Case 1**: Verify account creation with valid inputs.
 - **Test Case 2**: Check for validation messages on invalid inputs.
 - **Test Case 3**: Verify the user can log in after account creation.
 
-### 7. Email Confirmation After Registering
+#### 7. Email Confirmation After Registering
 - **Test Case 1**: Verify registration confirmation email is sent.
 - **Test Case 2**: Check email contains correct user information.
 - **Test Case 3**: Verify that the confirmation link in email is working.
 
-### 8. User Profile Management
+#### 8. User Profile Management
 - **Test Case 1**: Verify user can update profile information.
-- **Test Case 3**: Verify profile changes are saved and reflected on the profile page.
-- **Test Case 2**: Verify user can change their password by clicking forgot password on the login page.
+- **Test Case 2**: Verify profile changes are saved and reflected on the profile page.
+- **Test Case 3**: Verify user can change their password by clicking forgot password on the login page.
 
-### 9. Select Quantity
+#### 9. Select Quantity
 - **Test Case 1**: Verify quantity selection updates the shopping bag total.
-- **Test Case 3**: Verify quantity selection reflects correctly in the shopping bag "preview".
-- **Test Case 2**: Verify that you can keep shopping.
+- **Test Case 2**: Verify quantity selection reflects correctly in the shopping bag "preview".
+- **Test Case 3**: Verify that you can keep shopping.
 
-### 10. View Products in Shopping Bag
+#### 10. View Products in Shopping Bag
 - **Test Case 1**: Verify products are correctly added and displayed in the shopping bag.
 - **Test Case 2**: Check for the correct total price in the shopping bag.
 - **Test Case 3**: Verify the user can add and remove events from the shopping bag.
 - **Test Case 4**: Verify the shopping bag persists after logging in/out.
 
-### 11. View the Total of Purchase
+#### 11. View the Total of Purchase
 - **Test Case 1**: Verify total reflects all items in the shopping bag.
 - **Test Case 2**: Check for correct application of discounts.
 - **Test Case 3**: Verify total updates on quantity changes.
 
-### 12. Enter Payment Information
+#### 12. Enter Payment Information
 - **Test Case 1**: Verify payment form accepts valid inputs.
 - **Test Case 2**: Check for validation on incorrect payment details.
 - **Test Case 3**: Verify secure transmission of payment information.
 
-### 13. Purchase Ticket
+#### 13. Purchase Ticket
 - **Test Case 1**: Verify ticket purchase process completes successfully.
 - **Test Case 2**: Check for appropriate error messages on failed purchases.
 
-### 14. View Order Confirmation
+#### 14. View Order Confirmation
 - **Test Case 1**: Verify order confirmation displays correct order details.
 - **Test Case 2**: Verify order confirmation is sent via email.
-- **Test Case 2**: Verify order is listed in My Account and that it can be clicked to come to the Event's detail view.
-- **Test Case 3**: Check for a unique order ID in the confirmation.
+- **Test Case 3**: Verify order is listed in My Account and that it can be clicked to come to the Event's detail view.
+- **Test Case 4**: Check for a unique order ID in the confirmation.
 
-### 15. Notifications
+#### 15. Notifications
 - **Test Case 1**: Verify toast message appears on successful actions (e.g., ticket purchase).
 - **Test Case 2**: Verify the content of the toast message is correct.
 - **Test Case 3**: Verify notifications appear for relevant alerts (e.g., incorrect or missing input for required form fields).
 
-### 16. Manage Events
+#### 16. Manage Events
 - **Test Case 1**: Verify user can create a new event.
 - **Test Case 2**: Check for the ability to edit existing events.
 - **Test Case 3**: Verify deletion of events works as intended.
 
-### 17. Logout
+#### 17. Logout
 - **Test Case 1**: Verify that user can logout and login features are no longer accessed.
 - **Test Case 2**: Check that user has to confirm the signout before signing out.
 
-### 18. Newsletter
+#### 18. Newsletter
 - **Test Case 1**: Verify user can subscribe to the newsletter.
-- **Test Case 3**: Verify confirmation message functionality works.
+- **Test Case 2**: Verify confirmation message functionality works.
 
-### 19. About the Site
+#### 19. About the Site
 - **Test Case 1**: Verify the About page is accessible.
-- **Test Case 3**: Verify links to browse events work correctly.
+- **Test Case 2**: Verify links to browse events work correctly.
 
-### 20. FAQ
+#### 20. FAQ
 - **Test Case 1**: Verify the FAQ page is accessible.
 - **Test Case 2**: Check for clarity and relevance of answers.
 - **Test Case 3**: Verify the contact form and the subject option dropdown work correctly.
 
-### 21. Add an Event to the Store
+#### 21. Add an Event to the Store
 - **Test Case 1**: Verify Administrator can successfully add an event.
 - **Test Case 2**: Check for validation on required fields.
 - **Test Case 3**: Verify added event appears in the store.
 
-### 22. Contact Form
+#### 22. Contact Form
 - **Test Case 1**: Verify contact form is functional.
 - **Test Case 2**: Check for confirmation message after submission.
 - **Test Case 3**: Verify submission of invalid inputs returns errors.
 
-### 23. Contact Management
-- **Test Case 1**: Verify Admin can view contacts
+#### 23. Contact Management
+- **Test Case 1**: Verify Admin can view contacts.
 - **Test Case 2**: Verify the ability to respond to messages.
 - **Test Case 3**: Verify deletion of messages.
-- **Test Case 3**: Verify message is marked as replied when message has been responded to.
+- **Test Case 4**: Verify message is marked as replied when message has been responded to.
 
+</details>
 
-## The code was validated with:
-
+### The code was validated with:
 - **HTML**: Validated using the [W3C HTML Validator](https://validator.w3.org/)
 - **CSS**: Validated using the [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)
 - **JavaScript**: Validated using [JS Hint](https://jshint.com)
 - **Python**: Validated using the [CI Python Linter](https://pep8ci.herokuapp.com/)
 - **Performance**: Validated using [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- **Rich results** Validated using [Rich text test](https://search.google.com/test/rich-results/result?id=Gfu7gG7eXs8eFwfpV9mgQw)
 
-https://docs.google.com/document/d/1M42v5yGdEz0chHrz0ZMtJ_-Rxlaq8vBqwUg6bKgzbX8/edit?usp=sharing
-
-- **Accessibility**: Validated using the [Wave Validator](https://wave.webaim.org/) 
 
 **See detailed [Test Report](documentation/TESTING.md)**
 **See [Bug Report](documentation/BUGS.md)**
@@ -607,12 +636,23 @@ https://docs.google.com/document/d/1M42v5yGdEz0chHrz0ZMtJ_-Rxlaq8vBqwUg6bKgzbX8/
 
 
 ## Deployment
-The live site is deployed on heroku and can be found here [deployed site URL:](https://salon-talks-af192748bd52.herokuapp.com) 
+The live site is deployed on heroku and can be found here [deployed site](https://salon-talks-af192748bd52.herokuapp.com) 
 
-### Postgress SQL Database
-Details about the SQL database setup.
+## Setup
 
-### Amazon AWS
+<details>
+<summary><strong>Postgres SQL Database</strong></summary>
+
+The project utilizes 
+[PostgreSQL from Code Institute](https://dbs.ci-dbs.net) 
+(only available to current students of Code Institute)
+
+Add your email to receive your database. To manage your databases, click on the management URL in the confirmation email. This URL is like a password and is unique to you. If you have forgotten or lost your management link, [click here](https://dbs.ci-dbs.net/manage/) to retrieve it.
+
+</details>
+
+<details>
+<summary><strong>Amazon AWS</strong></summary>
 
 This project uses [AWS](https://aws.amazon.com) to store media and static files online, due to the fact that Heroku doesn't persist this type of data.
 
@@ -739,7 +779,10 @@ Once on the IAM page, follow these steps:
 - Under **Manage Public Permissions**, select **Grant public read access to this object(s)**.
 - No further settings are required, so click **Upload**.
 
-### Stripe API
+</details>
+
+<details>
+<summary><strong>Stripe API</strong></summary>
 
 This project uses [Stripe](https://stripe.com) to handle the ecommerce payments.
 
@@ -760,8 +803,10 @@ As a backup, in case users prematurely close the purchase-order page during paym
 - You'll have a new key here:
 	- `STRIPE_WH_SECRET` = Signing Secret (Wehbook) Key (starts with **wh**)
 
+</details>
 
-### Gmail API
+<details>
+<summary><strong>Gmail API</strong></summary>
 
 This project uses [Gmail](https://mail.google.com) to handle sending emails to users for account verification and purchase order confirmations.
 
@@ -782,8 +827,10 @@ Once you've created a Gmail (Google) account and logged-in, follow these series 
 	- Save this somewhere locally, as you cannot access this key again later!
 	- `EMAIL_HOST_PASS` = user's 16-character API key
 	- `EMAIL_HOST_USER` = user's own personal Gmail email address
+</details>
 
-### Heroku Deployment
+<details>
+<summary><strong>Heroku Deployment</strong></summary>
 
 This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
@@ -840,7 +887,10 @@ Or:
 
 The project should now be connected and deployed to Heroku!
 
-### Local Deployment
+</details>
+
+<details>
+<summary><strong>Local Deployment</strong></summary>
 
 This project can be cloned or forked in order to make a local copy on your own system.
 
@@ -914,18 +964,17 @@ You can fork this repository by using the following steps:
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
-
-
-Here’s an improved version of the "Credits" section for your README file, with better organization and clarity:
+</details>
 
 ---
 
 ## Credits
 
-
 ### Contributors
 
-### Resources and Tutorials
+<details>
+<summary><strong>Resources and Tutorials</strong></summary>
+
 - **Django eCommerce Tutorial**: Comprehensive guide for building an eCommerce site using Django.
   - [GitHub Repository](https://github.com/imanaspaul/Django-eCommerce-tutorial-manascode/blob/master/ecommerce/ecommerce/settings.py)
   - [Part Two - Django Allauth](https://manascode.com/django-e-commerce-tutorial-part-two-django-allauth/)
@@ -959,6 +1008,7 @@ Here’s an improved version of the "Credits" section for your README file, with
   - [Google Developers - Robots Meta Tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag)
   - [Keyword Validation Tool](https://www.wordtracker.com/search?query=book%20discussions)
 
+<details>
 
 ### Content
 ChatGPT has been used to create categories, product descriptions, product images and evaluate the color palette.

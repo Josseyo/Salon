@@ -330,4 +330,4 @@ CSP_CONNECT_SRC = (
     "ka-f.fontawesome.com",  # Allow Font Awesome connections
 )
 
-
+CSP_SCRIPT_SRC_ELEM = CSP_SCRIPT_SRC

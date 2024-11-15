@@ -294,6 +294,7 @@ CSP_SCRIPT_SRC = (
     "js.stripe.com",
     "kit.fontawesome.com",
     "salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com/static/*",
+    "salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com",
     "salontalks-e6485414bbd3.s3.amazonaws.com/static/faq/js/faq.js",
     "salontalks-e6485414bbd3.s3.amazonaws.com/static/checkout/js/stripe_elements.js",
 )

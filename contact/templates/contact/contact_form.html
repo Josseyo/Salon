@@ -11,10 +11,13 @@
         <div class="row">
             <div class="col text-left mt-3">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-6 my-5">
+                    <div class="col-12 col-md-6">
                         <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
                             <fieldset class="form-group">
+                                <img src="{% static 'images/backgrounds/macbookpro_flower.webp' %}" 
+                                alt="MacBook" 
+                                class="img-fluid mb-4">
                                 <h1 class="text-center default-page-header mb-4">Get In Touch</h1>
                                 <br>
                                 {{ form|crispy }}

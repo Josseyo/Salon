@@ -1,4 +1,5 @@
 # SalonTalks
+![Salon Talks screen views](documentation/readme_top.png)
 
 SalonTalks is a fully functioning e-commerce web application that allows users to view and purchase tickets to SalonTalks events online. Users can easily create personal accounts and profiles to access their information and order history. The site also enables administrators to manage events and respond to contact inquiries. The live site can be found [here](https://salon-talks-af192748bd52.herokuapp.com).
 
@@ -216,7 +217,7 @@ The order confirmation email includes the same information as the checkout succe
 ![About Page](documentation/features/sitepages/about.png)
 
 <div style="width: 100%; max-width: 600px; margin: 0 auto;">
- Gives users essential information about The SalonTalks. At the end of the text a "Browse SalonTalks" button is visible to keep the user engaged with the presented information.
+ Gives users essential information about The SalonTalks. At the end of the text a "Browse SalonTalks" button is visible to offer an easy way to come to the the events to keep the user engaged and browse the events. 
 </div>
 
 ### FAQ
@@ -330,6 +331,11 @@ Admins can see details of a contact message left by the user. All of the contact
 ![Response alert](documentation/features/sitepages/response_alert.png)
 
 Once a response is sent, the contact message is automatically marked as "Responded," and the "respond to message" button will no longer be visible on that message's details page.
+
+**Subscribers email**
+![Subscribers emails list](documentation/features/sitepages/subscribers_email.png)
+
+The subcsribers emails can be accessed and copied from the django admin view. 
 
 ### Webhooks
 The site uses a secure and robust webhook system to ensure that the payment process is not interrupted and corrupted, either through user error or malicious intent. Webhooks are incorporated via the Stripe payment system and are handled on the Stripe website, by way of the python code in checkout > webhook_handler.py and checkout > webhooks.py.
@@ -463,13 +469,37 @@ The newsletter list enables the business to communicate regularly with users, pr
 
 ### Keywords
 
-**Keywords**  
 I’ve identified several relevant keywords to enhance the site’s visibility in search engines. This includes a mix of:
 
-- **Short-tail (head terms)**: General keywords.
-- **Long-tail keywords**: More specific phrases.
+**Short-tail (head terms)**
+- Salon Talks
+- Life Conversation
+- Discussing the present
+- Thoughtful Exchanges
+- Online Conversations
+- Meaningful Connections
+- Loneliness Support
+- Life Experiences
+- Food and Drink Conversations
+- Book Discussions
+- Age and Connectivity
 
-I also experimented with [Word Tracker](https://www.wordtracker.com) to analyze the frequency of some primary keywords for my site, but only until the free trial ended.
+**Long-tail keywords**
+- Online community for meaningful conversations
+- Virtual events to combat loneliness for seniors 
+- Join engaging discussions on life experiences
+- Relaxed online space for sharing stories
+- Supportive environment for seniors to connect
+- Easy participation in online conversation 
+- Building genuine connections through virtual talks 
+- Engaging online discussions for seniors 
+- Creating meaningful connections
+
+I also experimented with [Word Tracker](https://www.wordtracker.com) to analyze the frequency of some primary keywords for the site, but only until the free trial ended.
+
+![Wordtracker Meaningful Connections](documentation/webmarketing/wordtracker_meaningful_connections.png)
+![Wordtracker Book Discussions](documentation/webmarketing/wordtracker_book_discussions.png)
+
 
 ### Sitemap & Robots
 To help search engines find and index the site more effectively I added a sitemap in the root directory as well as a robots.txt with default settings instructions for web crawlers.
@@ -502,12 +532,14 @@ provided by Code Institute, to create a mockup Facebook business account using
 A sign-up form is availble on the site to allow users to submit their
 email address to subcsribe to our newsletter.
 
+The email address list can be accessed from django admin.
+
 
 ## Testing & Validation
 
 ### Manual Testing Protocol
 <details>
-<summary>Features and workflows were manually tested across different screen sizes and browser compatibility:</summary>
+<summary>Features and workflows were manually tested across different screen sizes and browsers:</summary>
 
 #### 1. User Story: Navigate the Site
 - **Test Case 1**: Verify all navigation links are functional.

@@ -22,7 +22,32 @@
 ## Performance
 **Validated using [Lighthouse](https://developers.google.com/web/tools/lighthouse/)**
 
-https://docs.google.com/document/d/1M42v5yGdEz0chHrz0ZMtJ_-Rxlaq8vBqwUg6bKgzbX8/edit?tab=t.0
+### Home
+![Home](validation/lighthouse/home.png)
+
+### About
+![About](validation/lighthouse/about.png)
+
+### Bag
+![Bag](validation/lighthouse/bag.png)
+
+### Contact
+![Contact](validation/lighthouse/contact.png)
+
+### FAQ
+![FAQ](validation/lighthouse/home.png)
+
+### Event list view
+![Products](validation/lighthouse/event_list.png)
+
+### Event detail view
+![Products](validation/lighthouse/event_details.png)
+
+### Subscribe
+![Subscribe](validation/lighthouse/subscription.png)
+
+### Login
+![Login](validation/lighthouse/login.png)
 
 ---
 
@@ -149,4 +174,14 @@ http://jigsaw.w3.org/css-validator/validator$link
 ### Subscribe
 ![Subscribe](validation/python/subscribe_py.png)
 ![Subscribe](validation/python/subscribe_py2.png)
+---
+
+## Remaining issues
+
+### Register Account
+![Signup](validation/issues/remaining_issues/signup_html.png)
+
+### Forgot Password
+![Forgot Password](validation/issues/remaining_issues/password_reset_html.png)
+
 

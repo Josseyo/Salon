@@ -10,6 +10,19 @@ from .forms import ProductForm
 
 
 def product_meeting_view(request, product_id, meeting_id):
+    """Render the product meeting page if the meeting link is valid.
+
+    Args:
+        request (HttpRequest): The request object.
+        product_id (int): The ID of the product.
+        meeting_id (str): The unique meeting ID.
+
+    Raises:
+        Http404: If the meeting link is invalid.
+
+    Returns:
+        HttpResponse: The rendered product meeting page.
+    """
     product = get_object_or_404(Product, id=product_id)
     if meeting_id not in product.meeting_link:
         raise Http404("Invalid meeting link")
@@ -17,13 +30,27 @@ def product_meeting_view(request, product_id, meeting_id):
 
 
 def custom_404(request, exception):
-    """Render the custom 404 error page."""
+    """Render the custom 404 error page.
+
+    Args:
+        request (HttpRequest): The request object.
+        exception (Exception): The exception that triggered the 404 error.
+
+    Returns:
+        HttpResponse: The rendered 404 error page.
+    """
     return render(request, "404.html", status=404)
 
 
 def all_products(request):
-    """A view to show all products, including sorting and search queries"""
+    """A view to show all products, including sorting and search queries.
 
+    Args:
+        request (HttpRequest): The request object.
+
+    Returns:
+        HttpResponse: The rendered products page with filtered and sorted products.
+    """
     products = Product.objects.all()
     query = None
     categories = None
@@ -74,8 +101,15 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """A view to show individual product details"""
+    """A view to show individual product details.
 
+    Args:
+        request (HttpRequest): The request object.
+        product_id (int): The ID of the product.
+
+    Returns:
+        HttpResponse: The rendered product detail page.
+    """
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
@@ -87,7 +121,14 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
-    """Add a product to the store"""
+    """Add a product to the store.
+
+    Args:
+        request (HttpRequest): The request object.
+
+    Returns:
+        HttpResponse: The rendered add product page or redirect to product detail.
+    """
     if not request.user.is_superuser:
         messages.error(request, "Sorry, only store owners can do that.")
         return redirect(reverse("home"))
@@ -113,7 +154,15 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """Edit a product in the store"""
+    """Edit a product in the store.
+
+    Args:
+        request (HttpRequest): The request object.
+        product_id (int): The ID of the product to edit.
+
+    Returns:
+        HttpResponse: The rendered edit product page or redirect to product detail.
+    """
     if not request.user.is_superuser:
         messages.error(request, "Sorry, only store owners can do that.")
         return redirect(reverse("home"))
@@ -142,7 +191,15 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """Delete a product from the store"""
+    """Delete a product from the store.
+
+    Args:
+        request (HttpRequest): The request object.
+        product_id (int): The ID of the product to delete.
+
+    Returns:
+        HttpResponse: Redirect to the products page after deletion.
+    """
     if not request.user.is_superuser:
         messages.error(request, "Sorry, only store owners can do that.")
         return redirect(reverse("home"))

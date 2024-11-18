@@ -447,16 +447,24 @@ https://temp-mail.org/
 ---
 ## Agile Development Process
 
-### GitHub Projects
-[GitHub Projects](https://github.com/users/Josseyo/projects/8/views/1) served as an Agile tool for this project. Through it, user stories, labels, epics and milestone tasks were planned, then tracked using the basic Kanban board.
-Epics were decomposed into smaller User Stories and Tasks. The Github issue linking system was utilised to ensure that user stories which were children of an epic were kept organised and easily accessible through these links
-- [Userstories]
-- [Epics](https://github.com/users/Josseyo/projects/8/views/2?sliceBy%5BcolumnId%5D=Status&sliceBy%5Bvalue%5D=EPIC)
-- [Milestones]
+<details><summary><strong>GitHub Projects</strong></summary>
+[GitHub Projects](https://github.com/users/Josseyo/projects/8/views/2?visibleFields=[%22Title%22,%22Status%22,%22Labels%22,%22Milestone%22]&sortedBy[direction]=asc&sortedBy[columnId]=Title&sortedBy[direction]=desc&sortedBy[columnId]=Milestone) served as an Agile tool for this project. Through it, user stories, labels, epics and milestone tasks were planned, then tracked using the basic [Kanban board.](https://github.com/users/Josseyo/projects/8/views/1)
 
-Overview of issues tracked in the GitHub repository.
-- [Open issues](https://github.com/users/Josseyo/projects/8/views/1)
-- [Closed issues](https://github.com/users/Josseyo/projects/8/views/2?sliceBy%5BcolumnId%5D=Status&sliceBy%5Bvalue%5D=Done)
+Epics were decomposed into smaller User Stories and Tasks. 
+The Github issue linking system was utilised to ensure that user stories which were children of an epic were kept organised and easily accessible through these links
+
+#### Detailed Userstory
+![Userstory](documentation/project_setup/userstory.png)
+
+#### Userstory overview
+![Userstories](documentation/project_setup/userstories.png)
+
+#### Epics
+![Epics](documentation/project_setup/epic.png)
+
+#### Milestones
+![Milestones](documentation/project_setup/milestones.png)
+
 
 ### MoSCoW Prioritization
 The MoSCoW method was used with accompanying custom Github project labels to help prioritise the important tasks for the available time.
@@ -464,9 +472,12 @@ The MoSCoW method was used with accompanying custom Github project labels to hel
 - **Should Have:** Important features for future development.
 - **Could Have:** Enhancements for user experience.
 - **Will Not Have:** Features for future consideration.
+
+</details>
 ---
 ## Ecommerce Business Model
 SalonTalks operates on a Business-to-Customer (B2C) model, focusing on one-time transactions.
+
 Currently in the early stages of development, the site features a newsletter signup form and links for social media marketing. Utilizing social media can help create a community around the business and increase site traffic, particularly on larger platforms like Facebook.
 
 The newsletter list enables the business to communicate regularly with users, providing updates on last-chance events, new offerings, host announcements, and more.
@@ -509,6 +520,8 @@ I also experimented with [Word Tracker](https://www.wordtracker.com) to analyze 
 </details>
 
 ---
+<details><summary><strong>Sitemap & Robots</strong></summary>
+
 ### Sitemap & Robots
 To help search engines find and index the site more effectively I added a sitemap in the root directory as well as a robots.txt with default settings instructions for web crawlers.
 
@@ -523,6 +536,8 @@ Links for future implementation:
 - [Creating and submitting a sitemap](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap)
 - [Managing your sitemaps and using sitemaps reports](https://support.google.com/webmasters/answer/7451001)
 - [Testing the robots.txt file](https://support.google.com/webmasters/answer/6062598)
+
+</div>
 
 ---
 ### Social Media Marketing
@@ -673,7 +688,6 @@ The email address list can be accessed from django admin.
 
 **See detailed [Test Report](documentation/TESTING.md)**
 **See [Bug Report](documentation/BUGS.md)**
-
 
 
 ## Deployment

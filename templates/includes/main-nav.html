@@ -1,17 +1,18 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="All Salon Talks">
-                All Salon Talks
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="about-salon-talks-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Salon Talks">
+                Salon Talks
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+            <div class="dropdown-menu border-0" aria-labelledby="about-salon-talks-links">
+                <a href="{% url 'about' %}" class="dropdown-item">About</a>
+                <a href="{% url 'contact-form' %}" class="dropdown-item">Contact</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Salon Talks</a>
-                <a href="{% url 'products' %}?sort=date&direction=asc" class="dropdown-item">By Date</a>
-                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
-                <a href="{% url 'home' %}" class="dropdown-item">Home</a>
-            </div>
+            </div> 
+
         </li>
+        
+
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="thoughtful-exchanges-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Thoughtful Exchanges">
@@ -35,15 +36,8 @@
             </div>
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="About">
-                About
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="about-link">
-                <a href="{% url 'about' %}" class="dropdown-item">About</a>
-                <a href="{% url 'faq' %}" class="dropdown-item">FAQ</a>
-                <a href="{% url 'contact-form' %}" class="dropdown-item">Contact</a>
-            </div>            
+        <li class="nav-item">
+            <a href="{% url 'faq' %}" class="logo-font font-weight-bold nav-link text-black mr-5" aria-label="faq">FAQ</a>
         </li>
 
         <li class="nav-item">

@@ -333,6 +333,12 @@ Once a response is sent, the contact message is automatically marked as "Respond
 The subcsribers emails can be accessed and copied from the django admin view. 
 
 ### Webhooks
+![Webhooks](documentation/features/sitepages/webhook_transactions.png)
+
+![Webhooks](documentation/features/sitepages/webhook_log.png)
+
+![Webhooks](documentation/features/sitepages/webhook_events.png)
+
 The site uses a secure and robust webhook system to ensure that the payment process is not interrupted and corrupted, either through user error or malicious intent. Webhooks are incorporated via the Stripe payment system and are handled on the Stripe website, by way of the python code in checkout > webhook_handler.py and checkout > webhooks.py.
 
 </details>

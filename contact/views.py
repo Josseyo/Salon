@@ -27,7 +27,8 @@ class ContactFormCreateView(CreateView):
         """Set initial data for the form.
 
         Returns:
-            dict: The initial data for the form, including the user's email if authenticated.
+            dict: The initial data for the form, including the user's email
+            if authenticated.
         """
         initial = super().get_initial()
         if self.request.user.is_authenticated:
@@ -95,8 +96,8 @@ class ContactUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def _send_email(self):
         """Send the user a confirmation email.
 
-        This method retrieves the email address and subject from the contact submission
-        and sends an email using the provided body.
+        This method retrieves the email address and subject from the
+        contact submission and sends an email using the provided body.
 
         Returns:
             None

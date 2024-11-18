@@ -9,9 +9,11 @@ class Contact(models.Model):
     Attributes:
         name (str): The name of the person submitting the contact request.
         email (str): The email address of the person submitting the request.
-        subject (str): The subject of the contact request, chosen from predefined options.
+        subject (str): The subject of the contact request, chosen from
+        predefined options.
         message (str): The message content of the contact request.
-        date_created (datetime): The date and time when the request was created.
+        date_created (datetime): The date and time when the request was
+        created.
         responded (bool): Indicates whether the request has been responded to.
     """
 

@@ -2,10 +2,22 @@ html {
     height: 100%;
 }
 
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100vw;
+    height: auto;
+    display: block;
+}
+
 body {
     background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px); /* Adjust based on navbar height */
+    height: calc(100vh - 164px);
     color: #555;
     font-family: 'Open Sans', sans-serif;
 }
@@ -24,7 +36,7 @@ h4 {
 }
 
 .text-background {
-    background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+    background-color: rgba(255, 255, 255, 0.9);
     padding-top: 20px; /* Top and bottom padding */
     padding-bottom: 2px;
     padding-left: 40px;
@@ -73,7 +85,7 @@ h4 {
 
 .btn-outline-black {
     background: white;
-    color: #704c5eff !important; /* use important to override link colors for <a> elements */
+    color: #704c5eff !important;
     border: 1px solid black;
 }
 
@@ -143,11 +155,11 @@ h4 {
 
 
 a.category-badge > span.badge {
-    display: inline-block; /* Ensure the badge behaves like a block element */
-    max-width: 100%; /* Allow the badge to be responsive */
-    padding: 0.5rem 1rem; /* Add some padding */
-    white-space: normal; /* Allow text to wrap */
-    overflow-wrap: break-word; /* Break long words if necessary */
+    display: inline-block;
+    max-width: 100%;
+    padding: 0.5rem 1rem;
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 a.category-badge > span.badge:hover {
@@ -291,6 +303,14 @@ hr {
 }
 
 /* Media Queries */
+@media (max-width: 600px) {
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
 @media (min-width: 1200px) {
     .container {
         max-width: 80%;

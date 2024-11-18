@@ -3,7 +3,14 @@ from django.shortcuts import reverse
 
 
 class Subscribe(models.Model):
-    """Model representing a subscription."""
+    """Model representing a subscription.
+
+    Attributes:
+        title (CharField): The title of the subscription.
+        updated_on (DateTimeField): The date and time when the
+        subscription was last updated.
+        content (TextField): The content of the subscription.
+    """
     title = models.CharField(max_length=200)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
@@ -14,7 +21,14 @@ class Subscribe(models.Model):
 
 
 class SubscribeRequest(models.Model):
-    """Model representing a subscription request."""
+    """Model representing a subscription request.
+
+    Attributes:
+        email (EmailField): The email address of the subscriber,
+        must be unique.
+        date (DateTimeField): The date and time when the subscription
+        request was created.
+    """
     email = models.EmailField(
         unique=True,
         max_length=254,
@@ -27,6 +41,10 @@ class SubscribeRequest(models.Model):
         return f"Subscription request from {self.email}"
 
     def get_absolute_url(self):
-        """Return the URL to redirect to after a successful
-            subscription request."""
+        """Return the URL to redirect to after a successful subscription
+        request.
+
+        Returns:
+            str: The URL to redirect to.
+        """
         return reverse('home')

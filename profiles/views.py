@@ -3,13 +3,20 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
-
 from checkout.models import Order
 
 
 @login_required
 def profile(request):
-    """Display the user's profile."""
+    """Display and update the user's profile.
+
+    Args:
+        request (HttpRequest): The request object.
+
+    Returns:
+        HttpResponse: The rendered profile page with user information
+        and orders.
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == "POST":
@@ -23,15 +30,29 @@ def profile(request):
             )
     else:
         form = UserProfileForm(instance=profile)
+
     orders = profile.orders.all()
 
     template = "profiles/profile.html"
-    context = {"form": form, "orders": orders, "on_profile_page": True}
+    context = {
+        "form": form,
+        "orders": orders,
+        "on_profile_page": True,
+    }
 
     return render(request, template, context)
 
 
 def order_history(request, order_number):
+    """Display the details of a specific order.
+
+    Args:
+        request (HttpRequest): The request object.
+        order_number (str): The unique order number.
+
+    Returns:
+        HttpResponse: The rendered order history page.
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(

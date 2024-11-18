@@ -2,14 +2,23 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
 from django_countries.fields import CountryField
 
 
 class UserProfile(models.Model):
     """
     A user profile model for maintaining default
-    delivery information and order history
+    delivery information and order history.
+
+    Attributes:
+        user (OneToOneField): A one-to-one relationship with the User model.
+        default_phone_number (CharField): The user's default phone number.
+        default_street_address1 (CharField): The user's primary street address.
+        default_street_address2 (CharField): The user's secondary street addr.
+        default_town_or_city (CharField): The user's town or city.
+        default_county (CharField): The user's county.
+        default_postcode (CharField): The user's postal code.
+        default_country (CountryField): The user's default country.
     """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -32,13 +41,20 @@ class UserProfile(models.Model):
     )
 
     def __str__(self):
+        """Return the username of the associated user."""
         return self.user.username
 
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
-    Create or update the user profile
+    Create or update the user profile when the User model is saved.
+
+    Args:
+        sender (Model): The model class that sent the signal.
+        instance (User): The instance of the user that was saved.
+        created (bool): A boolean indicating if a new record was created.
+        **kwargs: Additional keyword arguments.
     """
     if created:
         UserProfile.objects.create(user=instance)

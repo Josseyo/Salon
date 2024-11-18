@@ -5,7 +5,15 @@ from .forms import SubscribeForm
 
 
 def subscribe_view(request):
-    """Handle subscription requests and display the subscription form."""
+    """Handle subscription requests and display the subscription form.
+
+    Args:
+        request (HttpRequest): The request object.
+
+    Returns:
+        HttpResponse: The rendered subscription page with the form and latest
+        subscription info.
+    """
     if request.method == "POST":
         subscribe_form = SubscribeForm(data=request.POST)
         if subscribe_form.is_valid():

@@ -255,11 +255,9 @@ In the newsletter, there will be an unsubscribe link in case the user changes th
 
 These provide a more user-friendly error page than the user would see otherwise and includes an informative message and button to return to the home of the site.
 
-</details>
 
-## User Features
-<details>
-<summary>Click to expand</summary>
+### User Features
+---
 
 ### User Registration
 ![Signup](documentation/features/sitepages/signup.png)
@@ -275,12 +273,12 @@ When the user has signed up, they receive an email verification.
 
 Users who have made an account can quickly and easily log in to their account in order to access the login-required functionality of the site.
 
-#### Login Redirect
+### Login Redirect
 ![login verification message](documentation/features/sitepages/login_message.png)
 
 After logging in, the user is sent to the home page. A message shows that you are logged in and shows if you have something placed in your shopping bag.
 
-#### Login Dependent Navbar Links
+### Login Dependent Navbar Links
 ![dependant navbar links](documentation/features/sitepages/dependant_nav.png)
 
 When users are logged in, 'Register' and 'Login' links are replaced with 'My Account' links. This provides the user with visual feedback upon logging in, as well as removing links that they will not need.
@@ -300,11 +298,8 @@ Users who have forgotten their password can recover their password via the forgo
 
 User profiles are automatically created upon user registration. Displays a user's profile information. Lets a user see their relevant profile information in a clean and simple way, and contains an update form that users can use to update their profile information. Users can also see their order history, with full details of their order as well as links to see past order confirmations.
 
-</details>
-
-## Admin Features
-<details>
-<summary>Click to expand</summary>
+### Admin Features
+---
 
 ### Add and Edit Product Page
 ![Edit/Delete Links](documentation/features/sitepages/edit_delete_links.png)
@@ -354,10 +349,10 @@ The site uses a secure and robust webhook system to ensure that the payment proc
 
 </details>
 
-<details>
-<summary>## Tools & Technologies Used</summary>
 
-List of tools and technologies utilized in the project:
+## Tools & Technologies Used
+<details>
+<summary>List of tools and technologies utilized in the project:</summary>
 
 - **HTML:** Main site content.
 - **CSS:** Site design and layout.
@@ -405,11 +400,15 @@ List of tools and technologies utilized in the project:
 
 https://temp-mail.org/
 
-## Database Design
+
+## Database design
+
+<details><summary><strong>ERD</strong></summary>
+
 ![ERD](documentation/project_setup/erd.svg)
+</details>
 
-The relationships between the models in the ERD:
-
+<details><summary><strong>The relationships between the models in the ERD</strong></summary>
 1. **Order and OrderLineItem**:
    - **Relationship**: One-to-Many
    - **Description**: An `Order` can contain multiple `OrderLineItems`. Each `OrderLineItem` is associated with a single `Order`, indicating that it represents a specific product within that order.
@@ -437,6 +436,7 @@ The relationships between the models in the ERD:
 7. **CollaborateRequest and Contact**:
    - **Relationship**: Many-to-One
    - **Description**: Each `CollaborateRequest` can be associated with one `Contact`. This shows that a collaboration request may be part of a broader contact inquiry.
+   </details>
 
 ---
 ## Agile Development Process
@@ -458,49 +458,51 @@ The MoSCoW method was used with accompanying custom Github project labels to hel
 - **Should Have:** Important features for future development.
 - **Could Have:** Enhancements for user experience.
 - **Will Not Have:** Features for future consideration.
-
+---
 ## Ecommerce Business Model
 SalonTalks operates on a Business-to-Customer (B2C) model, focusing on one-time transactions.
 Currently in the early stages of development, the site features a newsletter signup form and links for social media marketing. Utilizing social media can help create a community around the business and increase site traffic, particularly on larger platforms like Facebook.
 
 The newsletter list enables the business to communicate regularly with users, providing updates on last-chance events, new offerings, host announcements, and more.
+---
 
 ## Search Engine Optimization (SEO) & Social Media Marketing
 
-### Keywords
+<details><summary><strong>Keywords</strong></summary>
 
-I’ve identified several relevant keywords to enhance the site’s visibility in search engines. This includes a mix of:
+## Keywords
+This project aims to create a supportive online community where individuals can connect, share experiences, and engage in meaningful conversations to combat loneliness. I’ve identified several relevant keywords to enhance the site’s visibility in search engines. This includes a mix of short-tail and long-tail keywords.
 
-**Short-tail (head terms)**
-- Salon Talks
-- Life Conversation
-- Discussing the present
-- Thoughtful Exchanges
-- Online Conversations
-- Meaningful Connections
-- Loneliness Support
-- Life Experiences
-- Food and Drink Conversations
-- Book Discussions
+### Short-Tail Keywords
 - Age and Connectivity
+- Book Discussions
+- Connect with Others
+- Food and Drink Conversations
+- Life Experiences
+- Loneliness Support
+- Meaningful Connections
+- Online Conversations
+- Salon Talks
+- Video Conversation
 
-**Long-tail keywords**
-- Online community for meaningful conversations
-- Virtual events to combat loneliness for seniors 
-- Join engaging discussions on life experiences
-- Relaxed online space for sharing stories
-- Supportive environment for seniors to connect
-- Easy participation in online conversation 
-- Building genuine connections through virtual talks 
-- Engaging online discussions for seniors 
-- Creating meaningful connections
+### Long-Tail Keywords
+- Building Genuine Connections through Virtual Talks
+- Discussing the Present
+- Easy Participation in Online Conversation
+- Engaging Online Discussions for Seniors
+- Join Engaging Discussions on Life Experiences
+- Life Conversation
+- Online Community for Meaningful Conversations
+- Relaxed Online Space for Sharing Stories
+- Supportive Environment for Seniors to Connect
 
 I also experimented with [Word Tracker](https://www.wordtracker.com) to analyze the frequency of some primary keywords for the site, but only until the free trial ended.
 
 ![Wordtracker Meaningful Connections](documentation/webmarketing/wordtracker_meaningful_connections.png)
 ![Wordtracker Book Discussions](documentation/webmarketing/wordtracker_book_discussions.png)
+</details>
 
-
+---
 ### Sitemap & Robots
 To help search engines find and index the site more effectively I added a sitemap in the root directory as well as a robots.txt with default settings instructions for web crawlers.
 
@@ -516,8 +518,9 @@ Links for future implementation:
 - [Managing your sitemaps and using sitemaps reports](https://support.google.com/webmasters/answer/7451001)
 - [Testing the robots.txt file](https://support.google.com/webmasters/answer/6062598)
 
-
+---
 ### Social Media Marketing
+---
 
 Creating a strong social base (with participation) and linking that to the business site can help drive sales. Using more popular providers with a wider user base, such as Facebook, typically maximizes site views.
 
@@ -1040,7 +1043,6 @@ You can fork this repository by using the following steps:
   - [Google Developers - Robots Meta Tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag)
   - [Keyword Validation Tool](https://www.wordtracker.com/search?query=book%20discussions)
 
-<details>
 
 ### Content
 ChatGPT has been used to create categories, product descriptions, product images and evaluate the color palette.
@@ -1050,10 +1052,12 @@ ChatGPT has been used to create categories, product descriptions, product images
 | [Flat Icon](https://flaticon.com) | favicon | 
 
 ### Acknowledgements
-Code Institute for providing lms, tutorsupport 
-Rory Sheridan my mentor for valuable tips and support
-Christina Åhman for laughter and support 
-Lotta Tuvstedt for the idea and help with content
+- Code Institute for providing lms, tutorsupport 
+- Rory Sheridan my mentor for valuable tips and support
+- Christina Åhman for laughter and support 
+- Lotta Tuvstedt for the idea and help with content
+
+</details>
 
 ### Issues on the road
 October 4th I got pull & push issues when trying to update previous pushed commits accordin to followin instructions https://algerwrites.medium.com/how-to-remove-env-from-git-commit-history-1d594917b376 . On tutors recommendation I started a new workspace. Which resulted in confusion with code and commits being "broken". 73 pulled and 78 pushed but got stuck in the middle. 

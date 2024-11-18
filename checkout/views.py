@@ -22,6 +22,12 @@ import json
 
 
 def send_order_confirmation_email(order):
+    """
+    Send an order confirmation email to the customer.
+
+    Args:
+        order (Order): The order object containing order details.
+    """
     subject = f"Order Confirmation - {order.order_number}"
     body = render_to_string(
         "account/email_order_confirmation.html", {"order": order}
@@ -39,6 +45,15 @@ def send_order_confirmation_email(order):
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    Cache checkout data for the payment process.
+
+    Args:
+        request (HttpRequest): The request object containing checkout data.
+
+    Returns:
+        HttpResponse: A response indicating success or failure.
+    """
     try:
         pid = request.POST.get("client_secret").split("_secret")[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -57,13 +72,22 @@ def cache_checkout_data(request):
             "Sorry, your payment cannot be \
             processed right now. Please try again later.",
         )
-
         return HttpResponse(
             content=str(e), status=400
         )  # Convert exception to string
 
 
 def checkout(request):
+    """
+    Handle the checkout process, including displaying the order form and
+    processing payments.
+
+    Args:
+        request (HttpRequest): The request object containing checkout data.
+
+    Returns:
+        HttpResponse: The rendered checkout page or a redirect response.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -104,7 +128,7 @@ def checkout(request):
                     messages.error(
                         request,
                         (
-                            "We can't find one of the Salon Talks in your bag"
+                            "We can't find one of the Salon Talks in your bag."
                             "Please call us for assistance!"
                         ),
                     )
@@ -184,7 +208,12 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    Handle successful checkouts and display the order confirmation.
+    Args:
+        request (HttpRequest): The request object.
+        order_number (str): The order number for the completed order.
+    Returns:
+        HttpResponse: The rendered success page.
     """
     save_info = request.session.get("save_info")
     order = get_object_or_404(Order, order_number=order_number)
@@ -209,6 +238,7 @@ def checkout_success(request, order_number):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
+
     # Send the confirmation email
     send_order_confirmation_email(order)
 

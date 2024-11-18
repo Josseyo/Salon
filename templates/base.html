@@ -7,7 +7,27 @@
     {% block meta %}
         <title>SalonTalks</title>
         <meta name="description" content="Salon Talks is an online space for meaningful conversations, designed to connect people who may feel lonely and isolated">
-        <meta name="keywords" content="Book Discussions, Food and Drink Conversations, Online Conversations, Life Experiences">
+        <meta name="keywords" content="
+            Age and Connectivity, 
+            Book Discussions, 
+            Building Genuine Connections through Virtual Talks, 
+            Connect with Others, 
+            Discussing the Present, 
+            Easy Participation in Online Conversation, 
+            Engaging Online Discussions for Seniors, 
+            Food and Drink Conversations, 
+            Join Engaging Discussions on Life Experiences, 
+            Life Conversation, 
+            Life Experiences, 
+            Loneliness Support, 
+            Meaningful Connections, 
+            Online Community for Meaningful Conversations, 
+            Online Conversations, 
+            Relaxed Online Space for Sharing Stories, 
+            Salon Talks, 
+            Supportive Environment for Seniors to Connect, 
+            Video Conversation
+        ">
         <meta name="author" content="SalonTalks">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="utf-8">
@@ -58,10 +78,11 @@
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <label for="search-input" class="visually-hidden">Search our site</label>
-                        <input id="search-input" class="form-control border border-black rounded-0" type="text" 
-                               name="q" placeholder="Search our site">
+                        <input id="search-input" class="form-control border border-black rounded-0" 
+                               type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit" aria-label="Search">
+                            <button class="form-control btn btn-black border border-black rounded-0" 
+                                    type="submit" aria-label="Search">
                                 <span class="icon">
                                     <i class="fas fa-search" aria-hidden="true"></i>
                                     <span class="visually-hidden">Search</span>
@@ -154,33 +175,33 @@
     {% block content %}{% endblock %}
 
     {% if request.path != '/' %}
-  
-    <footer class="footer mt-auto d-flex justify-content-center">
-        <div class="footer-content text-center">
-            <hr>
-        
-            <p class="m-0">Made by Salon Talks | Follow us on 
-                <a href="https://www.instagram.com/coon_louis/" target="_blank" rel="noopener"
-                   aria-label="Visit Coon Louis on Instagram (opens in a new tab)" class="icon-link" style="color: #704c5eff;">
-                    <i class="fab fa-instagram-square"></i>
-                </a>
-                <a href="https://github.com/Josseyo/Salon" target="_blank" rel="noopener"
-                   aria-label="Visit Josefin Yoshida on GitHub (opens in a new tab)" class="icon-link" style="color: #704c5eff;">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/josefiny/" target="_blank" rel="noopener"
-                   aria-label="Visit Josefin Yoshida on LinkedIn (opens in a new tab)" class="icon-link" style="color: #704c5eff;">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </p>
-            <div class="btt-button shadow-sm rounded-0 border">
-                <a class="btt-link d-flex h-100" href="#top" title="Scroll to Top">
-                    <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-                </a>	
+        <footer class="footer mt-auto d-flex justify-content-center">
+            <div class="footer-content text-center">
+                <hr>
+                <p class="m-0">Made by Salon Talks | Follow us on 
+                    <a href="https://www.instagram.com/coon_louis/" target="_blank" rel="noopener"
+                       aria-label="Visit Coon Louis on Instagram (opens in a new tab)" class="icon-link" 
+                       style="color: #704c5eff;">
+                        <i class="fab fa-instagram-square"></i>
+                    </a>
+                    <a href="https://github.com/Josseyo/Salon" target="_blank" rel="noopener"
+                       aria-label="Visit Josefin Yoshida on GitHub (opens in a new tab)" class="icon-link" 
+                       style="color: #704c5eff;">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/josefiny/" target="_blank" rel="noopener"
+                       aria-label="Visit Josefin Yoshida LinkedIn profile (opens in a new tab)" class="icon-link" 
+                       style="color: #704c5eff;">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </p>
+                <div class="btt-button shadow-sm rounded-0 border">
+                    <a class="btt-link d-flex h-100" href="#top" title="Scroll to Top">
+                        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                    </a>	
+                </div>
             </div>
-        </div>
-    </footer>
-   
+        </footer>
     {% endif %}
 
     {% block postloadjs %}

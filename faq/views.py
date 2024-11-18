@@ -5,7 +5,15 @@ from common.forms import ContactForm
 
 
 def faq_view(request):
-    """Render the FAQ page with a list of questions and a contact form."""
+    """Render the FAQ page with a list of questions and a contact form.
+
+    Args:
+        request (HttpRequest): The request object.
+
+    Returns:
+        HttpResponse: The rendered FAQ page with questions and the
+        contact form.
+    """
     questions = Question.objects.all()
 
     if request.method == "POST":

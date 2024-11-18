@@ -24,25 +24,47 @@ class ContactFormCreateView(CreateView):
     form_class = ContactForm  # Use the ContactForm defined in common/forms.py
 
     def get_initial(self):
-        """Set initial data for the form."""
+        """Set initial data for the form.
+
+        Returns:
+            dict: The initial data for the form, including the user's email if authenticated.
+        """
         initial = super().get_initial()
         if self.request.user.is_authenticated:
             initial["email"] = self.request.user.email
         return initial
 
     def get_success_url(self):
-        """Return the URL to redirect after a successful form submission."""
+        """Return the URL to redirect after a successful form submission.
+
+        Returns:
+            str: The URL to redirect to after successful submission.
+        """
         return reverse("contact-success")
 
     def form_valid(self, form):
-        """Handle valid form submission."""
+        """Handle valid form submission.
+
+        Args:
+            form (ContactForm): The submitted contact form.
+
+        Returns:
+            HttpResponse: The response after successfully processing the form.
+        """
         form.instance.author = self.request.user
         messages.info(self.request, "Message Sent!")
         return super().form_valid(form)
 
 
 def contact_success(request):
-    """Render the contact success page."""
+    """Render the contact success page.
+
+    Args:
+        request (HttpRequest): The request object.
+
+    Returns:
+        HttpResponse: The rendered success page.
+    """
     return render(request, "contact/contact_success.html")
 
 
@@ -55,7 +77,11 @@ class ContactListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
     ordering = ["responded", "pk"]
 
     def test_func(self):
-        """Check if the user is staff."""
+        """Check if the user is staff.
+
+        Returns:
+            bool: True if the user is staff, False otherwise.
+        """
         return self.request.user.is_staff
 
 
@@ -67,7 +93,14 @@ class ContactUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name_suffix = "_update_form"
 
     def _send_email(self):
-        """Send the user a confirmation email."""
+        """Send the user a confirmation email.
+
+        This method retrieves the email address and subject from the contact submission
+        and sends an email using the provided body.
+
+        Returns:
+            None
+        """
         email = self.object.email
         subject = self.object.subject
         body = self.request.POST.get("email_body", "No body provided.")
@@ -80,7 +113,14 @@ class ContactUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         )
 
     def form_valid(self, form):
-        """Handle valid form submission for updates."""
+        """Handle valid form submission for updates.
+
+        Args:
+            form (ContactForm): The submitted contact form.
+
+        Returns:
+            HttpResponse: The response after successfully processing the form.
+        """
         form.instance.author = self.request.user
         messages.info(self.request, "Response sent via email")
         self._send_email()
@@ -88,11 +128,19 @@ class ContactUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return super().form_valid(form)
 
     def test_func(self):
-        """Check if the user is staff."""
+        """Check if the user is staff.
+
+        Returns:
+            bool: True if the user is staff, False otherwise.
+        """
         return self.request.user.is_staff
 
     def get_success_url(self):
-        """Return the URL to redirect after a successful update."""
+        """Return the URL to redirect after a successful update.
+
+        Returns:
+            str: The URL to redirect to after successful update.
+        """
         return reverse("contact-update", kwargs={"pk": self.object.pk})
 
 
@@ -106,10 +154,23 @@ class ContactDeleteView(
     success_message = "Message Deleted."
 
     def test_func(self):
-        """Check if the user is staff."""
+        """Check if the user is staff.
+
+        Returns:
+            bool: True if the user is staff, False otherwise.
+        """
         return self.request.user.is_staff
 
     def delete(self, request, *args, **kwargs):
-        """Handle the deletion of a contact submission."""
+        """Handle the deletion of a contact submission.
+
+        Args:
+            request (HttpRequest): The request object.
+            *args: Additional positional arguments.
+            **kwargs: Additional keyword arguments.
+
+        Returns:
+            HttpResponse: The response after deletion.
+        """
         messages.success(self.request, self.success_message)
         return super().delete(request, *args, **kwargs)

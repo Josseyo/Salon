@@ -6,10 +6,10 @@ from django.urls import reverse
 
 
 class Category(models.Model):
-"""Model representing a product category."""
+    """Model representing a product category."""
 
     class Meta:
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = "Categories"
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -36,10 +36,7 @@ class Product(models.Model):
     """Model representing a product with event details."""
 
     category = models.ForeignKey(
-        'Category',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL
+        "Category", null=True, blank=True, on_delete=models.SET_NULL
     )
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
@@ -50,10 +47,7 @@ class Product(models.Model):
     host = models.CharField(max_length=255, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(
-        max_digits=6,
-        decimal_places=2,
-        null=True,
-        blank=True
+        max_digits=6, decimal_places=2, null=True, blank=True
     )
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
@@ -67,15 +61,17 @@ class Product(models.Model):
             ValidationError: If end_time is not after start_time.
         """
         if self.start_time >= self.end_time:
-            raise ValidationError('End time must be after start time.')
+            raise ValidationError("End time must be after start time.")
 
     def __str__(self):
         """Return the string representation of the product.
 
         Returns:
-            str: A formatted string representing the product, including name, event date, start time, and end time.
+            str: A formatted string representing the product, including name,
+            event date, start time, and end time.
         """
-        return f"{self.name} on {self.event_date} from {self.start_time} to {self.end_time}"
+        return f"{self.name} on {self.event_date} from {self.start_time} to {
+            self.end_time}"
 
     def generate_meeting_link(self):
         """Generate a unique meeting link for the product.
@@ -84,7 +80,7 @@ class Product(models.Model):
             str: The URL for the product meeting.
         """
         unique_id = uuid.uuid4().hex
-        return reverse('product_meeting', args=[self.id, unique_id])
+        return reverse("product_meeting", args=[self.id, unique_id])
 
     def save(self, *args, **kwargs):
         """Override the save method to set the meeting link if not already set.

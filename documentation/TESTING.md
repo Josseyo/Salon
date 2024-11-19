@@ -214,5 +214,7 @@ Heroku shows corrupted data:
 #### Solution
 To fix the issue I replaced the: SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", get_random_secret_key()) with: SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
-[Back to readme](../README.md)
+## Issues on the road
+October 4th I got pull & push issues when trying to update previous pushed commits accordin to followin instructions https://algerwrites.medium.com/how-to-remove-env-from-git-commit-history-1d594917b376 . On tutors recommendation I started a new workspace. Which resulted in confusion with code and commits being "broken". 73 pulled and 78 pushed but got stuck in the middle. 
 
+[Back to readme](../README.md)

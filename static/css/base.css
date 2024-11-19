@@ -48,6 +48,21 @@ h1, h2, h3, h5, h6 {
   margin: 0 auto;
 }
 
+.btn-home {
+  color: var(--color-primary);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.btn-home:hover,
+.btn-home:active,
+.btn-home:focus {
+  color: var(--color-white) !important;
+  background-color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+}
+
 .shop-now-button {
   font-family: 'Lato', sans-serif;
   font-weight: 800;

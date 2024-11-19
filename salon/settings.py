@@ -296,7 +296,8 @@ CSP_STYLE_SRC = (
     "'unsafe-inline'",
     "https://stackpath.bootstrapcdn.com",
     "https://fonts.googleapis.com",
-    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/"
+    "font-awesome/5.15.4/css/all.min.css",
     "https://salontalks-e6485414bbd3.s3.eu-north-1.amazonaws.com",
     "https://salontalks-e6485414bbd3.s3.amazonaws.com",
     "https://ka-f.fontawesome.com",
